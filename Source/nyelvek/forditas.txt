@@ -1,0 +1,263 @@
+;Vakablak 2.1 Prototípus nyelvi fájl - Muráti Ákos
+;-------------------------------------------------
+
+
+;1) Bevezetés:
+;-------------
+
+;Az a szöveg, ami pontosvesszõvel vagy
+;kapcsoszárójellel kezdõdik,
+;azt nem értelmezi a nyelvi fordító.
+;Egyszóval ez egy megjegyzés, ahova bármit
+;írhat, vagy akár ki is törölheti ezeket
+;bármilyen következmény nélkül.
+
+
+;2) A modul installálása
+;------------------------
+
+;Ahhoz, hogy a Vakablak fel tudja használni
+;az aktuális nyelvi modult mindig a ;
+;Vakbalak/nyelvek mappában kell lennie.
+
+;A fájl célszerû elnevezése: nyelv-neve.lng
+
+
+;4) Speciális jelölések és kapcsolók:
+;------------------------------------
+
+;	valami=érték:
+;	-------------
+;	Ez a szabványos értékadás módja.
+;	Önnek csak az = jel utáni részt
+;	kell lefordítania és csak egy
+;	soros lehet egy értékadás!!!
+
+;	&:
+;	--
+;	Azt a betût fogja értelmezni az
+;	ALT billyentyû segítségével, ami
+;	elé rakjuk ezt a jelet.
+
+;	$sz:
+;	----
+;	Egy olyan speciális kapcsoló, aminek
+;	a helyére a Vakablak egy szöveget fog
+;	behelyettesíteni.
+
+;3) Fordító
+;----------
+
+;A fordítónak munkájáért lehetõsége van írni
+;egy pár szót magáról, ami a Névjegyben fog
+;megjelenni. Valamint a fordítás beküldése
+;és elfogadása után bekerül a Támogatók közé.
+
+;A fordtásokat a muratiakos@hotmail.com címre
+;küldjék és a levél tárgya legyen:Fordítás
+
+
+;Támogatásukat elõre is köszönöm: Muráti Ákos
+
+
+[Vakablak menürendszer]
+
+fajl=&Fájl
+fajl.ujra_kezd=Újra kezd
+fajl.megnyit=Megnyitás...
+fajl.nyomtat=Nyomtatás...
+fajl.szerkeszt=Projekt szerkesztése
+fajl.kilepes=Kilépés
+
+eszkozok=&Eszközök
+eszkozok.jelmagyarazat=Jelmagyarázat
+eszkozok.ertekeles=Értékelés
+eszkozok.beallitas=Beállítások...
+eszkozok.behuzo=Behúzó
+
+sugo=&Súgó
+sugo.segitseg=Segítség
+sugo.nevjegy=Névjegy
+
+[Gombok]
+
+gombok.megse=&Mégse
+gombok.ok=&OK
+gombok.mentes=M&entés
+gombok.nyomtat=&Nyomtatás
+gombok.sugo=&Súgó
+gombok.bezar=&Bezár
+
+[Névjegy]
+
+nevjegy.forditas=Fordítás:
+nevjegy.fordito=Ide írhat magáról!!!!
+nevjegy.koszonet=Köszönet:
+
+[Options window]
+
+beallitasok.altalanos=Általános
+beallitasok.altalanos.beall_enged=Beállítások menü engedélyezése
+beallitasok.altalanos.szerkesztes_enged=Szerkesztés menü engedélyezése
+beallitasok.altalanos.behuzas_enged=Behúzó bekapcsolása
+beallitasok.altalanos.kerdesek_enged=Kérdések engedélyezése
+beallitasok.altalanos.tippek_enged=Tipp szövegek mutatása
+;>>>>>>A pótlójel azt a szöveget jelenti, amit a Vakablak be fog helyetettesíteni
+;a kérdések helyére.
+beallitasok.altalanos.potlo=Pótlójel:
+
+beallitasok.ertekeles=Értékelés
+;>>>>>>Ide az a szöveg jön, hogy ha az értékelés eredménye kisebb vagy egyenlõ mint a beírandó érték...
+beallitasok.ertekeles.feltetel=Ha az eredmény <=
+;>>>>>>Akkor...
+beallitasok.ertekeles.akkor=%, akkor
+beallitasok.ertekeles.megnevezes=Megnevezés:
+beallitasok.ertekeles.felvesz=Felvesz
+beallitasok.ertekeles.torol=Töröl
+beallitasok.ertekeles.pont=Pont/Kérdés
+beallitasok.ertekeles.levonas=Levonás
+
+beallitasok.ellenorzes=Ellenõrzés
+beallitasok.ellenorzes.kapitalis=Kis és nagy betû nem számít
+beallitasok.ellenorzes.felesleges=Felesleges szóközök levágása
+beallitasok.ellenorzes.kotojelek=Kötõjeleket figyelmen kívül hagy
+beallitasok.ellenorzes.szinek=Jelölés színekkel
+beallitasok.ellenorzes.eltuntet=Helyes válaszok elrejtése
+
+beallitasok.nyelv=Nyelv
+beallitasok.nyelv.magyar=Eredeti magyar nyelv használata
+beallitasok.nyelv.idegen=Idengen nyelvi modul használata
+beallitasok.nyelv.betolt=Választott nyelv alkalmazása
+
+[Nyomtatás ablak]
+nyomtatas.szelesseg=Szélesség:
+nyomtatas.magassag=Magasság:
+
+ertekeles.helyes=Helyes válaszok:
+ertekeles.hibas=Helytelen válaszok:
+ertekeles.eredmeny=Eredmény:
+ertekeles.pontok=Pontszám:
+ertekeles.jegy=Érdemjegy:
+
+
+[A szerkesztõ menürendszere]
+
+projekt=&Projekt
+projekt.uj=Új projekt
+projekt.megnyit=Megnyitás..
+projekt.ment=Mentés...
+projekt.ment_mint=Mentés másként...
+projekt.tulajdonsagok=Projekt tulajdonságai
+projekt.megtekint=Megtekintés...
+projekt.beallitasok=Beállítások...
+projekt.kilep=Kilépés
+
+[A Szerkesztõ felugró menüje]
+elem.uj=Új szimbólum
+elem.torol=Törlés
+elem.tulajdonsagok=Tulajdonságok
+elem.tipus=Jel típusa
+elem.tipus.kerdezendo=Kikérdezendõ
+elem.tipus.megjegyzes=Megjegyzés
+elem.tipus.jelmagyarazat=Jelmagyarázat
+
+elem.igazitas=Szöveg igazítása
+elem.igazitas.ala=Alá
+elem.igazitas.fole=Fölé
+elem.igazitas.kozepre=Középre
+elem.igazitas.jobbra=Jobbra
+elem.igazitas.balra=Balra
+
+elem.meretez=Jel átméretezése
+
+[Tulajdonság ablak]
+[Általános fül]
+tulajdonsagok.altalanos=&Általános
+tulajdonsagok.altalanos.cim=Cím:
+tulajdonsagok.altalanos.kep=Kép:
+tulajdonsagok.altalanos.nagyitas=Nagyítás:
+tulajdonsagok.altalanos.nev=Neve:
+tulajdonsagok.altalanos.tipp=Tipp szövege:
+tulajdonsagok.altalanos.masolo=Formátum másoló
+tulajdonsagok.altalanos.kikerdezendo=Kikérdezendõ
+tulajdonsagok.altalanos.jelmagyarazat=Jelmagyarázat
+tulajdonsagok.altalanos.megjegyzes=Megjegyzés
+
+[Alakzat fül]
+tulajdonsagok.jel=&Jel
+tulajdonsagok.jel.jel=Jel:
+tulajdonsagok.jel.kitoltes=Kitöltés:
+tulajdonsagok.jel.keret=Keret típusa:
+tulajdonsagok.jel.vastagsag=Vastagsága:
+tulajdonsagok.jel.lathatatlan=Láthatatlan alakzat
+tulajdonsagok.jel.vtajolas=Vonal tájolása
+
+[Szöveg fül]
+tulajdonsagok.szoveg=&Szöveg
+tulajdonsagok.szoveg.betutipus=Betûtípus:
+tulajdonsagok.szoveg.meret=Méret:
+tulajdonsagok.szoveg.szin=Szín
+tulajdonsagok.szoveg.felkover=Félkövér
+tulajdonsagok.szoveg.dolt=Dõlt
+tulajdonsagok.szoveg.alahuzott=Aláhúzott
+tulajdonsagok.szoveg.athuzva=Áthúzva
+tulajdonsagok.szoveg.hatter=Háttérszín engedélyezése
+tulajdonsagok.szoveg.elrejt=Szöveg elrejtése
+tulajdonsagok.szoveg.hatterszin=Hattér
+
+[Kérdések fül]
+tulajdonsagok.kerdes=&Kérdések
+tulajdonsagok.kerdes.kerdes=Kérdés:
+tulajdonsagok.kerdes.valasz=Válasz:
+
+[Üzenetablakok]
+1=Ön letiltotta a Beállítások menüt. Ahhoz, hogy újra el tudja érni a beállításokat, indítsa a programot a -beall kapcsolóval az alábbi módon: 'vakablak.exe -beall'.
+2=Az új beállítások érvénybelépéséhez újra kell indítanom az alkalmazást. Kívánja most megtenni?
+3=Projekt megnyitása...
+4=Vakablak fájlok
+5=Projekt mentése másként ...
+6=Projekt mentése ...
+7=Szerkesztõ mód
+8=Névtelen projekt
+9=Az alapkép elérési útja nem adható meg relatívan. Kívánja, hogy a képet a projekt mellé másoljam? Ha a nemet választja, akkor a teljes elérési út lesz elmentve.
+10=$sz térképelem egy másik fájlra hivatkozik. Kívánja, hogy ezt a fájlt a projekt mellé másoljam?
+11=Külsõ fájlok kezelése:
+12=A '$sz' fájl nem tölthetõ be.
+13=A szerkesztésre megadott fájl nem található!
+14=A megadott projekt hibás bejegyzéseket tartalmaz, ami bizonytalanná teheti a program futását. Kívánja folytatni töltést?
+15=Ismeretlen hiba
+16=A megadott kép hibás, ismeretlen tömörítésû vagy nem található a megadott helyen. $sz Kívánja folytatni a töltést a hiba javításához?
+17=Képbetöltési hiba
+18=A '$sz' módosításait nem mentette el. Kívánja most menteni azt?
+19=Módosítások mentése
+20=Végsõ eredmény
+21=A megadott fájl nem található!
+22=A megadott projekt hibás bejegyzéseket tartalmaz, ami bizonytalanná teheti a program futását. A töltés e hiba miatt megszakad.
+23=$sz. kérdés:
+24=$sz tulajdonságai
+25=Kép keresése ...
+26=Minden támogatott képformátum
+27=Négyzet
+28=Ellipszis
+29=Kör
+30=Kerekített négyszög
+31=Kerekített négyzet
+32=Kép
+33=Vonal
+34=Nincs
+35=Elem színével
+    
+[Hibaüzenetek]
+36=A témakörhöz tartozó súgót nem lehet megnyitni!
+37=Súgó hiba:
+38=Megnyitási hiba
+39=Mentési hiba
+40=Nem tudok a meghajtóra írni, mert írásvédett.
+41=A lemez nincs a meghajtóban, vagy nincs formázva.
+42=A fájl nem írható, mert írásvédett.
+43=Nyomtatási hiba
+44=Nem találom a kiválasztott nyomtatót!
+45=A projekt nyomtatása meghiúsult, mert hibás nyomtatási méretet adott meg.
+46=A projekt nem nyomtatható, mert túl nagy nyomtatási méretet adott meg.
+47=Négyszög
+;Ez csak azért került a végére, mert véletlenül kimaradt a fejlesztéskor... :(

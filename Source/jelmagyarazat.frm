@@ -14,7 +14,7 @@ Begin VB.Form jelmagyarazat
    ScaleWidth      =   1485
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
-   Begin Vakterkep2.jel jelm 
+   Begin Vakablak.jel jelm 
       Height          =   255
       Index           =   0
       Left            =   120
@@ -48,5 +48,5 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 10 Then Me.Hide
+    If KeyAscii = 10 Or KeyAscii = 27 Then Me.Hide
 End Sub

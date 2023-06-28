@@ -1,0 +1,193 @@
+[Menu system]
+
+fajl=&File
+fajl.ujra_kezd=Restart
+fajl.megnyit=Open...
+fajl.nyomtat=Print...
+fajl.szerkeszt=Edit project
+fajl.kilepes=Quit
+
+eszkozok=&Tools
+eszkozok.jelmagyarazat=Legend
+eszkozok.ertekeles=Rating
+eszkozok.beallitas=Options...
+eszkozok.behuzo=Drag-In
+
+sugo=&Help
+sugo.segitseg=Contents
+sugo.nevjegy=About
+
+[Buttons]
+
+gombok.megse=&Cancel
+gombok.ok=&OK
+gombok.mentes=&Save
+gombok.nyomtat=&Print
+gombok.sugo=&Help
+gombok.bezar=Cl&ose
+
+[About window]
+
+nevjegy.forditas=Translation:
+nevjegy.fordito=English module by Ákos Muráti
+nevjegy.koszonet=Credits...
+
+[Options window]
+
+beallitasok.altalanos=General
+beallitasok.altalanos.beall_enged=Allow Options in menu
+beallitasok.altalanos.szerkesztes_enged=Allow Edit
+beallitasok.altalanos.behuzas_enged=Allow Drag-In
+beallitasok.altalanos.kerdesek_enged=Allow questions
+beallitasok.altalanos.tippek_enged=Show Tips
+beallitasok.altalanos.potlo=Tag
+
+beallitasok.ertekeles=Rating
+beallitasok.ertekeles.feltetel=If result <=
+beallitasok.ertekeles.akkor=%, then
+beallitasok.ertekeles.megnevezes=Rating:
+beallitasok.ertekeles.felvesz=Add
+beallitasok.ertekeles.torol=Delete
+beallitasok.ertekeles.pont=Points per question
+beallitasok.ertekeles.levonas=Subtraction
+
+beallitasok.ellenorzes=Checking
+beallitasok.ellenorzes.kapitalis=Non case sensitivity
+beallitasok.ellenorzes.felesleges=Cut out unnecessary spaces
+beallitasok.ellenorzes.kotojelek=By-pass hyphens
+beallitasok.ellenorzes.szinek=Mark by colors
+beallitasok.ellenorzes.eltuntet=Hide correct answers
+
+beallitasok.nyelv=Language
+beallitasok.nyelv.magyar=Use original Hungarian language(Magyar)
+beallitasok.nyelv.idegen=Use the selected language
+beallitasok.nyelv.betolt=Apply language module
+
+[Print window]
+nyomtatas.szelesseg=Width:
+nyomtatas.magassag=Height:
+
+ertekeles.helyes=Correct answers:
+ertekeles.hibas=Incorrect answers:
+ertekeles.eredmeny=Result:
+ertekeles.pontok=Points:
+ertekeles.jegy=Mark:
+
+
+[Editor menu system]
+
+projekt=&Project
+projekt.uj=New
+projekt.megnyit=Open..
+projekt.ment=Save
+projekt.ment_mint=Save as
+projekt.tulajdonsagok=Project properties
+projekt.megtekint=Show...
+projekt.beallitasok=Options
+projekt.kilep=Quit
+
+[Editor Popup menu]
+elem.uj=New symbol
+elem.torol=Delete
+elem.tulajdonsagok=Properties
+elem.tipus=Symbol type
+elem.tipus.kerdezendo=Question
+elem.tipus.megjegyzes=Remark
+elem.tipus.jelmagyarazat=Legend
+
+elem.igazitas=Text alignment
+elem.igazitas.ala=Bottom
+elem.igazitas.fole=Top
+elem.igazitas.kozepre=Center
+elem.igazitas.jobbra=Right
+elem.igazitas.balra=Left
+
+elem.meretez=Resize symbol
+
+[Property page]
+[General page]
+tulajdonsagok.altalanos=&General
+tulajdonsagok.altalanos.cim=Title:
+tulajdonsagok.altalanos.kep=Picture:
+tulajdonsagok.altalanos.nagyitas=Magnify:
+tulajdonsagok.altalanos.nev=Name:
+tulajdonsagok.altalanos.tipp=Tooltip text:
+tulajdonsagok.altalanos.masolo=Format copier
+tulajdonsagok.altalanos.kikerdezendo=Question
+tulajdonsagok.altalanos.jelmagyarazat=Legend
+tulajdonsagok.altalanos.megjegyzes=Remark
+
+[Symbol page]
+tulajdonsagok.jel=&Symbol
+tulajdonsagok.jel.jel=Symbol format:
+tulajdonsagok.jel.kitoltes=Filling:
+tulajdonsagok.jel.keret=Border style:
+tulajdonsagok.jel.vastagsag=Border width
+tulajdonsagok.jel.lathatatlan=Hide symbol
+tulajdonsagok.jel.vtajolas=Line direction
+
+[Text page]
+tulajdonsagok.szoveg=&Text
+tulajdonsagok.szoveg.betutipus=Font:
+tulajdonsagok.szoveg.meret=Size:
+tulajdonsagok.szoveg.szin=Color
+tulajdonsagok.szoveg.felkover=Bold
+tulajdonsagok.szoveg.dolt=Italic
+tulajdonsagok.szoveg.alahuzott=Underline
+tulajdonsagok.szoveg.athuzva=Strike thru
+tulajdonsagok.szoveg.hatter=Use background color
+tulajdonsagok.szoveg.elrejt=Hide text
+tulajdonsagok.szoveg.hatterszin=Bg color
+
+[Question-Answer page]
+tulajdonsagok.kerdes=&Questions
+tulajdonsagok.kerdes.kerdes=Question:
+tulajdonsagok.kerdes.valasz=Answer:
+
+1=You have switched off 'Options' menu. To reenter this option, you must run the program with a '-beall' switch. Ex: 'vakablak.exe -beall'
+2=For appling changes, you must restart the application. Would yo like to do it now?
+3=Open a map...
+4=Vakablak maps
+5=Save the project as...
+6=Save the project...
+7=Editor
+8=Unnamed project
+9=Unable to link relatively the selected image. Would you like to copy next to the project? If you choose 'No', the full path will be saved.
+10=$sz was linked to an other file. Would you like to copy next to the project?
+11=Managing attached files
+12=Unable to open the file: $sz!
+13=Unable to find the edited file!
+14=The file contains incorrect entries, that can cause unstable behaviour. Would you like to continue loading the project?
+15=Unknown error
+16=Unable to open the picture ($sz) or unknown or incorrect compression type. Would you like to continue loading the project?
+17=Picture loading error
+18=The changes of "$sz" have not been saved. Do you wish to do it now?
+19=Save changes
+20=Final result
+21=File cannot be found!
+22=The file contains incorrect entries, that can cause unstable behaviour. The loading cannot be proceed.
+23=Question $sz:
+24=Properties of "$sz"
+25=Browse picture...
+26=All supported pictureformat
+47=Quad
+27=Square
+28=Ellipse
+29=Circle
+30=Rounded quad
+31=Rounded square
+32=Picture
+33=Line
+34=None
+35=Symbol color
+36=The help of the topic cannot be opened!
+37=Help error
+38=Opening error
+39=saving error
+40=cannot write to a write-protected drive!
+41=Disk is not ready or not formatted.
+42=File cannot be written, because it is write-protected
+43=Printing error
+44=Unable to find the selected printer!
+45=Incorrect printing size. Printing failed!
+46=The printing size is too large! Printing failed!

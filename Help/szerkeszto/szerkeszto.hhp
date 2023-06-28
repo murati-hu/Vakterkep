@@ -6,20 +6,22 @@ Default topic=html\kezdo.htm
 Display compile progress=No
 Full-text search=Yes
 Language=0x40e magyar
-Title=Vaktérkép Szerkesztõ
+Title=Vakablak szerkesztõ
 
 
 [FILES]
 html\bill.htm
 html\elem.htm
 html\kezdo.htm
-html\kilep.htm
-html\megnyit.htm
 html\ment.htm
 html\ptul.htm
-html\sugo.htm
 html\szerk.htm
 html\uj.htm
+..\sugo.htm
+..\beall.htm
+..\kieg.htm
+..\kilep.htm
+..\megnyit.htm
 
 [INFOTYPES]
 

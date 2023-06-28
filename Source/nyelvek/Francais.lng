@@ -1,0 +1,182 @@
+fajl=&Fichier
+fajl.ujra_kezd=Recommencer
+fajl.megnyit=Ouverture...
+fajl.nyomtat=Impression...
+fajl.szerkeszt=Rédaction du project
+fajl.kilepes=&Quitter
+
+eszkozok=&Outils
+eszkozok.jelmagyarazat=Légende
+eszkozok.ertekeles=Évaluation
+eszkozok.beallitas=Préférences...
+eszkozok.behuzo=Tirages
+
+sugo=&Aide
+sugo.segitseg=Contenu
+sugo.nevjegy=A propos...
+
+
+gombok.megse=&Annuler
+gombok.ok=&OK
+gombok.mentes=&Sauvetage
+gombok.nyomtat=&Impression
+gombok.sugo=&Aide
+gombok.bezar=&Fermer
+
+
+nevjegy.forditas=Traduction:
+nevjegy.fordito=Krisztina Deák
+nevjegy.koszonet=Remerciement:
+
+[Options window]
+
+beallitasok.altalanos=Générale
+beallitasok.altalanos.beall_enged=Autorisation du menu Préférences
+beallitasok.altalanos.szerkesztes_enged=Autorisation du menu Rédaction
+beallitasok.altalanos.behuzas_enged=Mise en marche du Tirage
+beallitasok.altalanos.kerdesek_enged=Autorisation des questions
+beallitasok.altalanos.tippek_enged=Présentation des textes
+beallitasok.altalanos.potlo=Signe de remplacement:
+
+beallitasok.ertekeles=Évaluation
+beallitasok.ertekeles.feltetel=Si le résultat est <=
+beallitasok.ertekeles.akkor=%, alors
+beallitasok.ertekeles.megnevezes=Dénomination:
+beallitasok.ertekeles.felvesz=Enregistrer
+beallitasok.ertekeles.torol=Effacer
+beallitasok.ertekeles.pont=Point/Question
+beallitasok.ertekeles.levonas=Prélevement
+
+beallitasok.ellenorzes=Vérification
+beallitasok.ellenorzes.kapitalis=Lettres minuscules et manuscules ne comptent pas
+beallitasok.ellenorzes.felesleges=Couper les espaces inutiles entre les mots
+beallitasok.ellenorzes.kotojelek=Ignorer les traits d'union
+beallitasok.ellenorzes.szinek=Indiquer par couleurs
+beallitasok.ellenorzes.eltuntet=Cacher les réponses correctes
+
+beallitasok.nyelv=Langue
+beallitasok.nyelv.magyar=Utilisation du hongrois originel
+beallitasok.nyelv.idegen=Utilisation du module d'une langue étrangere
+beallitasok.nyelv.betolt=Appliquer d'une langue choisie
+
+nyomtatas.szelesseg=Largeur:
+nyomtatas.magassag=Hauteur:
+
+ertekeles.helyes=Réponses correctes:
+ertekeles.hibas=Réponses fausses:
+ertekeles.eredmeny=Résultat:
+ertekeles.pontok=Nombre de points:
+ertekeles.jegy=Note obtenue:
+
+
+projekt=&Projet
+projekt.uj=Nouveau projet
+projekt.megnyit=Ouverture...
+projekt.ment=Sauvetage...
+projekt.ment_mint=Sauvetage autrement...
+projekt.tulajdonsagok=Caractéristiques du projet
+projekt.megtekint=Visite...
+projekt.beallitasok=Préférences...
+projekt.kilep=Quitter
+
+elem.uj=Nouveau symbole
+elem.torol=Effacement
+elem.tulajdonsagok=Caractéristiques
+elem.tipus=Type du signe
+elem.tipus.kerdezendo=Devoir
+elem.tipus.megjegyzes=Remarque
+elem.tipus.jelmagyarazat=Légende
+
+elem.igazitas=Retouche du texte
+elem.igazitas.ala=Au-dessous
+elem.igazitas.fole=Au-dessus
+elem.igazitas.kozepre=Au milieu
+elem.igazitas.jobbra=A droit
+elem.igazitas.balra=A gauche
+
+elem.meretez=Mensuration du signe
+
+tulajdonsagok.altalanos=&Générale
+tulajdonsagok.altalanos.cim=Titre:
+tulajdonsagok.altalanos.kep=Image:
+tulajdonsagok.altalanos.nagyitas=Grossissement:
+tulajdonsagok.altalanos.nev=Son nom:
+tulajdonsagok.altalanos.tipp=Texte-model:
+tulajdonsagok.altalanos.masolo=Formation copier
+tulajdonsagok.altalanos.kikerdezendo=Devoir
+tulajdonsagok.altalanos.jelmagyarazat=Légende
+tulajdonsagok.altalanos.megjegyzes=Remarque
+
+tulajdonsagok.jel=&Signe
+tulajdonsagok.jel.jel=Signe:
+tulajdonsagok.jel.kitoltes=Remplissage:
+tulajdonsagok.jel.keret=Type du cadre:
+tulajdonsagok.jel.vastagsag=Épaisseur du cadre:
+tulajdonsagok.jel.lathatatlan=Forme invisible
+tulajdonsagok.jel.vtajolas=Direction de la ligne
+
+tulajdonsagok.szoveg=&Texte
+tulajdonsagok.szoveg.betutipus=Type de caractere:
+tulajdonsagok.szoveg.meret=Dimension:
+tulajdonsagok.szoveg.szin=Couleur
+tulajdonsagok.szoveg.felkover=Demi-gras
+tulajdonsagok.szoveg.dolt=Italique
+tulajdonsagok.szoveg.alahuzott=Souligné
+tulajdonsagok.szoveg.athuzva=Barré
+tulajdonsagok.szoveg.hatter=Autorisation de la couleur du fond
+tulajdonsagok.szoveg.elrejt=Cacher le texte
+tulajdonsagok.szoveg.hatterszin=Fond
+
+tulajdonsagok.kerdes=Questions
+tulajdonsagok.kerdes.kerdes=Question:
+tulajdonsagok.kerdes.valasz=Réponse:
+
+1=Vous avez fait opposition au menu réglage. Pour que vous puissiez le remettre en marche, faites démarrer le programme en appuyant sur le bouton "-beall" selon la maniere suivante: 'vakablak.exe -beall'.
+2=Pour mettre en vigueur les nouvelles dispositions, il me faut recommencer l'application. Le désirez-vous maintenant?
+3=Ouverture du projet...
+4=Files de la Fenétre aveugle
+5=Sauvetage du projet autrement...
+6=Sauvetage du projet...
+7=Mode de rédiger
+8=Projet anonyme
+9=On ne peut pas donner relativement la maniere selon laquelle vous pourriez atteindre l'image de base. Désirez-vous que je copie l'image pres du projet' Si vous répondez négativement, toute maniere d'atteindre l'image sera sauvée.
+10=$sz l'élément de l'image concerne un autre file. Désirez-vous que je copie l'image pres du projet?
+11=Maniement des images extérieures:
+12=On ne peut pas recharger le file '$sz'.
+13=Le file, envoyé rédaction, ne se trouve pas!
+14=Le projet donné contient de fausses inscriptions ce qui risque de rendre incertain le développement du programme. Souhaitez-vous continuer le rechargement.
+15=Faute inconnue
+16=L'image envoyée est erronnée, elle ne se trouve pas au lieu donné ou bien la forme réduite de cette image est inconnue. $sz Souhaitez-vous continuer le rechargement pour la correction de la fauteÿ?
+17=Faute de rechargement de l'image
+18=Les modifications de '$sz'ne sont pas sauvées. Souhaitez-vous le sauver maintenant?
+19=Sauvetage des modifications
+20=Résultat final
+21=Le file donné ne se trouve pas!
+22=Le projet donné contient de fausses inscriptions ce qui risque de rendre incertain le développement du programme. A cause de cette erreur, le rechargement s'interrompt.
+23=$sz. question:
+24=$sz caractéristiques
+25=A la recherche de l'image...
+26=Tous les formats soutenus de l'image
+27=Carré
+28=Ellipse
+29=Rond
+30=Quadrilatere aggrondi
+31=Carré aggrondi
+32=Image
+33=Ligne
+34=Cela n'existe pas
+35=Élément avec sa couleur
+
+
+36=Il est impossible d'ouvrir la Conseillere attachée au domaine!
+37=Faute de la Conseillere:
+38=Faute d'ouverture
+39=Faute de sauvetage
+40=Je ne peux pas écrire sur le driver parce qu'il est protégé.
+41=La disquette n'est pas dans le driver, ou bien elle n'est pas formée.
+42=On ne peut pas écrire sur le file parce qu'il est protégé.
+43=Erreur d'impression
+44=Je n'ai pas trouvé l'imprimate choisie!
+45=L'impression du projet est échouée car vous avez donné une mesure d'impression fausse.
+46=Il est impossible d'imprimer le projet car vous avez donné une mesure trop large.
+47=Quadrilatere

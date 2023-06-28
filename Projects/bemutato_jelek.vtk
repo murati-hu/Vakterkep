@@ -1,0 +1,142 @@
+; Vakablak 2.1.29
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Jelek formázása
+kep=\bemutato_jelek\logol.jpg
+<megjegyzes=Jelek formázása
+	xy=1328,128
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=412,-53
+	betu-meret=13,5
+	betu-szin=32896
+	formazas=fa
+!>
+<megjegyzes=Téglalap az alakzat hátterével kitöltve
+	xy=510,945
+	meret=530,360
+	hatter=255
+	kitoltes-szin=0
+	szovegXY=615,60
+	formazas=f
+!>
+<megjegyzes=Az alábbi pédákban minden alakzaton egy-egy formázást mutatok be.
+	xy=308,728
+	lathatatlan-jel
+	meret=200,200
+	kitoltes-tipus=0
+	kitoltes-szin=255
+	szovegXY=-53,-98
+!>
+<megjegyzes=Négyzet teljes kitöltéssel
+	xy=480,1395
+	meret=615,390
+	jel=1
+	kitoltes-tipus=0
+	kitoltes-szin=65535
+	szovegXY=615,90
+	formazas=f
+!>
+<megjegyzes=Ellipszis vízszintes vonalakkal
+	xy=450,1860
+	meret=673,472
+	jel=2
+	hatter=14671839
+	kitoltes-tipus=2
+	kitoltes-szin=986895
+	szovegXY=675,120
+	formazas=f
+!>
+<megjegyzes=Kör függõleges vonalakkal
+	xy=450,2385
+	meret=680,525
+	jel=3
+	hatter=16762623
+	kitoltes-tipus=3
+	kitoltes-szin=255
+	szovegXY=675,165
+	formazas=f
+!>
+<megjegyzes=Kerekített négyszög srég vonalakkal
+	xy=570,3000
+	meret=463,367
+	jel=4
+	hatter=4227327
+	kitoltes-tipus=4
+	kitoltes-szin=65280
+	szovegXY=540,75
+	formazas=f
+!>
+<megjegyzes=Kerekített négyzet
+	xy=480,3465
+	meret=627,353
+	jel=5
+	hatter=65280
+	kitoltes-tipus=6
+	kitoltes-szin=4227072
+	szovegXY=630,60
+	formazas=f
+!>
+<megjegyzes=Kép
+	xy=420,6660
+	meret=915,1073
+	jel=6
+	ikon=\BEMUTA~3\eu_zaszlo.jpg
+	szovegXY=1050,390
+	formazas=f
+!>
+<megjegyzes=Kitöltés nélküli alakzat vastag kerettel területek kijelölésére
+	xy=465,3945
+	meret=780,420
+	keret-vastagsag=3
+	atlatszo
+	szovegXY=75,105
+	formazas=f
+!>
+<megjegyzes=Figyelem! Kitöltés nélküli alakzatoknál csak a keret a megfogható!
+	xy=338,8572
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-128,8
+	betu-szin=255
+	formazas=f
+!>
+<megjegyzes=Téglalap keret nélkül
+	xy=540,4530
+	meret=530,360
+	hatter=65408
+	keret-tipus=0
+	kitoltes-szin=0
+	szovegXY=570,75
+	formazas=f
+!>
+<megjegyzes=Négyzet szaggatott narancssárga kerettel
+	xy=480,5040
+	meret=672,502
+	jel=1
+	hatter=65535
+	keret-tipus=2
+	keret-szin=33023
+	kitoltes-szin=0
+	szovegXY=765,135
+	formazas=f
+!>
+<megjegyzes=Kör szaggatott kerettel
+	xy=450,5655
+	meret=755,810
+	jel=3
+	keret-tipus=3
+	keret-szin=128
+	szovegXY=810,300
+	formazas=f
+!>
+<megjegyzes=A vonal objektum a Vakablak 2.1 újdonsága
+	xy=375,7845
+	meret=1185,540
+	jel=7
+	keret-vastagsag=2
+	keret-szin=8454143
+	vonal=2
+	szovegXY=1215,180
+	formazas=f
+!>

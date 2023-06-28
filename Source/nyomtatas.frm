@@ -1,11 +1,13 @@
 VERSION 5.00
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form nyomtatas 
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Vaktérkép nyomtatása"
+   Caption         =   "$sz nyomtatása"
    ClientHeight    =   5145
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   6540
+   ControlBox      =   0   'False
    Icon            =   "nyomtatas.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -14,6 +16,14 @@ Begin VB.Form nyomtatas
    ScaleHeight     =   5145
    ScaleWidth      =   6540
    StartUpPosition =   3  'Windows Default
+   Begin MSComDlg.CommonDialog nyomtatok 
+      Left            =   3360
+      Top             =   4560
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+      CancelError     =   -1  'True
+   End
    Begin VB.Frame meret 
       BorderStyle     =   0  'None
       Height          =   615
@@ -25,7 +35,6 @@ Begin VB.Form nyomtatas
          Height          =   285
          Left            =   960
          TabIndex        =   6
-         Text            =   "Text1"
          Top             =   0
          Width           =   855
       End
@@ -33,7 +42,6 @@ Begin VB.Form nyomtatas
          Height          =   285
          Left            =   960
          TabIndex        =   5
-         Text            =   "Text1"
          Top             =   360
          Width           =   855
       End
@@ -126,10 +134,11 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
         '    MsgBox KeyCode
     End Select
 End Sub
-Private Sub Form_Load()
-On Error Resume Next
+Public Sub NyomtatasiKep()
+    On Error Resume Next
     Me.Icon = terkep.Icon
-    Me.Caption = terkep.Cime & " nyomtása"
+    Me.Caption = terkep.nyomtat.Caption
+    'Me.Caption = Atalakit(Me.Caption, terkep.Cime)
     If terkep.terulet.Width > terkep.terulet.Height Then
                 arany = terkep.terulet.Width / nyomtatando.Width
                 nyomtatando.Height = terkep.terulet.Height / arany
@@ -149,6 +158,11 @@ On Error Resume Next
         nyomtatando.Left = (Me.ScaleWidth - nyomtatando.Width) / 2
         Form_Resize
     End If
+    Me.Show vbModal
+End Sub
+
+Private Sub Form_Load()
+    Me.Caption = terkep.nyomtat.Caption
 End Sub
 
 Private Sub Form_Resize()
@@ -165,13 +179,21 @@ On Error Resume Next
 End Sub
 
 Private Sub megse_Click()
-    Unload Me
+    'Unload Me
+    Me.Hide
 End Sub
 
 Private Sub ok_Click()
-    Vazol ("nyomtatora")
+Dim i As Integer
+On Error GoTo megse
+    nyomtatok.ShowPrinter
+    For i = 1 To nyomtatok.Copies
+        Vazol ("nyomtatora")
+        'MsgBox "ok"
+    Next i
+megse:
 End Sub
-Private Sub Vazol(mire As String)
+Public Sub Vazol(mire As String)
     Dim i As Integer, j As Integer
     Dim hova As Object, nagyit As Double, db As Integer, sz As String
     On Error GoTo Hiba
@@ -243,16 +265,18 @@ Private Sub Vazol(mire As String)
 Hiba:
     Dim hibauzenet
     Select Case Err.Number
+        Case 481
+            Exit Sub
         Case 482
-            hibauzenet = "nincs nyomtató telepítve."
+            hibauzenet = KozosSzovegek(44)
         Case 380, 13
-            hibauzenet = "hibás nyomtatási méretet adott meg."
+            hibauzenet = KozosSzovegek(45)
         Case 6
-            hibauzenet = "túl nagy nyomtatási méretet adott meg."
+            hibauzenet = KozosSzovegek(46)
         Case Else
             hibauzenet = Err.Description
     End Select
-    MsgBox "A projekt nyomtatása meghiúsult, mert " & hibauzenet, vbCritical, "Nyomtatási hiba (" & Err.Number & ")"
+    MsgBox hibauzenet, vbCritical, KozosSzovegek(43) & "(" & Err.Number & ")"
 End Sub
 
 Private Sub sugo_Click()

@@ -1,0 +1,157 @@
+; Vakablak 2.1.29
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=EU alapismeretek
+kep=\EU alapismeretek1\eu_zaszlo.jpg
+kijelol=0;0;4500;7500
+nagyitas=1,3
+<megjegyzes=Európai Uniós alapismeretek
+	xy=172,502
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-97,-472
+	betu-tipus=Arial
+	betu-meret=20,25
+	betu-szin=16777215
+	formazas=fa
+!>
+<megjegyzes=1) Hány tagállama van?
+	xy=352,1328
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-217,-143
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65535
+	formazas=fa
+!>
+<elem=25
+	xy=2460,1170
+	lathatatlan-jel
+	meret=1020,270
+	szovegXY=180,45
+	betu-szin=59904
+	formazas=f
+!>
+<megjegyzes=2) Mióta hívják Európai Uniónak?
+	xy=218,1508
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-83,7
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65535
+	formazas=fa
+!>
+<elem=1993
+	xy=3375,1515
+	lathatatlan-jel
+	meret=1020,270
+	szovegXY=150,60
+	betu-szin=59904
+	formazas=f
+!>
+<megjegyzes=3) Mikor lépett be Ausztria?
+	xy=98,1898
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=22,-53
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65535
+	formazas=fa
+!>
+<elem=1995
+	xy=2865,1830
+	lathatatlan-jel
+	meret=1020,270
+	szovegXY=195,30
+	betu-szin=59904
+	formazas=f
+!>
+<megjegyzes=4) Melyik évben csatlakozott Magyarország?
+	xy=158,2108
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-53,52
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65535
+	formazas=fa
+!>
+<elem=2004
+	xy=4290,2160
+	lathatatlan-jel
+	meret=1020,270
+	szovegXY=150,30
+	betu-szin=59904
+	formazas=f
+!>
+<megjegyzes=Írja a lobogó mellé az ország nevét!
+	xy=1312,3998
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-487,3382
+	betu-tipus=Arial
+	betu-meret=12
+	betu-szin=65280
+	formazas=fa
+!>
+<elem=Magyarország
+	xy=180,7800
+	meret=630,488
+	jel=6
+	ikon=\EU alapismeretek1\magyaro.gif
+	szovegXY=690,120
+	betu-meret=9,75
+	betu-szin=15724527
+	formazas=f
+!>
+<elem=Svájc
+	xy=195,8445
+	meret=630,488
+	jel=6
+	ikon=\EU alapismeretek1\svajc.gif
+	szovegXY=750,105
+	betu-meret=9,75
+	betu-szin=15724527
+	formazas=f
+!>
+<elem=Németország
+	xy=2865,7785
+	meret=630,488
+	jel=6
+	ikon=\EU alapismeretek1\nemeto.gif
+	szovegXY=735,90
+	betu-meret=9,75
+	betu-szin=15724527
+	formazas=f
+!>
+<elem=Franciaország
+	xy=2880,8415
+	meret=630,488
+	jel=6
+	ikon=\EU alapismeretek1\franciao.gif
+	szovegXY=720,120
+	betu-meret=9,75
+	betu-szin=15724527
+	formazas=f
+!>
+<megjegyzes=5) Melyik ország a kakukktojás?
+	xy=1298,9368
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-1103,-278
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65535
+	formazas=fa
+!>
+<elem=Svájc
+	xy=3622,9142
+	lathatatlan-jel
+	meret=1020,270
+	szovegXY=-232,-22
+	betu-szin=59904
+	formazas=f
+!>

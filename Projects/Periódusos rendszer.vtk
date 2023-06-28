@@ -1,0 +1,718 @@
+; Vakablak 2.1.29
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Periódusos rendszer
+kep=\Periódusos rendszer\periodus.jpg
+kijelol=0;0;18360;12930
+nagyitas=0,5
+<megjegyzes=H
+	xy=788,742
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=37,-97
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Li
+	xy=758,1342
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=67,-82
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Be
+	xy=1252,1298
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-37,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Na
+	xy=758,1988
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=7,-113
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Mg
+	xy=1252,1942
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-37,-52
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=K
+	xy=832,2572
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=38,-22
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ca
+	xy=1238,2602
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-8,-82
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Rb
+	xy=772,3218
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=8,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Sr
+	xy=1328,3262
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-68,-112
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Cs
+	xy=788,3848
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-8,-68
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ba
+	xy=1268,3908
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-53,-113
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Fr
+	xy=818,4508
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=7,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ra
+	xy=1282,4478
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-22,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Sc
+	xy=1718,2558
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-23,-23
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Y
+	xy=1710,3210
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=60,-45
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ti
+	xy=2175,2595
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=15,-60
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Zr
+	xy=2182,3202
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=8,-52
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Hf
+	xy=2182,3848
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=23,-68
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Rf
+	xy=2092,4522
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=98,-112
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=V
+	xy=2685,2610
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=15,-75
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Nb
+	xy=2662,3262
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-67,-112
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ta
+	xy=2618,3848
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-8,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ha
+	xy=2648,4478
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-38,-38
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Cr
+	xy=3128,2588
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-38,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Mo
+	xy=3105,3240
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-75,-75
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=W
+	xy=3142,3848
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-7,-68
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Unh
+	xy=3098,4508
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-53,-38
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=f
+!>
+<megjegyzes=Mn
+	xy=3548,2618
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-68,-83
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Tc
+	xy=3540,3240
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-30,-75
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Re
+	xy=3555,3840
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-45,-15
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Uns
+	xy=3488,4448
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=7,22
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=f
+!>
+<megjegyzes=Fe
+	xy=4042,2558
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-67,-38
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ru
+	xy=3968,3248
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-8,-83
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Os
+	xy=3938,3818
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=52,-23
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Uno
+	xy=3998,4462
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-53,-7
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=f
+!>
+<megjegyzes=Une
+	xy=4402,4432
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=23,23
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=f
+!>
+<megjegyzes=Co
+	xy=4508,2542
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-83,-7
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Rh
+	xy=4448,3248
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-38,-113
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ir
+	xy=4492,3878
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=23,-98
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ni
+	xy=4882,2542
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=83,-22
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Pd
+	xy=4972,3202
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-82,-67
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Pt
+	xy=4928,3788
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=7,-8
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Cu
+	xy=5370,2580
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-30,-60
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ag
+	xy=5340,3240
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=0,-75
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Au
+	xy=5318,3818
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=37,-23
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Zn
+	xy=5828,2482
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-8,23
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Cd
+	xy=5805,3225
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=0,-75
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Hg
+	xy=5798,3848
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=7,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=B
+	xy=6352,1268
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-22,-8
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Al
+	xy=6262,1912
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=53,-52
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ga
+	xy=6218,2572
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=22,-82
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=In
+	xy=6278,3172
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=37,-22
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ti
+	xy=6292,3788
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=23,-8
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=C
+	xy=6772,1328
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=23,-83
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=N
+	xy=7268,1312
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=7,-67
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=O
+	xy=7702,1268
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=8,-8
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=F
+	xy=8108,1342
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=67,-97
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=He
+	xy=8588,698
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-53,-83
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ne
+	xy=8558,1298
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-23,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Si
+	xy=6742,1928
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=8,-68
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=P
+	xy=7252,1972
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=8,-112
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=S
+	xy=7672,1972
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=38,-127
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Cl
+	xy=8092,1972
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=8,-97
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ar
+	xy=8468,1928
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=67,-68
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Ge
+	xy=6728,2572
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-38,-67
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=As
+	xy=7238,2588
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-83,-83
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Se
+	xy=7658,2558
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-53,-68
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Br
+	xy=8070,2580
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=15,-75
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Kr
+	xy=8528,2528
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=7,-38
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Sn
+	xy=6728,3202
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-38,-52
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Sb
+	xy=7298,3248
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-128,-128
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Te
+	xy=7620,3195
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=15,-75
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=I
+	xy=8122,3188
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=113,-53
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Xe
+	xy=8528,3142
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=22,-7
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Pb
+	xy=6758,3818
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-23,-38
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Bi
+	xy=7238,3788
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-8,-8
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Po
+	xy=7718,3802
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-113,-52
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=At
+	xy=8085,3855
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=30,-105
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>
+<megjegyzes=Rn
+	xy=8542,3878
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=8,-113
+	betu-tipus=Arial
+	betu-meret=14,25
+	formazas=f
+!>

@@ -1,0 +1,178 @@
+; Vakablak 2.1.29
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Magyarország megyéi
+kep=\Magyarország megyéi\megyek.gif
+kijelol=0;0;5700;3720
+nagyitas=2
+<megjegyzes=Csongrád
+	xy=6532,5258
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-142,-8
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Békés
+	xy=7958,4988
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-203,-23
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Hajdú-Bihar
+	xy=9008,2798
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-743,52
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Szabolcs-Szatmár-Bereg
+	xy=9128,1778
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-653,-113
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Borsod-Abaúj-Zemplén
+	xy=7088,982
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-293,98
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Nógrád
+	xy=5242,1792
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-82,38
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Heves
+	xy=6338,2272
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=22,8
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Jász-Nagykun-Szolnok
+	xy=6398,3068
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-278,22
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Pest
+	xy=5242,3472
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=188,-67
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Bács-Kiskun
+	xy=5032,4598
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-52,157
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Tolna
+	xy=3652,4958
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=203,-8
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Baranya
+	xy=3172,6398
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-112,-68
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Somogy
+	xy=2092,5168
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=203,-8
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Zala
+	xy=1342,4372
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-37,308
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Fejér
+	xy=3878,3802
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=67,8
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Veszprém
+	xy=2198,3592
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=97,-37
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Vas
+	xy=1058,3502
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=202,-7
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Gyõr-Moson-Sopron
+	xy=1012,2392
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-82,338
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>
+<megjegyzes=Komárom-Esztergom
+	xy=3262,2422
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-937,-82
+	betu-tipus=Arial
+	betu-meret=11,25
+	formazas=fd
+!>

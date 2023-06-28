@@ -213,7 +213,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-
+Public ertekeles As String
 
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 112 Then HHSugo ("ert.htm")
@@ -222,5 +222,5 @@ End Sub
 
 
 Private Sub ok_Click()
-Me.Hide
+    Me.Hide
 End Sub

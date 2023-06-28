@@ -1,0 +1,175 @@
+fajl=&Datei
+fajl.ujra_kezd=Neustarten
+fajl.megnyit=Öffnen...
+fajl.nyomtat=Drucken...
+fajl.szerkeszt=Bearbeiten
+fajl.kilepes=Austritt
+
+eszkozok=&Instrumenten
+eszkozok.jelmagyarazat=Zeichenerklärung
+eszkozok.ertekeles=Schätzung
+eszkozok.beallitas=Einstellung...
+eszkozok.behuzo=Einzieher
+
+sugo=&Hilfe
+sugo.segitseg=Inhalte...
+sugo.nevjegy=Über
+
+gombok.megse=&Wischen
+gombok.ok=&OK
+gombok.mentes=&Speichern
+gombok.nyomtat=&Drücken
+gombok.sugo=&Hilfe
+gombok.bezar=Schliessen
+
+nevjegy.forditas=Übersetzung:
+nevjegy.fordito=Die entsprechende Teile des Deutschen Moduls von Csaba Vida, die andere Teile von  Ákos Muráti.
+nevjegy.koszonet=Vielen Dank zu...
+
+beallitasok.altalanos=Allgemein
+beallitasok.altalanos.beall_enged=Erlauben der Optionen der Menu
+beallitasok.altalanos.szerkesztes_enged=Erlauben zu bearbeiten
+beallitasok.altalanos.behuzas_enged=Erlauben zum Einziechen
+beallitasok.altalanos.kerdesek_enged=Frage-erlauben
+beallitasok.altalanos.tippek_enged=Tippen zeigen
+beallitasok.altalanos.potlo=Tag:
+
+beallitasok.ertekeles=Schätzung
+beallitasok.ertekeles.feltetel=Wenn die Ergebnis ist <=
+beallitasok.ertekeles.akkor=%, dann
+beallitasok.ertekeles.megnevezes=Schätzung:
+beallitasok.ertekeles.felvesz=Addieren
+beallitasok.ertekeles.torol=Löschen
+beallitasok.ertekeles.pont=Points pro Frage
+beallitasok.ertekeles.levonas=Abziehen
+
+beallitasok.ellenorzes=Kontrollieren
+beallitasok.ellenorzes.kapitalis=Non case sensitivity
+beallitasok.ellenorzes.felesleges=Schnitt die unnützliche Ort aus
+beallitasok.ellenorzes.kotojelek=Bindestrichen
+beallitasok.ellenorzes.szinek=Ernennen nach Farbe
+beallitasok.ellenorzes.eltuntet=Verbirg die richtige Antworten
+
+beallitasok.nyelv=Sprache
+beallitasok.nyelv.magyar=Benutz origiale ungarische Sprache(Magyar)
+beallitasok.nyelv.idegen=Benutz die ausgewählte Sprache
+beallitasok.nyelv.betolt=Benutz die ausgewählte Sprache
+
+nyomtatas.szelesseg=Breite:
+nyomtatas.magassag=Grösse:
+
+ertekeles.helyes=Richtige Antorte:
+ertekeles.hibas=Falsche Antworte:
+ertekeles.eredmeny=Ergebnis:
+ertekeles.pontok=Punktzahle:
+ertekeles.jegy=Zensur:
+
+projekt=&Project
+projekt.uj=Neu
+projekt.megnyit=Öffnen...
+projekt.ment=Speichern
+projekt.ment_mint=Speichern unter
+projekt.tulajdonsagok=Project Eigenschaften
+projekt.megtekint=Zeigen...
+projekt.beallitasok=Einstellungen
+projekt.kilep=Austritt
+
+elem.uj=Neu Symbol
+elem.torol=Löschen
+elem.tulajdonsagok=Eigenschaften
+elem.tipus=Typ der Symbolen
+elem.tipus.kerdezendo=Frage
+elem.tipus.megjegyzes=Kommentar
+elem.tipus.jelmagyarazat=Zeichenerklärung
+
+elem.igazitas=Text richten
+elem.igazitas.ala=Boden
+elem.igazitas.fole=Dach
+elem.igazitas.kozepre=Center
+elem.igazitas.jobbra=Recht
+elem.igazitas.balra=Link
+
+elem.meretez=Wiederabmessen von Symbol
+
+tulajdonsagok.altalanos=Allgemein
+tulajdonsagok.altalanos.cim=Titel:
+tulajdonsagok.altalanos.kep=Bild:
+tulajdonsagok.altalanos.nagyitas=Vergrössern:
+tulajdonsagok.altalanos.nev=Name:
+tulajdonsagok.altalanos.tipp=Tooltip text:
+tulajdonsagok.altalanos.masolo=Format Kopierer
+tulajdonsagok.altalanos.kikerdezendo=Frage
+tulajdonsagok.altalanos.jelmagyarazat=Zeichenerklärung
+tulajdonsagok.altalanos.megjegyzes=Kommentar
+
+tulajdonsagok.jel=&Symbol
+tulajdonsagok.jel.jel=Symbol Format:
+tulajdonsagok.jel.kitoltes=Ausfüllen:
+tulajdonsagok.jel.keret=Border Style:
+tulajdonsagok.jel.vastagsag=Border Breite
+tulajdonsagok.jel.lathatatlan=Verbirg die symbol
+tulajdonsagok.jel.vtajolas=Linierichtung
+
+tulajdonsagok.szoveg=&Text
+tulajdonsagok.szoveg.betutipus=Font:
+tulajdonsagok.szoveg.meret=:
+tulajdonsagok.szoveg.szin=Farbe
+tulajdonsagok.szoveg.felkover=Bold
+tulajdonsagok.szoveg.dolt=Italic
+tulajdonsagok.szoveg.alahuzott=Unterstreichen
+tulajdonsagok.szoveg.athuzva=durchstreichen
+tulajdonsagok.szoveg.hatter=Benutz Hintergrund Farbe
+tulajdonsagok.szoveg.elrejt=Verbirg den Text
+tulajdonsagok.szoveg.hatterszin=Hintergrund Farbe
+
+tulajdonsagok.kerdes=&Frage
+tulajdonsagok.kerdes.kerdes=Frage:
+tulajdonsagok.kerdes.valasz=Antwort:
+
+1=Du hast die Einstellungen menü ausgeschaltet. Um der Einstellung einzutreten,du musst den Program mit '-beall' arbeiten lassen. Ex: 'vakablak.exe -beall'
+2=Um die Veränderungen zu akzeptieren, du musst die Programmen neustarten. Wünschen Sie tun das jetzt?
+3=Öffnen eine Mappe...
+4=Vakablak Mappen
+5=Speichern das Project unter...
+6=Speichern das  Project...
+7=Bearbeiter
+8=Unbenanntes Project
+9=Unfähig zu schliessen die ausgewählte Bild. Wünschen Sie kopieren neben dem Projekt? Wenn Sie 'Nein' wählen, the ganze Erreichsweg wird gespeichert.
+10=$sz war zu einem anderen Datei geschliessen. Wünschen Sie kopieren neben dem Projekt?
+11=Händlung der zugeschliessene Dateiene
+12=Unfähig zu öffnen das Datei: $sz!
+13=Unfähig das ausgewähltes Datei zu finden!
+14=The file contains incorrect entries, that can cause unstable behaviour. Would you like to continue loading the project?
+15=Unbekannter Fehler
+16=Unable to open the picture ($sz) or unknown or incorrect compression type. Would you like to continue loading the project?
+17=Bild loading Fehler
+18=Die Veränderungen von "$sz" sind nicht gespeichert worden.Wollen SIe tun das jetzt?
+19=Speichern die Veränderungen
+20=Endgültiges Ergebniss
+21=Das Datei kann nicht gefunden werden.
+22=The file contains incorrect entries, that can cause unstable behaviour. The loading cannot be proceed.
+23=Frage $sz:
+24=Eigenschaften von "$sz"
+25=Einen Bild nachlesen...
+26=Alle untergestützte Bildformat.
+47=Viereck
+27=Quadrat
+28=Ellipse
+29=Rund
+30=Abgerundete Viereck
+31=Abgerundete Quadrat
+32=Bild
+33=Linie
+34=Nichts
+35=Farbe der Symbol
+36=Die Hilfe der Aufgabe kann nicht geöffnet sein.
+37=Hilfe Fehler
+38=Öffnungsfehler
+39=Speichernfehler
+40=Cannot write to a write-protected drive!
+41=Der Disk ist nicht fertig,oder ist nicht geformat.
+42=File cannot be written, because it is write-protected
+43=Drückfehler
+44=Unfähig zu finden die ausgewählte Drücker.
+45=Falsches Drückengösse.Drücken hat nicht gelungen.
+46=Der Drückgrösse ist zu gross.Drücken hat nicht gelungen.

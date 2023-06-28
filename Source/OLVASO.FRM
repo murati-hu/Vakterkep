@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form terkep 
    BackColor       =   &H8000000C&
-   Caption         =   "Vaktérkép"
+   Caption         =   "Vakablak"
    ClientHeight    =   4485
    ClientLeft      =   165
    ClientTop       =   855
@@ -68,7 +68,7 @@ Begin VB.Form terkep
          Visible         =   0   'False
          Width           =   1335
       End
-      Begin Vakterkep2.jel jel 
+      Begin Vakablak.jel jel 
          Height          =   135
          Index           =   0
          Left            =   480
@@ -82,7 +82,7 @@ Begin VB.Form terkep
          KeretSzine      =   -2147483640
          HatterSzine     =   -2147483643
       End
-      Begin Vakterkep2.jel megj 
+      Begin Vakablak.jel megj 
          Height          =   135
          Index           =   0
          Left            =   2880
@@ -185,11 +185,14 @@ Begin VB.Form terkep
    Begin VB.Menu sugo_mnu 
       Caption         =   "&Súgó"
       Begin VB.Menu help_mnu 
-         Caption         =   "Súgó"
+         Caption         =   "Segítség"
          Shortcut        =   {F1}
       End
       Begin VB.Menu v2 
          Caption         =   "-"
+      End
+      Begin VB.Menu koszonet_mnu 
+         Caption         =   "Köszönet..."
       End
       Begin VB.Menu nevjegy_mnu 
          Caption         =   "Névjegy"
@@ -228,11 +231,8 @@ szoveg.Visible = False
 
 For i = 1 To (jel.Count - 1)
     If elemek(i).pont = 0 Then
-        If Trim(LCase(elemek(i).Cime)) = Trim(LCase(jel_szoveg(i).Caption)) Then
-            jel_szoveg(i).BackStyle = 1
-            jel_szoveg(i).BackColor = vbGreen
-            jel_szoveg(i).Enabled = False
-            jel(i).Bekapcsolva = False
+        If LegegyszerubbAlak(elemek(i).Cime) = LegegyszerubbAlak(jel_szoveg(i).Caption) Then
+                Ellenorzott i, True
             
             If proba = 1 Or beallitasok.kerdesek.Value = 0 Then
                 elemek(i).pont = beallitasok.pont.Text
@@ -241,8 +241,7 @@ For i = 1 To (jel.Count - 1)
             End If
             jo = jo + 1
         Else
-            jel_szoveg(i).BackStyle = 1
-            jel_szoveg(i).BackColor = &HC0C0FF
+            Ellenorzott i, False
         End If
     Else
         jo = jo + 1
@@ -263,42 +262,44 @@ ertekeles.maxpont.Caption = (jel.Count - 1) * beallitasok.pont.Text
 ertekeles.szazalek.Caption = Format(CDbl(ertekeles.pontok.Caption) / CDbl(ertekeles.maxpont.Caption) * 100, "##,##")
 If ertekeles.szazalek.Caption = "" Then ertekeles.szazalek.Caption = 0
 
-Select Case CByte(ertekeles.szazalek)
-    Case 0 To beallitasok.hatarok(1) - 1
-        ertekeles.jegy = 1
-        ertekeles.neve = "Elégtelen"
-       
-    Case beallitasok.hatarok(1) To beallitasok.hatarok(2) - 1
-        ertekeles.jegy = 2
-        ertekeles.neve = "Elégséges"
-        
-    Case beallitasok.hatarok(2) To beallitasok.hatarok(3) - 1
-        ertekeles.jegy = 3
-        ertekeles.neve = "Közepes"
-        
-    Case beallitasok.hatarok(3) To beallitasok.hatarok(4) - 1
-        ertekeles.jegy = 4
-        ertekeles.neve = "Jó"
-        
-    Case beallitasok.hatarok(4) To 100
-        ertekeles.jegy = 5
-        ertekeles.neve = "Példás"
-End Select
+'Kiértékelési szabályok
+jo = 0
+For i = 0 To beallitasok.ert_hatarok.ListCount - 1
+    If jo = 0 And CByte(ertekeles.szazalek.Caption) <= CByte(beallitasok.KiErtekeles(i, 1)) Then
+        ertekeles.jegy.Caption = beallitasok.KiErtekeles(i, 3)
+        ertekeles.neve.Caption = beallitasok.KiErtekeles(i, 2)
+        jo = 1
+    End If
+Next i
 
+'Ha nem találtunk semmit
+If jo = 0 Then
+    ertekeles.jegy.Caption = beallitasok.KiErtekeles(0, 3)
+    ertekeles.neve.Caption = beallitasok.KiErtekeles(0, 2)
+End If
+
+'Menü átírása
 If proba = 5 Then
-        ertekel_mnu.Caption = "Végsõ eredmény"
-        ertekeles.Caption = "Végsõ eredmény"
+        ertekel_mnu.Caption = KozosSzovegek(20)
+        ertekeles.Caption = KozosSzovegek(20)
     Else
-        ertekel_mnu.Caption = proba + 1 & ". Értékelés"
-        ertekeles.Caption = proba & ". Értékelés"
+        ertekel_mnu.Caption = proba + 1 & ". " & ertekeles.ertekeles
+        ertekeles.Caption = proba & ". " & ertekeles.ertekeles
         proba = proba + 1
 End If
 ertekeles.Show vbModal
 End Sub
 
+
+
 Private Sub fl_Change()
     terulet.Top = fl.Value
 End Sub
+
+Private Sub Form_DblClick()
+    megnyit_mnu_Click
+End Sub
+
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
 If jel.Count = 1 Then Exit Sub
 If szoveg.Visible Then
@@ -340,6 +341,8 @@ End Sub
 
 
 Private Sub Form_Load()
+    'MsgBox "'" & Lefoloz("Hello                        Belló!   ", " ") & "'"
+    'magyar_nyelv
     torol
 End Sub
 
@@ -348,14 +351,6 @@ Pozicional
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-    'If Megnyitva <> "" Then
-    '     jelmagyarazat.Hide
-    '     behuzo.Hide
-    '     If MsgBox("Ha most kilép, minden eddigi eredménye el fog veszni! Biztos, hogy ki akar lépni?", vbYesNo + vbQuestion, "Kilépés") = vbNo Then
-    '        Cancel = 1
-    '        Exit Sub
-    '    End If
-    'End If
     Megsemmisit
     End
 End Sub
@@ -422,11 +417,16 @@ Private Sub kilep_mnu_Click()
     Unload Me
 End Sub
 
+Private Sub koszonet_mnu_Click()
+    koszonet.Caption = Szulo.koszonet_mnu.Caption
+    koszonet.Show vbModal
+End Sub
+
 Private Sub megnyit_mnu_Click()
 On Error GoTo megse
     pb.CancelError = True
-    pb.DialogTitle = "Vaktérkép megnyitása ..."
-    pb.Filter = "Vaktérkép fájlok (*.vtk)|*.vtk"
+    pb.DialogTitle = KozosSzovegek(3)
+    pb.Filter = KozosSzovegek(4) & "(*.vtk)|*.vtk"
     pb.FileName = "*.vtk"
     pb.ShowOpen
     torol
@@ -468,7 +468,7 @@ On Error GoTo Hiba
 ' ######################## Projektekkel összefüggõ beállítások #################################
                 Case "cim", "cime"
                     Cime = parameter
-                    Me.Caption = parameter & " - " & "Vaktérkép " & Vakterkep.Verzio
+                    Me.Caption = parameter & " - " & Vakterkep.Verzio
                 Case "terkep", "kep"
                     On Error GoTo kephiba
                         parameter = Atalakit(parameter, Konyvtara(Fajlnev))
@@ -652,7 +652,7 @@ On Error GoTo Hiba
                     End If
                 Case "jel", "alakzat"
                     If aze Then
-                        obj.jel = CByte(parameter) Mod 7
+                        obj.jel = CByte(parameter) Mod 8
                     End If
                 
                 Case "ikon", "jelkep", "szimbolum"
@@ -707,6 +707,8 @@ On Error GoTo Hiba
                     If aze Then
                         obj.KeretVastagsaga = parameter
                     End If
+                Case "vonal"
+                        obj.VonalAllas = parameter
                 Case "lathatatlan-jel"
                     'If obj.Name <> "jelm" Then  'And megj_szoveg(FID).Visible Then
                         obj.Visible = False
@@ -714,12 +716,12 @@ On Error GoTo Hiba
                 Case "lathatatlan-szoveg"
                     If obj.Name = "megj" Then megj_szoveg(FID).Visible = False
 ' ######################## Beállításokkal kapcsolatos értékek ###################################
-                Case "hatarok", "ponthatarok"
-                    If beallitasok.egyeni.Value = 1 Or Fajlnev = Atalakit("$vt\vakterkep.ini") Then
-                        For i = 1 To 4
-                            beallitasok.hatarok(i) = Kicsontoz(parameter, ",", i - 1)
-                        Next i
-                    End If
+                'Case "hatarok", "ponthatarok"
+                '    If beallitasok.egyeni.Value = 1 Or Fajlnev = Atalakit("$vt\vakablak.ini") Then
+                '        For i = 1 To 4
+                '            beallitasok.hatarok(i) = Kicsontoz(parameter, ",", i - 1)
+                '        Next i
+                '    End If
                 Case "beallitas", "beallitasok_engedelyezese"
                     beallitasok.enged.Value = parameter
                     beall_mnu.Enabled = Abs(CInt(parameter))
@@ -740,6 +742,11 @@ On Error GoTo Hiba
                     beallitasok.behuzas = parameter
                 Case "szerkesztes_engedelyezese"
                     beallitasok.szerkesztes = parameter
+                Case "nyelv"
+                    If parameter <> "0" Then
+                        beallitasok.nyelv(1).Value = True
+                        NyelvAlkalmazasa (parameter)
+                    End If
             End Select
 kihagy:
         Loop
@@ -749,7 +756,7 @@ kihagy:
     If aze Then lezaras
     terulet.Visible = True
     
-    If Fajlnev <> Atalakit("$vt\vakterkep.ini") Then
+    If Fajlnev <> Atalakit("$vt\vakablak.ini") Then
             'van kikérdezendõ elem
             If jel.Count > 1 Then
                 ujra_mnu.Enabled = True
@@ -801,16 +808,16 @@ Hiba:
     'Dim uzenet As String
     Select Case Err.Number
         Case 52
-            UzenetAblak "A '" & Fajlnev & "' fájl nem tölthetõ be."
+            UzenetAblak Atalakit(KozosSzovegek(12), Fajlnev)
             'Exit Sub
         Case 53
-            If Fajlnev <> Vakterkep.Konyvtar & "vakterkep.ini" Then
-                UzenetAblak "A megadott fájl nem található!"
+            If Fajlnev <> Vakterkep.Konyvtar & "vakablak.ini" Then
+                UzenetAblak KozosSzovegek(21)
             End If
             'Exit Sub
         Case Else
-            UzenetAblak "A megadott projekt hibás bejegyzéseket tartalmaz, ami bizonytalanná teheti a program futását. A töltés e hiba miatt megszakad."
-            UzenetAblak "A hiba oka(" & Err.Number & "): " & Err.Description, "Ismeretlen hiba"
+            UzenetAblak KozosSzovegek(22)
+            UzenetAblak Err.Number & ": " & Err.Description, KozosSzovegek(15)
             torol
     End Select
     'If uzenet <> "" Then MsgBox uzenet, vbExclamation, "Megnyitási hiba"
@@ -819,9 +826,8 @@ Exit Sub
 
 'képhibák kezelése
 kephiba:
-    UzenetAblak "A megadott kép hibás, ismeretlen tömörítésû vagy nem található a megadott helyen." & vbCrLf & _
-           "A projekt betöltése e hiba miatt megszakad.", "Képbetöltési hiba"
-    UzenetAblak Err.Description & " - " & Err.Number, kep & " hibajelentése"
+    UzenetAblak Atalakit(KozosSzovegek(16), vbCrLf), KozosSzovegek(17)
+    UzenetAblak Err.Description, Err.Number & " - " & kep
     Close 1
     torol
 End Sub
@@ -850,7 +856,7 @@ Private Sub torol()
     behuzo.Visible = False
     ertekel_mnu.Enabled = False
     nyomtat.Enabled = False
-    Me.Caption = "Vaktérkép " & Vakterkep.Verzio
+    Me.Caption = Vakterkep.Verzio
     terulet.Picture = nevjegy.kep.Picture
     terulet.Visible = True
     
@@ -911,7 +917,10 @@ End If
 End Sub
 
 Private Sub nyomtat_Click()
-    nyomtatas.Show vbModal
+    'nyomtatas.Load
+    'nyomtatas.Show vbModal
+    
+    nyomtatas.NyomtatasiKep
 End Sub
 
 Private Sub szerkesztes_mnu_Click()
@@ -940,7 +949,7 @@ Private Sub ujra_mnu_Click()
 Dim i As Integer
     proba = 1
     Form_KeyDown 27, 0
-    ertekel_mnu.Caption = "Értékelés"
+    ertekel_mnu.Caption = ertekeles.ertekeles
     For i = 1 To jel.Count - 1
         elemek(i).pont = 0
         elemek(i).Kovetkezo = 1
@@ -974,8 +983,8 @@ End Sub
 Private Function IrhatE(Index As Integer) As Boolean
     If proba > 1 And beallitasok.kerdesek.Value = 1 And elemek(Index).kerdesek(elemek(Index).Kovetkezo).Kerdes <> "" And Not elemek(Index).Kitalalta Then
         Dim ev As String
-        ev = InputBox(elemek(Index).kerdesek(elemek(Index).Kovetkezo).Kerdes, elemek(Index).Kovetkezo & ". kérdés", "")
-        If Trim(LCase(ev)) <> Trim(LCase(elemek(Index).kerdesek(elemek(Index).Kovetkezo).Valasz)) Then
+        ev = InputBox(elemek(Index).kerdesek(elemek(Index).Kovetkezo).Kerdes, Atalakit(KozosSzovegek(23), CStr(elemek(Index).Kovetkezo)), "")
+        If LegegyszerubbAlak(ev) <> LegegyszerubbAlak(elemek(Index).kerdesek(elemek(Index).Kovetkezo).Valasz) Then
             If ev <> "" Then
                 elemek(Index).Kovetkezo = elemek(Index).Kovetkezo + 1
             End If
@@ -988,3 +997,19 @@ Private Function IrhatE(Index As Integer) As Boolean
         IrhatE = True
     End If
 End Function
+Private Sub Ellenorzott(Index As Integer, Joe As Boolean)
+    If beallitasok.megoldas(0).Value Then
+        jel_szoveg(Index).BackStyle = 1
+        If Joe Then
+                jel_szoveg(Index).BackColor = vbGreen
+            Else
+                jel_szoveg(Index).BackColor = &HC0C0FF
+        End If
+    Else
+        jel_szoveg(Index).Visible = Not Joe
+        jel(Index).Visible = Not Joe
+    End If
+    
+    jel_szoveg(Index).Enabled = Not Joe
+    jel(Index).Bekapcsolva = Not Joe
+End Sub

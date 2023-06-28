@@ -1,0 +1,107 @@
+; Vakablak 2.1.25
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Dél-Amerika
+kep=\Dél-Amerika\del_am.gif
+<megjegyzes=Brazília
+	xy=3405,1800
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=135,15
+	betu-meret=9,75
+	formazas=f
+!>
+<megjegyzes=Francia Guyana
+	xy=3728,668
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=22,37
+	formazas=f
+!>
+<megjegyzes=Suriname
+	xy=3398,592
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=127,-112
+	formazas=f
+!>
+<megjegyzes=Guyana
+	xy=3052,532
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=188,-262
+	formazas=f
+!>
+<megjegyzes=Venezuela
+	xy=2018,218
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=37,52
+	formazas=f
+!>
+<megjegyzes=Kolumbia
+	xy=1538,668
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-38,22
+	formazas=f
+!>
+<megjegyzes=Ecuador
+	xy=1162,1178
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-427,-23
+	formazas=f
+!>
+<megjegyzes=Peru
+	xy=1418,1988
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=52,-8
+	formazas=f
+!>
+<megjegyzes=Bolívia
+	xy=2258,2242
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=112,203
+	formazas=f
+!>
+<megjegyzes=Argentína
+	xy=2422,3968
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-82,-68
+	betu-szin=12632256
+	formazas=f
+!>
+<megjegyzes=Chile
+	xy=2108,3202
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-233,-127
+	formazas=f
+!>
+<megjegyzes=Paraguay
+	xy=2842,2888
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=143,52
+	formazas=f
+!>
+<megjegyzes=Uruguay
+	xy=3278,3968
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=67,22
+	betu-szin=65535
+	formazas=f
+!>
+<megjegyzes=Falkland-szigetek
+	xy=3142,5572
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=233,-172
+	betu-szin=8421376
+	formazas=f
+!>

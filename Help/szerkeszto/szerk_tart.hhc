@@ -23,7 +23,7 @@
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Megnyit&aacute;s">
-			<param name="Local" value="html\megnyit.htm">
+			<param name="Local" value="..\megnyit.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Projekt tulajdons&aacute;gai">
@@ -43,6 +43,10 @@
 		<param name="Local" value="html\bill.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Vakablak be&aacute;ll&iacute;t&aacute;sai">
+		<param name="Local" value="..\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Men&uuml;szerkezet">
 		</OBJECT>
 	<UL>
@@ -56,7 +60,7 @@
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Megnyit&aacute;s">
-				<param name="Local" value="html\megnyit.htm">
+				<param name="Local" value="..\megnyit.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Ment&eacute;s">
@@ -71,22 +75,26 @@
 				<param name="Local" value="html\ptul.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Be&aacute;ll&iacute;t&aacute;sok">
+				<param name="Local" value="..\beall.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Kil&eacute;p&eacute;s">
-				<param name="Local" value="html\kilep.htm">
+				<param name="Local" value="..\kilep.htm">
 				</OBJECT>
 		</UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="S&uacute;g&oacute;">
-			<param name="Local" value="html\sugo.htm">
+			<param name="Local" value="..\sugo.htm">
 			</OBJECT>
 		<UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="S&uacute;g&oacute;">
-				<param name="Local" value="html\sugo.htm">
+				<param name="Local" value="..\sugo.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="N&eacute;vjegy">
-				<param name="Local" value="html\sugo.htm">
+				<param name="Local" value="..\kilep.htm">
 				</OBJECT>
 		</UL>
 	</UL>

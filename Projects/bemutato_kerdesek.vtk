@@ -1,0 +1,116 @@
+; Vakablak 2.1.29
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Rávezetõ kérdések
+kep=\bemutato_kerdesek\logol.jpg
+<megjegyzes=Rávezetõ kérdések bemutatása
+	xy=922,518
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-7,-293
+	betu-tipus=Arial
+	betu-meret=15,75
+	betu-szin=0
+	formazas=a
+!>
+<megjegyzes=Akkor használhatjuk, ha a felhasználó nem találta el elsõ ellenõrzésre a választ.
+	xy=495,1410
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-315,-270
+	betu-szin=8454143
+!>
+<megjegyzes=>>> A kérdések csak az elsõ ellenõrzés után lépnek életbe
+	xy=922,2212
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-487,-757
+	betu-szin=8454143
+!>
+<megjegyzes=>>> Öszesen 10 kérdés rendelhetõ egy elemhez
+	xy=322,1598
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=98,262
+	betu-szin=8454143
+!>
+<megjegyzes=>>> Hibás válasz esetén a gép a következõ kérdésre ugrik
+	xy=1162,2242
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-757,-172
+	betu-szin=8454143
+!>
+<megjegyzes=>>> Minden hibás válasz csökkenti a kapható pontokat
+	xy=660,2340
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-255,-15
+	betu-szin=8454143
+!>
+<megjegyzes=>>> Addig nem lehet egy pontot megnyitni, amíg nem adtunk helyes választ
+	xy=1072,2708
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-637,-1058
+	betu-szin=8454143
+!>
+<elem=prb
+	xy=2085,6360
+	meret=530,390
+	jel=6
+	ikon=\bemutato_kerdesek\magyaro.gif
+	szovegXY=630,60
+	betu-meret=12
+	betu-szin=16744703
+	formazas=fk
+	kerdes=Ki ennek a programnak az írója? (válasz: Muráti Ákos)|Muráti Ákos
+	kerdes=Látom elrontotta az elõzõ kérdést. Minden hibázás -20%-ot jelent. (válasz: semmi)|semmi
+	kerdes=Ha ide is rosszat ír, több kérdése nem lesz és megnyílik a pont. (válasz:nincs)|nincs
+!>
+<megjegyzes=Próba
+	xy=2325,5400
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=225,-480
+	betu-tipus=Arial
+	betu-meret=12
+	betu-szin=4519851
+	formazas=fda
+!>
+<megjegyzes=1) Kattintson az Értékelés menüpontra, majd zárja be azt!
+	xy=750,5955
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-375,-135
+	betu-szin=8454143
+!>
+<megjegyzes=2) Kattintson a lobogóra!
+	xy=412,6218
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-37,-143
+	betu-szin=8454143
+!>
+<megjegyzes=4) Ha helyes választ ad vagy elfogynak a kérdések, akkor a pont megnyílik
+	xy=465,6840
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-60,360
+	betu-szin=8454143
+!>
+<megjegyzes=Elõször engedélyeznünk kell a beállítások menüpontban a Segítõ kérdéseket!
+	xy=382,5062
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-217,443
+	betu-szin=16777215
+	formazas=a
+!>
+<megjegyzes=3) Kattintson többször a pontra, az újabb kérdés elõhívásához.
+	xy=375,6930
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=15,-15
+	betu-szin=8454143
+!>

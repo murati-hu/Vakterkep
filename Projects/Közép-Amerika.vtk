@@ -1,0 +1,106 @@
+; Vakablak 2.1.29
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Közép-Amerika
+kep=\Közép-Amerika\kozep_am.gif
+<megjegyzes=Mexikó
+	xy=322,2048
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-127,-8
+	betu-meret=9,75
+	betu-szin=0
+	formazas=f
+!>
+<megjegyzes=Guatemala
+	xy=2348,4012
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-608,-22
+	betu-szin=0
+	formazas=f
+!>
+<megjegyzes=Belize
+	xy=2962,3308
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=83,7
+	betu-szin=0
+	formazas=f
+!>
+<megjegyzes=San Salvador
+	xy=2918,4282
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-878,23
+	betu-szin=0
+	formazas=f
+!>
+<megjegyzes=Honduras
+	xy=3368,3818
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-233,97
+	betu-szin=0
+	formazas=f
+!>
+<megjegyzes=Nicaragua
+	xy=3728,4478
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-263,67
+	betu-szin=0
+	formazas=f
+!>
+<megjegyzes=Costa Rica
+	xy=3892,5242
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-97,-127
+	betu-szin=0
+	formazas=f
+!>
+<megjegyzes=Panama
+	xy=4538,5558
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-53,-23
+	betu-szin=0
+	formazas=f
+!>
+<megjegyzes=Mexikói-Öböl
+	xy=1868,1372
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=142,83
+	betu-meret=12
+	betu-szin=10485760
+	formazas=f
+!>
+<megjegyzes=Csendes Óceán
+	xy=668,5062
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=202,-7
+	betu-meret=12
+	betu-szin=10485760
+	formazas=f
+!>
+<jelmagyarazat=Ország
+	xy=172,98
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-82,-68
+	betu-meret=9,75
+	betu-szin=0
+	formazas=f
+!>
+<jelmagyarazat=Víz
+	xy=248,368
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-53,-23
+	betu-meret=12
+	betu-szin=10485760
+	formazas=f
+!>

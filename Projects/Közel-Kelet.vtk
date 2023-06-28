@@ -1,0 +1,96 @@
+; Vakablak 2.1.25
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Közelkelet
+kep=\Közel-Kelet\kozelkelet.gif
+<megjegyzes=Irán
+	xy=3742,1478
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=98,52
+	formazas=f
+!>
+<megjegyzes=Irak
+	xy=1942,1538
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=23,-8
+	formazas=f
+!>
+<megjegyzes=Szíria
+	xy=892,982
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=83,8
+	formazas=f
+!>
+<megjegyzes=Libanon
+	xy=322,1208
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-202,52
+	formazas=f
+!>
+<megjegyzes=Izrael
+	xy=202,1552
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-67,68
+	formazas=f
+!>
+<megjegyzes=Jordánia
+	xy=682,2182
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-127,8
+	formazas=f
+!>
+<megjegyzes=Szaud-Arábia
+	xy=2122,3368
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-397,-98
+	formazas=f
+!>
+<megjegyzes=Yemen
+	xy=2692,5078
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-172,67
+	formazas=f
+!>
+<megjegyzes=Omán
+	xy=3968,4388
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-38,52
+	formazas=f
+!>
+<megjegyzes=Arab emírségek
+	xy=3878,3458
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-98,-38
+	formazas=f
+!>
+<megjegyzes=Katar
+	xy=3458,2992
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=97,53
+	formazas=f
+!>
+<megjegyzes=Bahrein
+	xy=2962,2902
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-172,-7
+	formazas=f
+!>
+<megjegyzes=Kuvait
+	xy=2888,2258
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=37,-8
+	formazas=f
+!>

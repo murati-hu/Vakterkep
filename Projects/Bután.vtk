@@ -1,0 +1,109 @@
+; Vakablak 2.1.28
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Bután
+kep=\Bután\butan.gif
+<megjegyzes=KÍNA
+	xy=458,638
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=1177,-143
+	betu-meret=12
+	betu-szin=8355711
+	formazas=f
+!>
+<megjegyzes=INDIA
+	xy=1748,4208
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=907,-68
+	betu-meret=12
+	betu-szin=8355711
+	formazas=f
+!>
+<megjegyzes=BANGLADES
+	xy=68,5152
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-8,68
+	betu-meret=9,75
+	betu-szin=8355711
+	formazas=f
+!>
+<megjegyzes=Brahmaputra
+	xy=2452,5062
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=53,-37
+	betu-szin=16558695
+	formazas=f
+!>
+<megjegyzes=THIMPU
+	xy=1245,2565
+	meret=200,200
+	jel=6
+	ikon=\Bután\ranger.gif
+	szovegXY=225,-15
+	betu-szin=5197647
+	formazas=f
+!>
+<megjegyzes=Tongsa
+	xy=2610,2655
+	meret=155,150
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=45,-225
+	betu-szin=6250335
+	formazas=f
+!>
+<megjegyzes=Tashigang
+	xy=4230,2865
+	meret=155,150
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=-795,-195
+	betu-szin=6250335
+	formazas=f
+!>
+<megjegyzes=Samdrup Jongkhar
+	xy=4170,3645
+	meret=155,150
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=-1335,-255
+	betu-szin=6250335
+	formazas=f
+!>
+<megjegyzes=Gasa Dzong
+	xy=1485,1875
+	meret=155,150
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=195,15
+	betu-szin=6250335
+	formazas=f
+!>
+<megjegyzes=Paro
+	xy=1035,2670
+	meret=155,150
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=-405,135
+	betu-szin=6250335
+	formazas=f
+!>
+<megjegyzes=Phuntsholing
+	xy=922,3562
+	meret=155,150
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=98,-232
+	betu-szin=6250335
+	formazas=f
+!>

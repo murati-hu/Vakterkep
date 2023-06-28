@@ -18,10 +18,19 @@ Begin VB.Form tulajdonsagok
    Begin VB.Frame tul_lap 
       Height          =   4215
       Index           =   1
-      Left            =   1920
+      Left            =   960
       TabIndex        =   28
-      Top             =   360
+      Top             =   240
       Width           =   4335
+      Begin VB.ComboBox vallas 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   2880
+         Style           =   2  'Dropdown List
+         TabIndex        =   63
+         Top             =   1320
+         Width           =   855
+      End
       Begin VB.PictureBox minta 
          Appearance      =   0  'Flat
          BackColor       =   &H00E9E9E9&
@@ -34,7 +43,7 @@ Begin VB.Form tulajdonsagok
          TabIndex        =   59
          Top             =   2520
          Width           =   4335
-         Begin Vakterkep2.jel jel 
+         Begin Vakablak.jel jel 
             Height          =   135
             Left            =   1800
             TabIndex        =   62
@@ -60,12 +69,12 @@ Begin VB.Form tulajdonsagok
          Height          =   255
          Left            =   120
          TabIndex        =   50
-         Top             =   1800
+         Top             =   2160
          Width           =   4095
       End
       Begin VB.TextBox vastagsag 
          Height          =   285
-         Left            =   1680
+         Left            =   1080
          MaxLength       =   2
          TabIndex        =   40
          Text            =   "1"
@@ -75,20 +84,20 @@ Begin VB.Form tulajdonsagok
       Begin VB.ComboBox keret 
          Appearance      =   0  'Flat
          Height          =   315
-         Left            =   600
+         Left            =   1080
          Style           =   2  'Dropdown List
          TabIndex        =   39
          Top             =   960
-         Width           =   3135
+         Width           =   2655
       End
       Begin VB.ComboBox kitoltes 
          Appearance      =   0  'Flat
          Height          =   315
-         Left            =   960
+         Left            =   1080
          Style           =   2  'Dropdown List
          TabIndex        =   37
          Top             =   600
-         Width           =   2775
+         Width           =   2655
       End
       Begin VB.CommandButton valaszt 
          Height          =   300
@@ -138,31 +147,39 @@ Begin VB.Form tulajdonsagok
       Begin VB.ComboBox Alakzat 
          Appearance      =   0  'Flat
          Height          =   315
-         Left            =   600
+         Left            =   1080
          Style           =   2  'Dropdown List
          TabIndex        =   30
          Top             =   240
-         Width           =   2895
+         Width           =   2415
+      End
+      Begin VB.Label cimke 
+         AutoSize        =   -1  'True
+         Caption         =   "Vonal tájolása:"
+         Height          =   195
+         Index           =   12
+         Left            =   1680
+         TabIndex        =   64
+         Top             =   1360
+         Width           =   1035
       End
       Begin VB.Line Line1 
          X1              =   120
          X2              =   4200
-         Y1              =   1680
-         Y2              =   1680
+         Y1              =   2040
+         Y2              =   2040
       End
       Begin VB.Label cimke 
-         Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          Caption         =   "Vastagsága:"
          Height          =   195
          Index           =   7
-         Left            =   720
+         Left            =   120
          TabIndex        =   41
-         Top             =   1320
+         Top             =   1340
          Width           =   885
       End
       Begin VB.Label cimke 
-         Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          Caption         =   "Keret:"
          Height          =   195
@@ -173,7 +190,6 @@ Begin VB.Form tulajdonsagok
          Width           =   420
       End
       Begin VB.Label cimke 
-         Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          Caption         =   "Jel:"
          Height          =   195
@@ -187,9 +203,9 @@ Begin VB.Form tulajdonsagok
    Begin VB.Frame tul_lap 
       Height          =   4215
       Index           =   3
-      Left            =   6720
+      Left            =   7440
       TabIndex        =   19
-      Top             =   1800
+      Top             =   240
       Visible         =   0   'False
       Width           =   4215
       Begin VB.ComboBox szama 
@@ -216,20 +232,20 @@ Begin VB.Form tulajdonsagok
          Top             =   3600
          Width           =   3975
       End
-      Begin VB.Label cetli 
+      Begin VB.Label cimke 
          Caption         =   "Kérdés:"
          Height          =   255
-         Index           =   5
+         Index           =   9
          Left            =   120
          TabIndex        =   24
          Top             =   600
          Width           =   1455
       End
-      Begin VB.Label cetli 
+      Begin VB.Label cimke 
          AutoSize        =   -1  'True
          Caption         =   "Megoldás:"
          Height          =   195
-         Index           =   6
+         Index           =   11
          Left            =   120
          TabIndex        =   23
          Top             =   3360
@@ -239,9 +255,9 @@ Begin VB.Form tulajdonsagok
    Begin VB.Frame tul_lap 
       Height          =   4215
       Index           =   0
-      Left            =   5400
+      Left            =   7560
       TabIndex        =   13
-      Top             =   240
+      Top             =   120
       Width           =   4335
       Begin VB.OptionButton tipus 
          Caption         =   "Megjegyzés, felirat"
@@ -297,17 +313,19 @@ Begin VB.Form tulajdonsagok
          Top             =   1200
          Width           =   3735
       End
-      Begin VB.Label Label2 
+      Begin VB.Label cimke 
          Caption         =   "Tipp szövege:"
          Height          =   255
+         Index           =   4
          Left            =   240
          TabIndex        =   43
          Top             =   960
          Width           =   1095
       End
-      Begin VB.Label Label1 
+      Begin VB.Label cimke 
          Caption         =   "Név:"
          Height          =   255
+         Index           =   3
          Left            =   240
          TabIndex        =   42
          Top             =   240
@@ -316,9 +334,9 @@ Begin VB.Form tulajdonsagok
    End
    Begin VB.Frame oldal 
       Height          =   4215
-      Left            =   120
+      Left            =   4680
       TabIndex        =   7
-      Top             =   240
+      Top             =   1800
       Visible         =   0   'False
       Width           =   4335
       Begin VB.ComboBox nagyito 
@@ -411,7 +429,6 @@ Begin VB.Form tulajdonsagok
          Width           =   3855
       End
       Begin VB.Label cimke 
-         Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          Caption         =   "Nagyítás:"
          Height          =   195
@@ -445,7 +462,7 @@ Begin VB.Form tulajdonsagok
    Begin VB.Frame tul_lap 
       Height          =   4215
       Index           =   2
-      Left            =   4560
+      Left            =   120
       TabIndex        =   6
       Top             =   240
       Width           =   4335
@@ -563,19 +580,20 @@ Begin VB.Form tulajdonsagok
          Y1              =   960
          Y2              =   960
       End
-      Begin VB.Label Label3 
+      Begin VB.Label cimke 
          AutoSize        =   -1  'True
          Caption         =   "Betûtípus:"
          Height          =   195
+         Index           =   5
          Left            =   120
          TabIndex        =   44
          Top             =   240
          Width           =   720
       End
-      Begin VB.Label duma 
+      Begin VB.Label cimke 
          Caption         =   "Méret:"
          Height          =   255
-         Index           =   5
+         Index           =   8
          Left            =   120
          TabIndex        =   18
          Top             =   600
@@ -664,18 +682,45 @@ Dim ures As KerdesValasz
 Public Masolas As Boolean
 Dim segito(1 To 10) As KerdesValasz
 
+
 Private Sub alahuzott_Click()
     jel_szoveg.FontUnderline = alahuzott.Value
 End Sub
 
 Private Sub Alakzat_Click()
-    If Alakzat.ListIndex = 6 Then
-        talloz(1).Enabled = True
-        jel.KepElerese = Alakzat.List(6)
-    Else
-        jel.jel = Alakzat.ListIndex
-        talloz(1).Enabled = False
-    End If
+    talloz(1).Enabled = True
+    valaszt(0).Enabled = True
+    kitolte.Enabled = True
+    kitoltes.Enabled = True
+    valaszt(2).Enabled = True
+    keret.Enabled = True
+    valaszt(1).Enabled = True
+    
+    vastagsag.Enabled = True
+    vallas.Enabled = True
+    
+    Select Case Alakzat.ListIndex
+        Case 6, 7
+            If Alakzat.ListIndex = 6 Then
+                jel.KepElerese = Alakzat.List(6)
+                
+                valaszt(0).Enabled = False
+                keret.Enabled = False
+                valaszt(1).Enabled = False
+                vastagsag.Enabled = False
+                vallas.Enabled = False
+            End If
+            
+            valaszt(0).Enabled = False
+            kitolte.Enabled = False
+            kitoltes.Enabled = False
+            valaszt(2).Enabled = False
+            
+        Case Else
+            'jel.jel = Alakzat.ListIndex
+            talloz(1).Enabled = False
+    End Select
+    jel.jel = Alakzat.ListIndex
     Alakzat.ToolTipText = Alakzat.List(Alakzat.ListIndex)
 End Sub
 
@@ -689,7 +734,7 @@ Private Sub betutipus_Click()
 End Sub
 
 Private Sub Cime_Change()
-    Me.Caption = Cime.Text & " tulajdonságai"
+    Me.Caption = Atalakit(KozosSzovegek(24), Cime.Text)
 End Sub
 
 
@@ -726,6 +771,8 @@ End Sub
 
 Private Sub Form_Load()
     Dim i As Integer
+    oldal.Move 120, 240
+    
     For i = 0 To tul_lap.Count - 1
         tul_lap(i).Move 120, 240
         tul_lap(i).Visible = False
@@ -733,44 +780,18 @@ Private Sub Form_Load()
     Me.Width = 4620
     'minta.Move 120, 2780
     
-    
-    Alakzat.AddItem "Négyszög"
-    Alakzat.AddItem "Négyzet"
-    Alakzat.AddItem "Ellipszis"
-    Alakzat.AddItem "Kör"
-    Alakzat.AddItem "Kerekített Négyszög"
-    Alakzat.AddItem "Kerekített Négyzet"
-    Alakzat.AddItem "Kép"
-    Alakzat.ListIndex = 0
-    
     For i = 0 To Screen.FontCount - 1
         betutipus.AddItem Screen.Fonts(i)
     Next i
-   betutipus.ListIndex = 0
+    betutipus.ListIndex = 0
     
-    keret.AddItem "Nincs"
-    keret.AddItem "Egyszerû"
-    keret.AddItem "Szaggatott"
-    keret.AddItem "Pontozott"
-    keret.AddItem "Pontosan Szaggatott"
-    keret.AddItem "Dupla Pontosan Szaggatott"
-    keret.ListIndex = 0
     
-    kitoltes.AddItem "Teljes"
-    kitoltes.AddItem "Alakzat hátterével"
-    kitoltes.AddItem "Vízszintes vonalakkal"
-    kitoltes.AddItem "Függõleges vonalakkal"
-    kitoltes.AddItem "Balról Srég vonalakkal"
-    kitoltes.AddItem "Jobbról Srég vonalakkal"
-    kitoltes.AddItem "Hálósan"
-    kitoltes.AddItem "Döntött Hálósan"
-    'kitoltes.AddItem "Átlátszó"
-    kitoltes.ListIndex = 0
+    vallas.AddItem "_"
+    vallas.AddItem "|"
+    vallas.AddItem "\"
+    vallas.AddItem "/"
+    vallas.ListIndex = 1
     
-    For i = 1 To 10
-        szama.AddItem i & ". kérdés:"
-    Next i
-    szama.ListIndex = 0
     
     meret.AddItem "8"
     meret.AddItem "10"
@@ -792,9 +813,14 @@ Private Sub Form_Load()
     nagyito.AddItem "400%"
     nagyito.Text = "100%"
     
+    UjraNyelvel
     terulet_DblClick
 End Sub
 
+
+Private Sub Form_Unload(Cancel As Integer)
+    'MsgBox "most"
+End Sub
 
 Private Sub formatum_masolo_Click()
     Masolas = True
@@ -858,7 +884,8 @@ Dim i As Integer
     megold.Text = ""
     szama.Text = szama.List(0)
     If id = 0 Then
-            Unload tulajdonsagok
+            'Unload tulajdonsagok
+            Me.Hide
         Else
             Me.Hide
     End If
@@ -918,7 +945,7 @@ End Sub
 
 Private Sub Nev_Change()
     jel_szoveg.Caption = Nev.Text
-    Me.Caption = Nev.Text & " tulajdonságai"
+    Me.Caption = Atalakit(KozosSzovegek(24), Nev.Text)
 End Sub
 
 Private Sub ok_Click()
@@ -932,7 +959,7 @@ If id = 0 Then
 'megse.Enabled = True
     With szerkeszto
         .Cime = Cime.Text
-        .Caption = .Cime & " - Vaktérkép Szerkesztõ " & Vakterkep.Verzio
+        .Caption = .Cime & " - " & Vakterkep.Verzio & " " & KozosSzovegek(7)
         .Kephelye = kep.Text
         
         .nagyitas = Format(nagyito.Text, "####.##")
@@ -991,6 +1018,7 @@ Else
             .KitoltesTipus = jel.KitoltesTipus
             .KitoltesSzine = jel.KitoltesSzine
             .Width = jel.Width
+            .VonalAllas = jel.VonalAllas
             .Visible = jel.Bekapcsolva
         End With
     End With
@@ -1045,13 +1073,17 @@ megva:
     jel.Height = .jel(Index).Height
     elrejt.Value = V(Not .jel(Index).Visible)
     
+    'Vonal
+    jel.VonalAllas = .jel(Index).VonalAllas
+    vallas.ListIndex = jel.VonalAllas
+    
     'alakzat
     valaszt(0).BackColor = .jel(Index).HatterSzine
     Alakzat.RemoveItem 6
     If .jel(Index).jel = 6 Then
-            Alakzat.AddItem .jel(Index).KepElerese
+            Alakzat.AddItem .jel(Index).KepElerese, 6
         Else
-            Alakzat.AddItem "Kép"
+            Alakzat.AddItem KozosSzovegek(32), 6
     End If
     Alakzat.ListIndex = .jel(Index).jel
     'kitoltes
@@ -1092,8 +1124,8 @@ Dim w, h
 On Error GoTo megse
     With szerkeszto
         .pb.CancelError = True
-        .pb.DialogTitle = "Kép keresése ..."
-        .pb.Filter = "Minden támogatott kép|*.bmp;*.gif;*.jpg;*.jpe;*.jpeg"
+        .pb.DialogTitle = KozosSzovegek(25)
+        .pb.Filter = KozosSzovegek(26) & "|*.bmp;*.gif;*.jpg;*.jpe;*.jpeg"
         .pb.FileName = kep.Text
         .pb.ShowOpen
         If Index = 0 Then
@@ -1103,8 +1135,9 @@ On Error GoTo megse
                 terulet_DblClick
             
             Else
-                Alakzat.RemoveItem (6)
-                Alakzat.AddItem (.pb.FileName)
+                'Alakzat.RemoveItem (6)
+                'Alakzat.AddItem (.pb.FileName), 6
+                Alakzat.List(6) = .pb.FileName
                 Alakzat.Text = Alakzat.List(6)
         End If
     End With
@@ -1113,7 +1146,7 @@ End Sub
 
 
 
-Private Sub terulet_DblClick()
+Public Sub terulet_DblClick()
     kijelolo.Move 0, 0, terulet.Width, terulet.Height
     kijM = eredeti.Height
     kijSZ = eredeti.Width
@@ -1163,6 +1196,12 @@ On Error GoTo megse
     End With
 megse:
     Szinez
+End Sub
+
+
+
+Private Sub vallas_Click()
+    jel.VonalAllas = vallas.ListIndex
 End Sub
 
 Private Sub vastagsag_Change()
@@ -1226,4 +1265,48 @@ Private Sub Kozepre()
     jel.Move (minta(0).Width - jel.Width) / 2
     jel_szoveg.Move jel_szoveg.Left, (minta(1).Height - jel_szoveg.Height) / 2
     jel_szoveg.Move (minta(1).Width - jel_szoveg.Width) / 2
+End Sub
+Public Sub UjraNyelvel()
+Dim i As Integer
+    'Alakzatok listája
+    Alakzat.Clear
+    Alakzat.AddItem KozosSzovegek(47)
+    Alakzat.AddItem KozosSzovegek(27)
+    Alakzat.AddItem KozosSzovegek(28)
+    Alakzat.AddItem KozosSzovegek(29)
+    Alakzat.AddItem KozosSzovegek(30)
+    Alakzat.AddItem KozosSzovegek(31)
+    Alakzat.AddItem KozosSzovegek(32)
+    Alakzat.AddItem KozosSzovegek(33)
+    Alakzat.ListIndex = 0
+    
+    'Kerettípusok
+    keret.Clear
+    keret.AddItem KozosSzovegek(34)
+    keret.AddItem "_______________________"
+    keret.AddItem "__ __ __ __ __ __ __ __ __"
+    keret.AddItem ". . . . . . . . . . . . . . . . . . . . . . . ."
+    keret.AddItem "__ . __ . __ . __ . __ . __ . __ ."
+    keret.AddItem ".. __ .. __ .. __ .. __ .. __ .. __"
+    keret.ListIndex = 0
+    
+    'Kitöltéstípusok
+    kitoltes.Clear
+    kitoltes.AddItem KozosSzovegek(35)
+    kitoltes.AddItem KozosSzovegek(34)
+    kitoltes.AddItem "============="
+    kitoltes.AddItem "|  |  |  |  |  |  |  |  |  |  |"
+    kitoltes.AddItem "\ \ \ \ \ \ \ \ \ \ \"
+    kitoltes.AddItem "/ / / / / / / / / / /"
+    kitoltes.AddItem "############"
+    kitoltes.AddItem "XXXXXXXXXXXX"
+    'kitoltes.AddItem "Átlátszó"
+    kitoltes.ListIndex = 0
+    
+    'Kérdésszámok
+    szama.Clear
+    For i = 1 To 10
+        szama.AddItem Atalakit(KozosSzovegek(23), CStr(i))
+    Next i
+    szama.ListIndex = 0
 End Sub

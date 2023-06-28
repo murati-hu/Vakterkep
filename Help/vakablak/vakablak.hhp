@@ -1,0 +1,27 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=vakablak.chm
+Contents file=d:\Develop\Vakablak\help\vakablak\vaktablak_tart.hhc
+Default topic=html\kezdo.htm
+Display compile progress=No
+Full-text search=Yes
+Language=0x40e magyar
+Title=Vakablak Súgó
+
+
+[FILES]
+html\bill.htm
+html\ert.htm
+html\hasznal.htm
+html\jelm.htm
+html\kezdo.htm
+html\nyomtat.htm
+html\uj.htm
+..\beall.htm
+..\kieg.htm
+..\kilep.htm
+..\megnyit.htm
+..\sugo.htm
+
+[INFOTYPES]
+

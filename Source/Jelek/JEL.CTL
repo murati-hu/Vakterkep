@@ -11,6 +11,12 @@ Begin VB.UserControl jel
    ScaleHeight     =   615
    ScaleWidth      =   1725
    ToolboxBitmap   =   "jel.ctx":0000
+   Begin VB.Line jel_ln 
+      X1              =   720
+      X2              =   1680
+      Y1              =   240
+      Y2              =   480
+   End
    Begin VB.Image jel_img 
       Appearance      =   0  'Flat
       BeginProperty DataFormat 
@@ -54,7 +60,9 @@ Enum Jelek
     Kor
     KerekitettNegyszog
     KerekitettNegyzet
+    'vonal
     kep
+    vonal
     'Szoveg
 End Enum
 
@@ -82,6 +90,8 @@ End Enum
 
 Private sJel As Jelek 'belsõ jelek
 Private sKepFajl As String ', sSzoveg As String 'Egyéb jelek adatai
+Private sVonalAllas As Byte
+
 Public Event Click()
 Public Event Hiba(hibakod As Byte)
 Public Event MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -127,18 +137,23 @@ End Sub
 Public Property Get jel() As Jelek
     If jel_shp.Visible Then jel = jel_shp.Shape
     If jel_img.Visible Then jel = kep
+    If jel_ln.Visible Then jel = vonal
     'If jel_lbl.Visible Then Jel = Szoveg
 End Property
 
 Public Property Let jel(ByVal UjJel As Jelek)
 jel_shp.Visible = False
 jel_img.Visible = False
+jel_ln.Visible = False
+
     Select Case UjJel
         Case 0 To 5
             jel_shp.Visible = True
             jel_shp.Shape = UjJel
         Case 6
             jel_img.Visible = True
+        Case 7
+            jel_ln.Visible = True
         'Case 7
         '    jel_lbl.Visible = True
         '    jel_lbl.Caption = Szoveg
@@ -187,6 +202,7 @@ Public Property Get KeretTipus() As Vonalak
 End Property
 Public Property Let KeretTipus(ByVal uj As Vonalak)
     jel_shp.BorderStyle = uj
+    jel_ln.BorderStyle = uj
 End Property
 
 'Keret színe
@@ -195,6 +211,7 @@ Public Property Get KeretSzine() As ColorConstants
 End Property
 Public Property Let KeretSzine(ByVal uj As ColorConstants)
     jel_shp.BorderColor = uj
+    jel_ln.BorderColor = uj
 End Property
 
 'Keret vasatgsága
@@ -204,6 +221,7 @@ End Property
 Public Property Let KeretVastagsaga(ByVal uj As Integer)
     If uj > 0 And uj < 101 Then
         jel_shp.BorderWidth = uj
+        jel_ln.BorderWidth = uj
         UserControl_Resize
     End If
 End Property
@@ -273,13 +291,38 @@ Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
         KeretSzine = .ReadProperty("KeretSzine", vbBlack)
         KeretVastagsaga = .ReadProperty("KeretVastagsaga", 1)
         HatterSzine = .ReadProperty("HatterSzine", vbWhite)
+        VonalAllas = .ReadProperty("VonalAllas", 1)
     End With
 End Sub
 
 Private Sub UserControl_Resize()
 On Error Resume Next
-jel_shp.Move jel_shp.BorderWidth * egyseg, jel_shp.BorderWidth * egyseg, UserControl.ScaleWidth - (jel_shp.BorderWidth * 2 * egyseg), UserControl.ScaleHeight - (jel_shp.BorderWidth * 2 * egyseg)
-jel_img.Move 0, 0, UserControl.ScaleWidth, UserControl.ScaleHeight
+    jel_shp.Move jel_shp.BorderWidth * egyseg, jel_shp.BorderWidth * egyseg, UserControl.ScaleWidth - (jel_shp.BorderWidth * 2 * egyseg), UserControl.ScaleHeight - (jel_shp.BorderWidth * 2 * egyseg)
+    jel_img.Move 0, 0, UserControl.ScaleWidth, UserControl.ScaleHeight
+    
+    With jel_ln
+    Dim torzit As Single
+    torzit = 20 * KeretVastagsaga
+    .x1 = 0 + torzit
+    Select Case sVonalAllas
+        Case 0
+            .y1 = 0 + torzit
+            .X2 = UserControl.ScaleWidth - torzit
+            .Y2 = 0 + torzit
+        Case 1
+            .y1 = 0 + torzit
+            .X2 = 0 + torzit
+            .Y2 = UserControl.ScaleHeight - torzit
+        Case 2
+            .y1 = 0 + torzit
+            .X2 = UserControl.ScaleWidth - torzit
+            .Y2 = UserControl.ScaleHeight - torzit
+        Case 3
+            .y1 = UserControl.ScaleHeight - torzit
+            .X2 = UserControl.ScaleWidth - torzit
+            .Y2 = 0 + torzit
+    End Select
+    End With
 End Sub
 
 Public Function BalKozep(Bal As Single)
@@ -307,5 +350,15 @@ Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
         .WriteProperty "KeretSzine", KeretSzine, vbBlack
         .WriteProperty "KeretVastagsaga", KeretVastagsaga, 1
         .WriteProperty "HatterSzine", HatterSzine, vbWhite
+        .WriteProperty "VonalAllas", VonalAllas, 1
     End With
 End Sub
+Public Property Get VonalAllas() As Byte
+    VonalAllas = sVonalAllas
+End Property
+Public Property Let VonalAllas(uj As Byte)
+    uj = uj Mod 4
+    
+    sVonalAllas = uj
+    UserControl_Resize
+End Property

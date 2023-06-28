@@ -15,7 +15,7 @@ Begin VB.Form szerkeszto
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
    Begin MSComDlg.CommonDialog pb 
-      Left            =   240
+      Left            =   120
       Top             =   4080
       _ExtentX        =   847
       _ExtentY        =   847
@@ -108,7 +108,7 @@ Begin VB.Form szerkeszto
          Visible         =   0   'False
          Width           =   90
       End
-      Begin Vakterkep2.jel jel 
+      Begin Vakablak.jel jel 
          Height          =   200
          Index           =   0
          Left            =   600
@@ -171,6 +171,10 @@ Begin VB.Form szerkeszto
       Begin VB.Menu olda_mnu 
          Caption         =   "Projekt &tulajdonságai"
          Shortcut        =   ^T
+      End
+      Begin VB.Menu beall_mnu 
+         Caption         =   "&Beállítások"
+         Shortcut        =   ^B
       End
       Begin VB.Menu megtekint_mnu 
          Caption         =   "Megt&ekintés..."
@@ -258,11 +262,14 @@ Begin VB.Form szerkeszto
    Begin VB.Menu sugo_mnu 
       Caption         =   "&Súgó"
       Begin VB.Menu sugo_mnup 
-         Caption         =   "Súgó"
+         Caption         =   "Segítség"
          Shortcut        =   {F1}
       End
       Begin VB.Menu v5 
          Caption         =   "-"
+      End
+      Begin VB.Menu koszonet_mnu 
+         Caption         =   "Köszönet"
       End
       Begin VB.Menu nevjegy_mnu 
          Caption         =   "&Névjegy"
@@ -283,8 +290,16 @@ Dim elemek(1 To 1024) As elem
 Dim ures As elem, ux As Single, uy As Single
 Dim mentettFajl As String, meretez As Boolean
 
+Private Sub beall_mnu_Click()
+    beallitasok.Show vbModal
+End Sub
+
 Private Sub fl_Change()
     terulet.Top = fl.Value
+End Sub
+
+Private Sub Form_DblClick()
+    megnyit_mnu_Click
 End Sub
 
 Private Sub Form_DragOver(Source As Control, X As Single, Y As Single, State As Integer)
@@ -342,8 +357,11 @@ End Sub
 
 
 Private Sub Form_Load()
+    'magyar_nyelv
+    'megnyitas ("$vt\vakablak.ini")
+    'Load tulajdonsagok
     torol
-    tulajdonsagok.Hide
+    'tulajdonsagok.Hide
 End Sub
 
 Public Sub Form_Resize()
@@ -468,13 +486,18 @@ Private Sub kilepes_mnu_Click()
     Unload Me
 End Sub
 
+Private Sub koszonet_mnu_Click()
+    koszonet.Caption = Szulo.koszonet_mnu.Caption
+    koszonet.Show vbModal
+End Sub
+
 Private Sub megnyit_mnu_Click()
 On Error GoTo megse
     If Not menti Then Exit Sub
 ujra:
         pb.CancelError = True
-        pb.DialogTitle = "Vaktérkép megnyitása ..."
-        pb.Filter = "Vaktérkép fájlok (*.vtk)|*.vtk"
+        pb.DialogTitle = KozosSzovegek(3)
+        pb.Filter = KozosSzovegek(4) & "(*.vtk)|*.vtk"
         pb.FileName = "*.vtk"
         pb.ShowOpen
         torol
@@ -491,8 +514,8 @@ Private Sub ment_mint_mnu_Click()
 On Error GoTo megse
 ujra:
         pb.CancelError = True
-        pb.DialogTitle = "Vaktérkép mentése másként ..."
-        pb.Filter = "Vaktérkép fájlok (*.vtk)|*.vtk"
+        pb.DialogTitle = KozosSzovegek(5)
+        pb.Filter = KozosSzovegek(4) & "(*.vtk)|*.vtk"
         pb.FileName = Cime & ".vtk"
         pb.ShowSave
         
@@ -508,8 +531,8 @@ On Error GoTo megse
 If mentettFajl = "" Then
 ujra:
         pb.CancelError = True
-        pb.DialogTitle = "Vaktérkép mentése ..."
-        pb.Filter = "Vaktérkép fájlok (*.vtk)|*.vtk"
+        pb.DialogTitle = KozosSzovegek(6)
+        pb.Filter = KozosSzovegek(4) & "(*.vtk)|*.vtk"
         pb.FileName = Cime & ".vtk"
         pb.ShowSave
         mentettFajl = pb.FileName
@@ -763,13 +786,18 @@ Private Sub uj_mnu_Click()
     terulet.Width = nevjegy.kep.Width
     terulet.Height = nevjegy.kep.Height
     terulet.Picture = Nothing
-    Unload tulajdonsagok
+    'Unload tulajdonsagok
+    tulajdonsagok.eredeti.Picture = Nothing
+    tulajdonsagok.terulet.Picture = Nothing
+    tulajdonsagok.terulet.Height = 2055
+    tulajdonsagok.terulet.Width = 3135
+    tulajdonsagok.terulet_DblClick
     
     Form_Resize
     'tulajdonsagok.megse.Enabled = False
     tulajdonsagok.Mutat (0)
 End Sub
-Private Sub torol()
+Public Sub torol()
     Dim i As Integer
     For i = 1 To jel.Count - 1
         Unload jel(i)
@@ -777,11 +805,11 @@ Private Sub torol()
         elemek(i) = ures
     Next i
     tabulalo = 0
-    Me.Caption = "Vaktérkép Szerkesztõ " & Vakterkep.Verzio
+    Me.Caption = Vakterkep.Verzio & " " & KozosSzovegek(7)
     ment_mnu.Enabled = False
     ment_mint_mnu.Enabled = False
     megtekint_mnu.Enabled = False
-    Cime = "Névtelen projekt"
+    Cime = KozosSzovegek(8)
     Kephelye = ""
     nagyitas = 1
     x1 = 0
@@ -811,8 +839,8 @@ emappa = Mid(CsakANeve(Fajlnev), 1, Len(CsakANeve(Fajlnev)) - 4) & "\"
 Fajl = CsakANeve(Fajlnev)
 On Error GoTo Hiba
 Open Fajlnev For Output As 2
-    Print #2, ";Vaktérkép " & Vakterkep.Verzio & "." & App.Revision & " által generált térképfájl"
-    Print #2, ";Muráti Ákos 2003 - Minden jog fenntartva."
+    Print #2, "; " & Vakterkep.Verzio & "." & App.Revision
+    Print #2, ";Muráti Ákos 2001-2004 - Minden jog fenntartva."
     Print #2, ""
     Print #2, "cim=" & Cime
     Print #2, "kep=";
@@ -823,7 +851,7 @@ Open Fajlnev For Output As 2
                 Print #2, seged
             Else
                 On Error Resume Next
-                If MsgBox("Az alapkép elérési útja nem adható meg relatívan. Kívánja, hogy a képet a projekt mellé másoljam? Ha a nemet választja, akkor a teljes elérési út lesz elmentve.", vbYesNo + vbQuestion, "Alapkép mentése") = vbYes Then
+                If MsgBox(KozosSzovegek(9), vbYesNo + vbQuestion, "Alapkép mentése") = vbYes Then
                         MkDir Mappa & emappa
                         FileCopy Kephelye, Mappa & emappa & CsakANeve(Kephelye)
                         Print #2, "\" & emappa & CsakANeve(Kephelye)
@@ -855,7 +883,7 @@ Open Fajlnev For Output As 2
             Kiir "meret=" & .Width & "," & .Height
             If .jel <> 0 Then Kiir "jel=" & .jel
             If .jel = 6 Then
-                    If MsgBox(jel_szoveg(i).Caption & " térképelem egy másik fájlra hivatkozik. Kívánja, hogy ezt a fájlt a projekt mellé másoljam?", vbQuestion + vbYesNo, "Külsõ fájlok kezelése:") = vbNo Then
+                    If MsgBox(Atalakit(KozosSzovegek(10), jel_szoveg(i).Caption), vbQuestion + vbYesNo, KozosSzovegek(11)) = vbNo Then
                             If RelativEleres(Konyvtara(Fajlnev), .KepElerese) <> "" Then
                                     Kiir "ikon=" & "\" & RelativEleres(Konyvtara(Fajlnev), .KepElerese)
                                 Else
@@ -878,6 +906,7 @@ Open Fajlnev For Output As 2
                             If .KitoltesTipus <> 1 Then Kiir "kitoltes-tipus=" & .KitoltesTipus 'jel(0).KitoltesTipus
                             If .KitoltesSzine <> -2147483640 Then Kiir "kitoltes-szin=" & .KitoltesSzine  'jel(0).KitoltesSzine
                     End If
+                    If .VonalAllas <> 1 Then Kiir "vonal=" & .VonalAllas
             End If
         End With
         
@@ -947,7 +976,7 @@ On Error GoTo Hiba
 ' ######################## Projektekkel összefüggõ beállítások #################################
                 Case "cim", "cime"
                     Cime = parameter
-                    Me.Caption = parameter & " - " & "Vaktérkép Szerkesztõ " & Vakterkep.Verzio
+                    Me.Caption = parameter & " - " & Vakterkep.Verzio & " Szerkesztõ mód"
                 Case "terkep", "kep"
                     On Error GoTo kephiba
                         parameter = Atalakit(parameter, Konyvtara(Fajlnev))
@@ -1075,7 +1104,7 @@ On Error GoTo Hiba
                     'End If
                 Case "jel", "alakzat"
                     'If aze Then
-                        obj.jel = CByte(parameter) Mod 7
+                        obj.jel = CByte(parameter) Mod 8
                     'End If
                 
                 Case "ikon", "jelkep", "szimbolum"
@@ -1126,10 +1155,19 @@ On Error GoTo Hiba
                     'If aze Then
                         obj.KeretVastagsaga = parameter
                     'End If
+                Case "vonal"
+                        obj.VonalAllas = parameter
                 Case "lathatatlan-jel"
                     If jel_szoveg(id).Visible Then obj.Visible = False
                 Case "lathatatlan-szoveg"
                     If obj.Visible Then jel_szoveg(id).Visible = False
+                Case "nyelv"
+                    If parameter <> "" Then
+                        beallitasok.nyelv(1).Value = True
+                        NyelvAlkalmazasa (parameter)
+                        Close 1
+                        Exit Function
+                    End If
             End Select
 kihagy:
         Loop
@@ -1147,24 +1185,27 @@ Hiba:
     'Dim uzenet As String
     Select Case Err.Number
         Case 52
-            UzenetAblak "A '" & Fajlnev & "' fájl nem tölthetõ be."
+            UzenetAblak Atalakit(KozosSzovegek(12), Fajlnev)
             'Close 1
             mentett = True
             uj_mnu_Click
         Case 53
-            If Fajlnev <> Vakterkep.Konyvtar & "vakterkep.ini" Then
-                UzenetAblak "A szerkesztésre megadott fájl nem található!"
+            If Fajlnev <> Vakterkep.Konyvtar & "vakablak.ini" Then
+                UzenetAblak KozosSzovegek(13)
                 'Close 1
                 mentett = True
                 uj_mnu_Click
             End If
+        Case 5
+            'Hibás területkijelölés
         Case Else
-            If MsgBox("A megadott projekt hibás bejegyzéseket tartalmaz, ami bizonytalanná teheti a program futását. Kívánja folytatni töltést?", vbQuestion + vbYesNo, "Ismeretlen hiba") = vbYes Then
-                UzenetAblak "A hiba oka(" & Err.Number & "): " & Err.Description
+            If MsgBox(KozosSzovegek(14), vbQuestion + vbYesNo, KozosSzovegek(15)) = vbYes Then
+                UzenetAblak Err.Number & ": " & Err.Description
                 On Error Resume Next
                 GoTo kihagy
             Else
                 'Close 1
+                'Resume
                 mentett = True
                 uj_mnu_Click
             End If
@@ -1174,8 +1215,7 @@ Hiba:
     Exit Function
 
 kephiba:
-    If MsgBox("A megadott kép hibás, ismeretlen tömörítésû vagy nem található a megadott helyen." & vbCrLf & _
-           "Kívánja folytatni a töltést a hiba javításához?", vbCritical + vbYesNo, "Képbetöltési hiba") = vbYes Then
+    If MsgBox(Atalakit(KozosSzovegek(16), vbCrLf), vbCritical + vbYesNo, KozosSzovegek(17)) = vbYes Then
             terulet.Picture = Nothing
             terulet.Cls
             'Kephelye = ""
@@ -1209,7 +1249,7 @@ End Sub
 Private Function menti() As Boolean
 Dim valaszt
 If Not mentett And Kephelye <> "" Then
-    valaszt = MsgBox("A '" & Cime & "' módosításait nem mentette el. Kívánja most menteni azt?", vbYesNoCancel + vbExclamation, "Módosítások mentése")
+    valaszt = MsgBox(Atalakit(KozosSzovegek(18), Cime), vbYesNoCancel + vbExclamation, KozosSzovegek(19))
     Select Case valaszt
         Case vbYes
             menti = True
@@ -1281,3 +1321,4 @@ Private Sub ba_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As 
         ba.Drag
     End If
 End Sub
+

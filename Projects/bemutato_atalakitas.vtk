@@ -1,0 +1,113 @@
+; Vakablak 2.1.29
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Projektek gyors átalakítása
+kep=\bemutato_atalakitas\logol.jpg
+<megjegyzes=Projektek gyors átalakítása
+	xy=142,158
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=698,7
+	betu-tipus=Arial
+	betu-meret=15,75
+	formazas=fa
+!>
+<megjegyzes=Ezen azt értem, hogy egy megjegyzésekbõl álló térképen
+	xy=532,1178
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-277,52
+	betu-tipus=Arial
+	betu-meret=9,75
+!>
+<megjegyzes=néhány megjegyzést átalakítók kikérdezendõ elemmé.
+	xy=232,1598
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=8,-113
+	betu-tipus=Arial
+	betu-meret=9,75
+!>
+<megjegyzes=Így készítettem el az EU dogát is a kész térképek közül.
+	xy=382,2122
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-142,-322
+	betu-tipus=Arial
+	betu-meret=9,75
+!>
+<megjegyzes=2) Jobb gombbal kattintsunk az elemre
+	xy=202,2738
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=188,-68
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65280
+!>
+<megjegyzes=3) A Típus menübõl választjuk ki a Kikérdezendõ menüpontot
+	xy=1268,2918
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-893,22
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65280
+!>
+<megjegyzes=4) Adjunk megjegyzés típusú utasításokat a felhasználóknak
+	xy=382,3248
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-7,-38
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65280
+!>
+<megjegyzes=5) Mentsük el a projektet.
+	xy=398,3532
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-23,-37
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65280
+!>
+<megjegyzes=Példa
+	xy=592,5842
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=1838,-592
+	betu-tipus=Arial
+	betu-meret=15,75
+	betu-szin=8388863
+	formazas=fda
+!>
+<megjegyzes=Módosítsa az alábbi elem típusát úgy hogy kikérdezhetõ legyen!
+	xy=615,5820
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=-420,-30
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65535
+!>
+<megjegyzes=elem
+	xy=2505,6540
+	meret=852,938
+	jel=3
+	keret-vastagsag=10
+	kitoltes-tipus=0
+	kitoltes-szin=255
+	szovegXY=900,315
+	betu-meret=12
+	formazas=f
+!>
+<megjegyzes=1) Nyissuk meg szerkesztésre a projektet
+	xy=375,2445
+	lathatatlan-jel
+	meret=200,200
+	szovegXY=0,-60
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=65280
+!>

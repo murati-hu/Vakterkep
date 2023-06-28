@@ -45,7 +45,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 8 Then Me.Hide
+    If KeyAscii = 8 Or KeyAscii = 27 Then Me.Hide
 End Sub
 Private Sub szoveg_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
     szoveg(Index).Drag

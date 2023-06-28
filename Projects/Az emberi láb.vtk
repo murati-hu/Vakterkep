@@ -1,0 +1,47 @@
+; Vakablak 2.1.29
+;Muráti Ákos 2001-2004 - Minden jog fenntartva.
+
+cim=Az emberi láb
+kep=\Az emberi láb\terd-izu.jpg
+kijelol=0;0;1680;2820
+nagyitas=3
+<megjegyzes=Combcsont
+	xy=2295,1575
+	meret=200,200
+	jel=3
+	szovegXY=645,15
+	betu-tipus=Times New Roman
+	betu-meret=15,75
+	betu-szin=16777215
+	formazas=f
+!>
+<megjegyzes=Szárkapocs
+	xy=2962,6428
+	meret=200,200
+	jel=3
+	szovegXY=458,-68
+	betu-tipus=Times New Roman
+	betu-meret=15,75
+	betu-szin=16777215
+	formazas=f
+!>
+<megjegyzes=Sípcsont
+	xy=1792,7148
+	meret=200,200
+	jel=3
+	szovegXY=-1447,-68
+	betu-tipus=Times New Roman
+	betu-meret=15,75
+	betu-szin=16777215
+	formazas=f
+!>
+<megjegyzes=Térdkalács
+	xy=1725,3345
+	meret=200,200
+	jel=3
+	szovegXY=-1590,-240
+	betu-tipus=Times New Roman
+	betu-meret=15,75
+	betu-szin=16777215
+	formazas=f
+!>

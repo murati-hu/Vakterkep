@@ -73,3 +73,48 @@ Public Function VanEBenne(Miben As String, Mi As String) As Boolean
         VanEBenne = True
     End If
 End Function
+Public Function Kivesz(szoveg As String, Mit As String) As String
+    Dim i As Long
+    Kivesz = ""
+    i = 0
+    
+    Do While i <= Len(szoveg)
+        i = i + 1
+        If Mid(szoveg, i, Len(Mit)) = Mit Then
+            i = i + Len(Mit) - 1
+        Else
+            Kivesz = Kivesz & Mid(szoveg, i, 1)
+        End If
+    Loop
+End Function
+Public Function LegegyszerubbAlak(szoveg As String) As String
+    Dim Belso As String
+    Belso = szoveg
+    
+    If beallitasok.nincskotojel.Value = 1 Then Belso = Kivesz(Belso, "-")
+    If beallitasok.kisbetus.Value = 1 Then Belso = LCase(Belso)
+    If beallitasok.szokoz.Value = 1 Then Belso = Korulmetel(Lefoloz(Belso, " "))
+    
+    LegegyszerubbAlak = Belso
+End Function
+Public Function Lefoloz(szoveg As String, Mit As String) As String
+    Dim i As Long, db As Long
+    Lefoloz = ""
+    i = 0
+    db = 0
+    
+    Do While i <= Len(szoveg)
+        i = i + 1
+        If Mid(szoveg, i, Len(Mit)) = Mit Then
+            db = db + 1
+            i = i + Len(Mit) - 1
+        Else
+            If db = 0 Then
+                Lefoloz = Lefoloz & Mid(szoveg, i, 1)
+            Else
+                db = 0
+                Lefoloz = Lefoloz & Mit & Mid(szoveg, i, 1)
+            End If
+        End If
+    Loop
+End Function
