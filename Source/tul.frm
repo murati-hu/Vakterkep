@@ -15,10 +15,18 @@ Begin VB.Form tul
    ScaleWidth      =   9705
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton sugo 
+      Caption         =   "Sú&gó"
+      Height          =   375
+      Left            =   3240
+      TabIndex        =   44
+      Top             =   3960
+      Width           =   1095
+   End
    Begin VB.Frame seg 
       BorderStyle     =   0  'None
       Height          =   3255
-      Left            =   5400
+      Left            =   240
       TabIndex        =   33
       Top             =   480
       Visible         =   0   'False
@@ -79,15 +87,16 @@ Begin VB.Form tul
       Cancel          =   -1  'True
       Caption         =   "&Mégse"
       Height          =   375
-      Left            =   2520
+      Left            =   1800
       TabIndex        =   21
       Top             =   3960
       Width           =   1095
    End
    Begin VB.CommandButton ok 
       Caption         =   "OK"
+      Default         =   -1  'True
       Height          =   375
-      Left            =   960
+      Left            =   360
       TabIndex        =   20
       Top             =   3960
       Width           =   1095
@@ -242,11 +251,19 @@ Begin VB.Form tul
    Begin VB.Frame elem 
       BorderStyle     =   0  'None
       Height          =   3255
-      Left            =   5280
+      Left            =   5040
       TabIndex        =   1
-      Top             =   1200
+      Top             =   480
       Visible         =   0   'False
       Width           =   4215
+      Begin VB.CheckBox lathatatlan 
+         Caption         =   "Láthatatlan jel"
+         Height          =   195
+         Left            =   120
+         TabIndex        =   43
+         Top             =   1740
+         Width           =   1335
+      End
       Begin VB.CommandButton Command1 
          Caption         =   "Formátum másoló"
          Height          =   255
@@ -261,7 +278,7 @@ Begin VB.Form tul
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
          TabIndex        =   40
-         Top             =   960
+         Top             =   720
          Width           =   3255
       End
       Begin VB.CheckBox jelmagy 
@@ -269,7 +286,7 @@ Begin VB.Form tul
          Height          =   255
          Left            =   2040
          TabIndex        =   32
-         Top             =   1680
+         Top             =   1440
          Width           =   1335
       End
       Begin VB.CheckBox jobbra 
@@ -277,7 +294,7 @@ Begin VB.Form tul
          Height          =   255
          Left            =   120
          TabIndex        =   22
-         Top             =   1680
+         Top             =   1440
          Width           =   1815
       End
       Begin VB.TextBox meret 
@@ -298,6 +315,7 @@ Begin VB.Form tul
          Width           =   1575
          Begin VB.Shape pont 
             BorderColor     =   &H00000000&
+            BorderStyle     =   0  'Transparent
             FillStyle       =   0  'Solid
             Height          =   135
             Left            =   120
@@ -354,7 +372,7 @@ Begin VB.Form tul
          Left            =   720
          Style           =   2  'Dropdown List
          TabIndex        =   5
-         Top             =   600
+         Top             =   360
          Width           =   3255
       End
       Begin VB.TextBox nev 
@@ -362,7 +380,7 @@ Begin VB.Form tul
          Left            =   720
          TabIndex        =   4
          Text            =   "Névtelen"
-         Top             =   240
+         Top             =   0
          Width           =   3255
       End
       Begin VB.Label duma 
@@ -371,7 +389,7 @@ Begin VB.Form tul
          Index           =   6
          Left            =   120
          TabIndex        =   41
-         Top             =   960
+         Top             =   720
          Width           =   495
       End
       Begin VB.Label duma 
@@ -389,7 +407,7 @@ Begin VB.Form tul
          Index           =   1
          Left            =   120
          TabIndex        =   3
-         Top             =   600
+         Top             =   360
          Width           =   495
       End
       Begin VB.Label duma 
@@ -398,7 +416,7 @@ Begin VB.Form tul
          Index           =   0
          Left            =   120
          TabIndex        =   2
-         Top             =   240
+         Top             =   0
          Width           =   495
       End
    End
@@ -567,6 +585,9 @@ Private Sub jobbra_Click()
     End Select
 End Sub
 
+Private Sub lathatatlan_Click()
+  pont.Visible = Abs(lathatatlan.Value - 1)
+End Sub
 
 Private Sub megold_LostFocus()
 elment
@@ -588,6 +609,7 @@ Private Sub ok_Click()
             szerk.terkepneve = terkep.Text
     End If
     szerk.Caption = szerk.terkepneve & " - Vaktérkép Szerkesztõ " & App.Major & "." & App.Minor
+    If szerk.aktualis <> 0 Then
     Call szerk.igazit(szerk.aktualis, jobbra.Value)
     
     szerk.cimke(szerk.aktualis).ToolTipText = gyorstip.Text
@@ -602,6 +624,7 @@ Private Sub ok_Click()
     szerk.pont(szerk.aktualis).BackColor = pont.BackColor
     szerk.pont(szerk.aktualis).BorderColor = pont.BorderColor
     szerk.pont(szerk.aktualis).Shape = pont.Shape
+    szerk.pont(szerk.aktualis).Visible = pont.Visible
     
     
     'szerk.pont(szerk.aktualis).Move
@@ -622,6 +645,7 @@ Private Sub ok_Click()
     Next i
     szerk.megoldasford (k)
     
+    End If
     For i = 1 To 4
             opciok.hatarok(i) = tul.hatarok(i)
     Next i
@@ -651,6 +675,20 @@ End Sub
 
 Private Sub segitseg_LostFocus()
 elment
+End Sub
+
+Private Sub sugo_Click()
+On Error GoTo hiba
+If szerk.aktualis <> 0 Then
+    Shell "hh.exe " & eleres & "\szerkeszto.chm::/page/elem.htm", vbNormalFocus
+Else
+    Shell "hh.exe " & eleres & "\szerkeszto.chm::/page/ptul.htm", vbNormalFocus
+End If
+Exit Sub
+hiba:
+    MsgBox "Az ön Windowsa nem képes kezelni a HTML Help fájlokat.", vbInformation, "Súgó nem tölthetõ be"
+
+
 End Sub
 
 Private Sub szama_Click()
@@ -763,6 +801,8 @@ Public Sub formatuma(id As Integer)
         pont.BackColor = szerk.pont(id).BackColor
         pont.FillColor = szerk.pont(id).FillColor
         pont.BorderColor = szerk.pont(id).BorderColor
+        pont.Visible = szerk.pont(id).Visible
+        
         If szerk.cimke(id).Alignment = 0 Then
             cimke.Left = pont.Left + pont.Width + 15
             cimke.Alignment = 0
@@ -775,6 +815,8 @@ Public Sub formatuma(id As Integer)
         cimke.FontUnderline = szerk.cimke(id).FontUnderline
         cimke.FontSize = szerk.cimke(id).FontSize
         cimke.ForeColor = szerk.cimke(id).ForeColor
+        
+        lathatatlan.Value = Abs(Abs(CInt(pont.Visible)) - 1)
         felkover.Value = Abs(CInt(cimke.FontBold))
         dolt.Value = Abs(CInt(cimke.FontItalic))
         alahuzott.Value = Abs(CInt(cimke.FontUnderline))

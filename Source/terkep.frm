@@ -1,11 +1,11 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form terkep 
-   BackColor       =   &H8000000A&
+   BackColor       =   &H8000000C&
    Caption         =   "Vaktérkép"
    ClientHeight    =   4680
    ClientLeft      =   165
-   ClientTop       =   750
+   ClientTop       =   735
    ClientWidth     =   6120
    Icon            =   "terkep.frx":0000
    KeyPreview      =   -1  'True
@@ -25,7 +25,7 @@ Begin VB.Form terkep
    End
    Begin VB.Timer ora 
       Enabled         =   0   'False
-      Interval        =   1000
+      Interval        =   300
       Left            =   120
       Top             =   1560
    End
@@ -49,13 +49,13 @@ Begin VB.Form terkep
       AutoSize        =   -1  'True
       BackColor       =   &H80000005&
       ForeColor       =   &H80000008&
-      Height          =   4050
+      Height          =   4095
       Left            =   360
-      ScaleHeight     =   4020
-      ScaleWidth      =   5220
+      ScaleHeight     =   4065
+      ScaleWidth      =   5265
       TabIndex        =   0
       Top             =   120
-      Width           =   5250
+      Width           =   5295
       Begin VB.TextBox szoveg 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
@@ -90,9 +90,12 @@ Begin VB.Form terkep
          Width           =   255
       End
       Begin VB.Label cimke 
+         Appearance      =   0  'Flat
          AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
          BackStyle       =   0  'Transparent
          Caption         =   "Címke"
+         ForeColor       =   &H80000008&
          Height          =   195
          Index           =   0
          Left            =   1440
@@ -104,10 +107,12 @@ Begin VB.Form terkep
       End
       Begin VB.Shape pont 
          BorderColor     =   &H00000000&
+         BorderStyle     =   0  'Transparent
+         DrawMode        =   1  'Blackness
          FillStyle       =   0  'Solid
          Height          =   135
          Index           =   0
-         Left            =   1200
+         Left            =   1320
          Shape           =   3  'Circle
          Top             =   3840
          Visible         =   0   'False
@@ -201,12 +206,18 @@ beiro
 End Sub
 
 Private Sub cimke_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+    kijelol (ttip)
     ttip = Index
     ora.Enabled = True
 End Sub
 
 Private Sub exit_Click()
-Unload Me
+If retrn.Enabled Then
+    i = MsgBox("Ha most kilép, minden eddigi eredménye el fog veszni. Biztosan ki akar lépni?", vbQuestion + vbYesNo, "Kilépés megerõsítése")
+Else
+    i = vbYes
+End If
+If i = vbYes Then Unload Me
 End Sub
 
 Private Sub fedo_Click(Index As Integer)
@@ -301,6 +312,7 @@ bizi.Show vbModal
 End Sub
 
 Private Sub fedo_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+    kijelol (ttip)
     ttip = Index
     ora.Enabled = True
 End Sub
@@ -366,11 +378,13 @@ If terkep.ScaleHeight - terulet.Height < 0 Then
         fl.Visible = False
 End If
 
-If (fl.Visible Or jb.Visible) And jelm.Enabled Then
+If (fl.Visible Or jb.Visible) Then
         gomb.Move fl.Left, jb.Top
         gomb.Visible = True
+        gomb.Enabled = jelm.Enabled
 Else
         gomb.Visible = False
+        
 End If
 End Sub
 
@@ -425,6 +439,7 @@ End Sub
 
 Public Sub beiro()
 'On Error GoTo ki
+Call ttip_el
 i = aktualis
 Call Form_KeyPress(27)
 aktualis = i
@@ -437,6 +452,7 @@ mehet:
     szoveg.SelLength = Len(szoveg.Text)
     szoveg.Move cimke(aktualis).Left, cimke(aktualis).Top
     szoveg.Visible = True
+    szoveg.SetFocus
     Exit Sub
 Else
     k = InputBox(segitseg(aktualis, egyeni(aktualis)), egyeni(aktualis) + 1 & ". segítõ kérdés:")
@@ -458,7 +474,7 @@ Public Sub tolt(fajlnev As String)
 Dim parancs As String, ertek As String, kod As Integer, sor As String, ker As Integer, i As Integer
 Dim tipus As Byte, X As Integer, Y As Integer, nev As String, szin As ColorConstants
 Dim kover As Boolean, dolt As Boolean, alahuzott As Boolean, feltolt(1 To 10) As String
-Dim meret As Byte, konyvtar As String, jobbra As Boolean
+Dim meret As Byte, konyvtar As String, jobbra As Boolean, lathatatlan As Boolean
 
 'konyvtar meghatározása
 j = 0
@@ -475,6 +491,7 @@ dolt = False
 kover = False
 alahuzott = False
 jobbra = False
+lathatatlan = False
 
 If fajlnev = eleres & "\vakterkep.ini" Then
     On Error GoTo nincs
@@ -521,6 +538,8 @@ gyorski:
             meret = ertek
         Case "balra"
             jobbra = True
+        Case "lathatatlan"
+            lathatatlan = True
         Case "elem"
            For i = 1 To 10
                 feltolt(i) = ""
@@ -548,10 +567,9 @@ gyorski:
                             Load pont(kod)
                             pont(kod).Left = X
                             pont(kod).Top = Y
-                            pont(kod).Shape = tipus
                             pont(kod).BorderColor = szin
                             pont(kod).FillColor = szin
-                            pont(kod).Visible = True
+                            'pont(kod).Visible = True
                             
                             
                             Load cimke(kod)
@@ -578,7 +596,11 @@ gyorski:
                             Load fedo(kod)
                             fedo(kod).Move pont(kod).Left, pont(kod).Top, pont(kod).Width, pont(kod).Height
                             fedo(kod).Visible = True
-                       
+                            
+                            If lathatatlan = False Then
+                                pont(kod).Shape = tipus
+                                pont(kod).Visible = True
+                            End If
                        Case 7
     
                             i = jelol.pont.Count
@@ -586,10 +608,10 @@ gyorski:
                             Load jelol.pont(i)
                             jelol.pont(i).Left = jelol.pont(i - 1).Left
                             jelol.pont(i).Top = jelol.cimke(i - 1).Top + jelol.cimke(i - 1).Height + 30
-                            jelol.pont(i).Shape = X
+                            'jelol.pont(i).Shape = X
                             jelol.pont(i).BorderColor = szin
                             jelol.pont(i).FillColor = szin
-                            jelol.pont(i).Visible = True
+                            'jelol.pont(i).Visible = True
                             
                             
                             Load jelol.cimke(i)
@@ -606,10 +628,14 @@ gyorski:
                             If jelol.Width < jelol.cimke(i).Left + jelol.cimke(i).Width + 100 Then
                                     jelol.Width = jelol.cimke(i).Left + jelol.cimke(i).Width + 100
                             End If
-                            jelol.Height = 1.5 * (jelol.cimke(i).Top + jelol.cimke(i).Height)
-                            
+                            jelol.Height = jelol.cimke(i).Top + jelol.cimke(i).Height + 500
                             jelm.Enabled = True
                             
+                            If lathatatlan = False Then
+                                jelol.pont(i).Shape = X
+                                jelol.pont(i).Visible = True
+                            End If
+                        
                 End Select
                 meret = 9
                 szin = vbBlack
@@ -617,6 +643,7 @@ gyorski:
                 kover = False
                 alahuzott = False
                 jobbra = False
+                lathatatlan = False
                 
                 retrn.Enabled = True
                 ertekeles.Enabled = True
@@ -795,4 +822,12 @@ Private Sub ttip_el()
 ora.Enabled = False
 segito.Visible = False
 ttip = 0
+For i = 1 To cimke.Count - 1
+        pont(i).BorderStyle = 0
+        cimke(i).BorderStyle = 0
+Next i
+End Sub
+Sub kijelol(id As Integer)
+    'pont(id).BorderStyle = 1
+    'cimke(id).BorderStyle = 1
 End Sub

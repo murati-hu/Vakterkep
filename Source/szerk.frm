@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form szerk 
-   BackColor       =   &H8000000A&
+   BackColor       =   &H8000000C&
    Caption         =   "Vaktérkép Szerkesztõ"
    ClientHeight    =   5130
    ClientLeft      =   165
@@ -76,14 +76,14 @@ Begin VB.Form szerk
       AutoSize        =   -1  'True
       BackColor       =   &H80000005&
       ForeColor       =   &H80000008&
-      Height          =   3885
+      Height          =   3855
       Left            =   720
       MousePointer    =   2  'Cross
-      ScaleHeight     =   3855
-      ScaleWidth      =   4980
+      ScaleHeight     =   3825
+      ScaleWidth      =   5025
       TabIndex        =   1
       Top             =   480
-      Width           =   5010
+      Width           =   5055
       Begin VB.TextBox szoveg 
          Appearance      =   0  'Flat
          Height          =   285
@@ -98,17 +98,20 @@ Begin VB.Form szerk
          BackStyle       =   0  'Transparent
          Height          =   255
          Index           =   0
-         Left            =   2040
+         Left            =   1680
          MousePointer    =   1  'Arrow
          TabIndex        =   5
-         Top             =   3600
+         Top             =   3360
          Visible         =   0   'False
          Width           =   255
       End
       Begin VB.Label cimke 
+         Appearance      =   0  'Flat
          AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
          BackStyle       =   0  'Transparent
          Caption         =   "Címke"
+         ForeColor       =   &H80000008&
          Height          =   195
          Index           =   0
          Left            =   2280
@@ -120,6 +123,7 @@ Begin VB.Form szerk
       End
       Begin VB.Shape pont 
          BorderColor     =   &H00000000&
+         BorderStyle     =   0  'Transparent
          FillStyle       =   0  'Solid
          Height          =   135
          Index           =   0
@@ -228,6 +232,15 @@ Private Sub cimke_Mousedown(Index As Integer, Button As Integer, Shift As Intege
 End Sub
 
 Private Sub exit_Click()
+If szerkesztett Then
+    i = MsgBox("Kilépés elõtt szeretné elmenteni a változtatásokat?", vbQuestion + vbYesNoCancel, "Kilépés és mentés megerõsítése")
+    Select Case i
+        Case vbYes
+            save_Click
+        Case vbCancel
+            Exit Sub
+    End Select
+End If
 Unload Me
 End Sub
 
@@ -387,7 +400,7 @@ Public Sub tolt(fajlnev As String)
 Dim parancs As String, ertek As String, kod As Integer, sor As String, ker As Integer, i As Integer
 Dim tipus As Byte, X As Integer, Y As Integer, nev As String, szin As ColorConstants
 Dim kover As Boolean, dolt As Boolean, alahuzott As Boolean, meret As Byte
-Dim konyvtar As String, jobbra As Boolean, feltolt(1 To 10) As String
+Dim konyvtar As String, jobbra As Boolean, feltolt(1 To 10) As String, lathatatlan As Boolean
 
 'konyvtar meghatározása
 j = 0
@@ -404,6 +417,7 @@ dolt = False
 kover = False
 alahuzott = False
 jobbra = False
+lathatatlan = False
 
 terulet.Picture = Nothing
 terulet.Move 0, 0, Me.ScaleWidth, Me.ScaleHeight
@@ -451,6 +465,8 @@ gyorski:
             alahuzott = True
         Case "meret"
             meret = ertek
+        Case "lathatatlan"
+            lathatatlan = True
         Case "balra"
             jobbra = True
         Case "elem"
@@ -482,10 +498,9 @@ gyorski:
                             Load pont(kod)
                             pont(kod).Left = X
                             pont(kod).Top = Y
-                            pont(kod).Shape = tipus
                             pont(kod).BorderColor = szin
                             pont(kod).FillColor = szin
-                            pont(kod).Visible = True
+                            'pont(kod).Visible = True
                             
                             
                             Load cimke(kod)
@@ -504,15 +519,20 @@ gyorski:
                             Load fedo(kod)
                             fedo(kod).Move pont(kod).Left, pont(kod).Top, pont(kod).Width, pont(kod).Height
                             fedo(kod).Visible = True
+                            
+                            If lathatatlan = False Then
+                                pont(kod).Shape = tipus
+                                pont(kod).Visible = True
+                            End If
                         Case 7
                              
                             Load pont(kod)
                             pont(kod).Left = 0
                             pont(kod).Top = 30
-                            pont(kod).Shape = X
+                            'pont(kod).Shape = X
                             pont(kod).BorderColor = szin
                             pont(kod).FillColor = szin
-                            pont(kod).Visible = True
+                            'pont(kod).Visible = True
                             
                             
                             Load cimke(kod)
@@ -531,8 +551,11 @@ gyorski:
                             fedo(kod).Move pont(kod).Left, pont(kod).Top, pont(kod).Width, pont(kod).Height
                             fedo(kod).Visible = True
                                                    
-                            
                                                    
+                            If lathatatlan = False Then
+                                pont(kod).Shape = X
+                                pont(kod).Visible = True
+                            End If
                             
                 End Select
                 meret = 9
@@ -541,6 +564,7 @@ gyorski:
                 kover = False
                 alahuzott = False
                 jobbra = False
+                lathatatlan = False
 objkkod:
         Case "hatarok"
             i = 1
@@ -839,6 +863,7 @@ End If
             If cimke(i).FontItalic Then Print #2, "dolt"
             If cimke(i).FontUnderline Then Print #2, "alahuzott"
             If cimke(i).FontBold Then Print #2, "kover"
+            If pont(i).Visible = False Then Print #2, "lathatatlan"
             If cimke(i).FontSize <> 8.25 Then Print #2, "meret=" & cimke(i).FontSize
             If cimke(i).ForeColor <> 0 Then Print #2, "szin=" & cimke(i).ForeColor
             If cimke(i).BorderStyle = 1 Then

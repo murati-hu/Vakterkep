@@ -17,6 +17,14 @@ Begin VB.Form opciok
    ScaleWidth      =   5460
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.CommandButton sugo 
+      Caption         =   "Sú&gó"
+      Height          =   375
+      Left            =   120
+      TabIndex        =   33
+      Top             =   2880
+      Width           =   1095
+   End
    Begin VB.Frame alt 
       Caption         =   "Általános beállítások:"
       Height          =   2775
@@ -77,7 +85,7 @@ Begin VB.Form opciok
    Begin VB.CommandButton megse 
       Caption         =   "&Mégse"
       Height          =   375
-      Left            =   1320
+      Left            =   1440
       TabIndex        =   5
       Top             =   2880
       Width           =   1095
@@ -86,7 +94,7 @@ Begin VB.Form opciok
       Caption         =   "&OK"
       Default         =   -1  'True
       Height          =   375
-      Left            =   2760
+      Left            =   2880
       TabIndex        =   6
       Top             =   2880
       Width           =   1095
@@ -94,7 +102,7 @@ Begin VB.Form opciok
    Begin VB.CommandButton Alk 
       Caption         =   "Menté&s"
       Height          =   375
-      Left            =   4080
+      Left            =   4320
       TabIndex        =   7
       Top             =   2880
       Width           =   1095
@@ -390,6 +398,15 @@ If IsNumeric(pont.Text) = False Then
      MsgBox "Ide csak szám kerülhet!", vbInformation, "Pontok:"
     pont.Text = 10
 End If
+End Sub
+
+Private Sub sugo_Click()
+On Error GoTo hiba
+Shell "hh.exe " & eleres & "\vakterkep.chm::/page/beall.htm", vbNormalFocus
+Exit Sub
+hiba:
+    MsgBox "Az ön Windowsa nem képes kezelni a HTML Help fájlokat.", vbInformation, "Súgó nem tölthetõ be"
+
 End Sub
 
 Private Sub szazal_LostFocus()
