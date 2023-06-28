@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form terkep 
    BackColor       =   &H8000000C&
    Caption         =   "Vaktérkép"
@@ -76,11 +76,11 @@ Begin VB.Form terkep
          Top             =   2520
          Visible         =   0   'False
          Width           =   135
-         _extentx        =   873
-         _extenty        =   873
-         kitoltesszine   =   -2147483640
-         keretszine      =   -2147483640
-         hatterszine     =   -2147483643
+         _ExtentX        =   873
+         _ExtentY        =   873
+         KitoltesSzine   =   -2147483640
+         KeretSzine      =   -2147483640
+         HatterSzine     =   -2147483643
       End
       Begin Vakterkep2.jel megj 
          Height          =   135
@@ -90,11 +90,11 @@ Begin VB.Form terkep
          Top             =   2040
          Visible         =   0   'False
          Width           =   135
-         _extentx        =   873
-         _extenty        =   873
-         kitoltesszine   =   -2147483640
-         keretszine      =   -2147483640
-         hatterszine     =   -2147483643
+         _ExtentX        =   873
+         _ExtentY        =   873
+         KitoltesSzine   =   -2147483640
+         KeretSzine      =   -2147483640
+         HatterSzine     =   -2147483643
       End
       Begin VB.Label jel_szoveg 
          Appearance      =   0  'Flat
@@ -208,6 +208,7 @@ Dim elemek(1 To 1024) As elem
 Dim ures As elem, proba As Byte
 Public Megnyitva As String
 Private Sub beall_mnu_Click()
+    szoveg.Visible = False
     beallitasok.Show vbModal
 End Sub
 
@@ -222,6 +223,8 @@ End Sub
 
 Private Sub ertekel_mnu_Click()
 Dim jo As Integer, i As Integer, osszeg As Double
+
+szoveg.Visible = False
 
 For i = 1 To (jel.Count - 1)
     If elemek(i).pont = 0 Then
@@ -345,6 +348,14 @@ Pozicional
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
+    'If Megnyitva <> "" Then
+    '     jelmagyarazat.Hide
+    '     behuzo.Hide
+    '     If MsgBox("Ha most kilép, minden eddigi eredménye el fog veszni! Biztos, hogy ki akar lépni?", vbYesNo + vbQuestion, "Kilépés") = vbNo Then
+    '        Cancel = 1
+    '        Exit Sub
+    '    End If
+    'End If
     Megsemmisit
     End
 End Sub
@@ -388,7 +399,10 @@ Private Sub jel_szoveg_Click(Index As Integer)
 End Sub
 
 Private Sub jel_szoveg_DragDrop(Index As Integer, Source As Control, X As Single, Y As Single)
-    jel_szoveg(Index).Caption = Source.Caption
+    If IrhatE(Index) Then
+        jel_szoveg(Index).Caption = Source.Caption
+        Me.SetFocus
+    End If
 End Sub
 
 Private Sub jel_szoveg_DragOver(Index As Integer, Source As Control, X As Single, Y As Single, State As Integer)
@@ -408,11 +422,6 @@ Private Sub kilep_mnu_Click()
     Unload Me
 End Sub
 
-
-
-
-
-
 Private Sub megnyit_mnu_Click()
 On Error GoTo megse
     pb.CancelError = True
@@ -424,6 +433,7 @@ On Error GoTo megse
     megnyitas (pb.FileName)
 megse:
 End Sub
+
 Public Sub megnyitas(Fajlnev As String)
 Dim sor As String, i As Integer, j As Integer, ker As Integer, megvan As Boolean
 Dim id As Integer, JID As Integer, KID As Integer, FID As Integer
@@ -433,7 +443,7 @@ id = 0
 JID = 0
 KID = 0
 FID = 0
-Fajlnev = Atalakit(Fajlnev, "")
+Fajlnev = Atalakit(Fajlnev)
 On Error GoTo Hiba
     Open Fajlnev For Input As 1
         terulet.Visible = False
@@ -478,11 +488,15 @@ On Error GoTo Hiba
                     szel = Kicsontoz(parameter, ";", 2)
                     mag = Kicsontoz(parameter, ";", 3)
                     
+                    If Y <> 0 And X <> 0 And szel <> terulet.ScaleWidth Or mag <> terulet.ScaleHeight Then nyomtat.Enabled = False
                     terulet.Width = szel
                     terulet.Height = mag
                     
                     terulet.Cls
                     terulet.PaintPicture LoadPicture(kep), 0, 0, terulet.Width, terulet.Height, X, Y, szel, mag
+                     'nyomtat.Enabled = False
+                     'terulet.PaintPicture
+                     'terulet.Picture = terulet
                     Form_Resize
                     
                 Case "nagyitas"
@@ -548,14 +562,14 @@ On Error GoTo Hiba
                 Case "pozicio", "xy", "koordianatak"
                     On Error Resume Next
                     If obj.Name <> "jelm" Then
-                        obj.Left = CSng(Atalakit(Kicsontoz(parameter, ",", 0), ""))
-                        obj.Top = CSng(Atalakit(Kicsontoz(parameter, ",", 1), ""))
+                        obj.Left = CSng(Atalakit(Kicsontoz(parameter, ",", 0)))
+                        obj.Top = CSng(Atalakit(Kicsontoz(parameter, ",", 1)))
                     End If
                 Case "meret", "meretek"
                     On Error Resume Next
                     If aze Then
-                        obj.Width = CLng(Atalakit(Kicsontoz(parameter, ",", 0), ""))
-                        obj.Height = CLng(Atalakit(Kicsontoz(parameter, ",", 1), ""))
+                        obj.Width = CLng(Atalakit(Kicsontoz(parameter, ",", 0)))
+                        obj.Height = CLng(Atalakit(Kicsontoz(parameter, ",", 1)))
                     End If
                 Case "tipp"
                     obj.ToolTipText = parameter
@@ -602,9 +616,6 @@ On Error GoTo Hiba
                     On Error Resume Next
                     parameter = CLng(parameter)
                     Select Case obj.Name
-                        'Case "jel"
-                            'jel_szoveg(id).BackStyle = 1
-                            'jel_szoveg(id).BackColor = parameter
                         Case "megj"
                             megj_szoveg(FID).BackStyle = 1
                             megj_szoveg(FID).BackColor = parameter
@@ -632,7 +643,7 @@ On Error GoTo Hiba
                             jelmagyarazat.jelm_szoveg(JID).FontStrikethru = VanEBenne(parameter, "k")
                     End Select
                         
-                ' ########## ELEM EGYEDITULAJDONSÁGAI
+                ' ########## ELEM EGYEDI TULAJDONSÁGAI
                 Case "kerdes"
                     If obj.Name = "jel" And KID < 10 Then
                         KID = KID + 1
@@ -704,14 +715,14 @@ On Error GoTo Hiba
                     If obj.Name = "megj" Then megj_szoveg(FID).Visible = False
 ' ######################## Beállításokkal kapcsolatos értékek ###################################
                 Case "hatarok", "ponthatarok"
-                    If beallitasok.egyeni.Value = 1 Or Fajlnev = Atalakit("$vt\vakterkep.ini", "") Then
+                    If beallitasok.egyeni.Value = 1 Or Fajlnev = Atalakit("$vt\vakterkep.ini") Then
                         For i = 1 To 4
                             beallitasok.hatarok(i) = Kicsontoz(parameter, ",", i - 1)
                         Next i
                     End If
                 Case "beallitas", "beallitasok_engedelyezese"
                     beallitasok.enged.Value = parameter
-                    beall_mnu.Visible = Abs(CInt(parameter))
+                    beall_mnu.Enabled = Abs(CInt(parameter))
             
                 Case "egyeni", "egyeni_beallitasok"
                     beallitasok.egyeni.Value = parameter
@@ -729,92 +740,88 @@ On Error GoTo Hiba
                     beallitasok.behuzas = parameter
                 Case "szerkesztes_engedelyezese"
                     beallitasok.szerkesztes = parameter
-                'Case "nyelv"
-                '    If parameter <> "0" Then
-                '        beallitasok.nyelv_chk.Value = 1
-                '        For i = 0 To beallitasok.nyelvek.ListCount - 1
-                '            If parameter = beallitasok.nyelvek.List(i) Then
-                '                nyelv (parameter)
-                '                beallitasok.nyelvek.Selected(i) = True
-                '            End If
-                '        Next i
-                '    Else
-                '        beallitasok.nyelv_chk.Value = 0
-                '    End If
-
             End Select
 kihagy:
         Loop
         Close 1
     
+    'Még le nem zárt objektumok lezárása
     If aze Then lezaras
-    
-    If jel.Count > 1 Then ertekel_mnu.Enabled = True
-    
-    If jelmagyarazat.jelm.Count > 1 Then
-        jelm_mnu.Enabled = True
-        jelmagyarazat.Height = (Nagyobb(jelmagyarazat.jelm(jelmagyarazat.jelm.Count - 1).Top + jelmagyarazat.jelm(jelmagyarazat.jelm.Count - 1).Height, jelmagyarazat.jelm_szoveg(jelmagyarazat.jelm_szoveg.Count - 1).Top + jelmagyarazat.jelm_szoveg(jelmagyarazat.jelm_szoveg.Count - 1).Height)) + 610 '* 1.5 '* (jelmagyarazat.Height / jelmagyarazat.ScaleHeight)
-        For i = 1 To JID
-            If jelmagyarazat.Width < (200 + jelmagyarazat.jelm_szoveg(i).Left + jelmagyarazat.jelm_szoveg(i).Width) Then '* (jelmagyarazat.ScaleWidth / jelmagyarazat.Width) Then
-                jelmagyarazat.Width = (200 + jelmagyarazat.jelm_szoveg(i).Left + jelmagyarazat.jelm_szoveg(i).Width) + 120 '* (jelmagyarazat.ScaleWidth / jelmagyarazat.Width)
-            End If
-        Next i
-        'else
-    End If
-    
-    If jel.Count > 1 And beallitasok.behuzas.Value = 1 Then
-            behuzo_mnu.Enabled = True
-        Else
-            behuzo_mnu.Enabled = False
-    End If
-    
-    
     terulet.Visible = True
-    If jel.Count > 1 Then ujra_mnu.Enabled = True
-    If Fajlnev <> Atalakit("$vt\vakterkep.ini", "") Then
-            For i = 1 To jel.Count - 1 Step 2
-                Ujbehuzo (i)
-            Next i
-            
-            For i = 2 To jel.Count - 1 Step 2
-                Ujbehuzo (i)
-            Next i
-            
-            For i = 1 To behuzo.szoveg.Count - 1
-                If behuzo.szoveg(i).Width + 200 > behuzo.Width - 120 Then
-                    behuzo.Width = (behuzo.szoveg(i).Width + 300) + 120 '* (behuzo.Width / behuzo.ScaleWidth)
+    
+    If Fajlnev <> Atalakit("$vt\vakterkep.ini") Then
+            'van kikérdezendõ elem
+            If jel.Count > 1 Then
+                ujra_mnu.Enabled = True
+                ertekel_mnu.Enabled = True
+        
+                'Ha engedélyezve van, akkor behúzó aktiválása
+                If beallitasok.behuzas.Value = 1 Then
+                        behuzo_mnu.Enabled = True
+                    Else
+                        behuzo_mnu.Enabled = False
                 End If
-            Next i
+                
+                'behúzó elemeinek összekeverése
+                For i = 1 To jel.Count - 1 Step 2
+                    Ujbehuzo (i) 'páratlanok
+                Next i
             
-            behuzo.Height = (behuzo.szoveg(behuzo.szoveg.Count - 1).Top + behuzo.szoveg(behuzo.szoveg.Count - 1).Height + 610) '* 1.5 '(behuzo.Height / (behuzo.ScaleHeight))
-
+                For i = 2 To jel.Count - 1 Step 2
+                    Ujbehuzo (i) 'párosak
+                Next i
+            
+                For i = 1 To behuzo.szoveg.Count - 1
+                    If behuzo.szoveg(i).Width + 200 > behuzo.Width - 120 Then
+                        behuzo.Width = (behuzo.szoveg(i).Width + 300) + 120 '* (behuzo.Width / behuzo.ScaleWidth)
+                    End If
+                Next i
+                behuzo.Height = (behuzo.szoveg(behuzo.szoveg.Count - 1).Top + behuzo.szoveg(behuzo.szoveg.Count - 1).Height + 610) '* 1.5 '(behuzo.Height / (behuzo.ScaleHeight))
+            End If
+    
+    
+            'jelmagyarázat és ablakméretének beállítása
+            If jelmagyarazat.jelm.Count > 1 Then
+                jelm_mnu.Enabled = True
+                jelmagyarazat.Height = (Nagyobb(jelmagyarazat.jelm(jelmagyarazat.jelm.Count - 1).Top + jelmagyarazat.jelm(jelmagyarazat.jelm.Count - 1).Height, jelmagyarazat.jelm_szoveg(jelmagyarazat.jelm_szoveg.Count - 1).Top + jelmagyarazat.jelm_szoveg(jelmagyarazat.jelm_szoveg.Count - 1).Height)) + 610 '* 1.5 '* (jelmagyarazat.Height / jelmagyarazat.ScaleHeight)
+                
+                For i = 1 To JID
+                    If jelmagyarazat.Width < (200 + jelmagyarazat.jelm_szoveg(i).Left + jelmagyarazat.jelm_szoveg(i).Width) Then '* (jelmagyarazat.ScaleWidth / jelmagyarazat.Width) Then
+                        jelmagyarazat.Width = (200 + jelmagyarazat.jelm_szoveg(i).Left + jelmagyarazat.jelm_szoveg(i).Width) + 120 '* (jelmagyarazat.ScaleWidth / jelmagyarazat.Width)
+                    End If
+                Next i
+            End If
+            
             Form_KeyDown 40, 0
             Megnyitva = Fajlnev
             szerkesztes_mnu.Enabled = CBool(beallitasok.szerkesztes.Value)
     End If
 Exit Sub
 Hiba:
+    'Dim uzenet As String
     Select Case Err.Number
         Case 52
-            MsgBox "A '" & Fajlnev & "' fájl nem tölthetõ be.", vbInformation, "Hábás fájl adott meg!"
+            UzenetAblak "A '" & Fajlnev & "' fájl nem tölthetõ be."
             'Exit Sub
         Case 53
             If Fajlnev <> Vakterkep.Konyvtar & "vakterkep.ini" Then
-                MsgBox "A megadott fájl nem található!", vbCritical, "A megadott fájl nem található!"
+                UzenetAblak "A megadott fájl nem található!"
             End If
             'Exit Sub
         Case Else
-            MsgBox "A megadott projekt hibás bejegyzéseket tartalmaz, ami bizonytalanná teheti a program futását. A töltés e hiba miatt megszakad", vbCritical, "Ismeretlen hiba"
-            MsgBox "A hiba oka: " & Err.Description, vbInformation, "Hiba(" & Err.Number & ")"
-        End Select
-    
+            UzenetAblak "A megadott projekt hibás bejegyzéseket tartalmaz, ami bizonytalanná teheti a program futását. A töltés e hiba miatt megszakad."
+            UzenetAblak "A hiba oka(" & Err.Number & "): " & Err.Description, "Ismeretlen hiba"
+            torol
+    End Select
+    'If uzenet <> "" Then MsgBox uzenet, vbExclamation, "Megnyitási hiba"
     Close 1
-    Exit Sub
-    
+Exit Sub
+
+'képhibák kezelése
 kephiba:
-    MsgBox "A megadott kép hibás, ismeretlen tömörítésû vagy nem található a megadott helyen." & vbCrLf & _
-           "A projekt betöltése e hiba miatt megszakad.", vbCritical, "Képbetöltési hiba"
-    MsgBox Err.Description & " - " & Err.Number, vbCritical, kep
+    UzenetAblak "A megadott kép hibás, ismeretlen tömörítésû vagy nem található a megadott helyen." & vbCrLf & _
+           "A projekt betöltése e hiba miatt megszakad.", "Képbetöltési hiba"
+    UzenetAblak Err.Description & " - " & Err.Number, kep & " hibajelentése"
     Close 1
     torol
 End Sub
@@ -852,6 +859,8 @@ Private Sub torol()
     Cime = ""
     Megnyitva = ""
     tabulalo = 0
+    
+    Form_Resize
 End Sub
 Private Sub lezaras()
 On Error Resume Next
@@ -889,21 +898,7 @@ End Sub
 Private Sub Beiras(Index As Integer)
     tabulalo = Index
     megjelol (Index)
-    
-    If proba > 1 And beallitasok.kerdesek.Value = 1 And elemek(Index).kerdesek(elemek(Index).Kovetkezo).Kerdes <> "" And Not elemek(Index).Kitalalta Then
-        Dim ev As String
-        ev = InputBox(elemek(Index).kerdesek(elemek(Index).Kovetkezo).Kerdes, elemek(Index).Kovetkezo & ". kérdés", "")
-        If Trim(LCase(ev)) <> Trim(LCase(elemek(Index).kerdesek(elemek(Index).Kovetkezo).Valasz)) Then
-            If ev <> "" Then
-                elemek(Index).Kovetkezo = elemek(Index).Kovetkezo + 1
-            End If
-            Exit Sub
-        Else
-            elemek(Index).Kitalalta = True
-            GoTo irhat
-        End If
-    Else
-irhat:
+If IrhatE(Index) Then
     szoveg.Visible = True
     szoveg.Move jel_szoveg(Index).Left, jel_szoveg(Index).Top, szoveg.Width, jel_szoveg(Index).Height
     szoveg.Text = jel_szoveg(Index).Caption
@@ -912,14 +907,11 @@ irhat:
         szoveg.SelLength = Len(jel_szoveg(Index).Caption)
     End If
     szoveg.SetFocus
-    End If
+End If
 End Sub
 
 Private Sub nyomtat_Click()
     nyomtatas.Show vbModal
-    'Printer.ScaleMode = 1
-    'terkep.Refresh
-    'terkep.PrintForm
 End Sub
 
 Private Sub szerkesztes_mnu_Click()
@@ -933,6 +925,11 @@ On Error Resume Next
     jel_szoveg(0).Caption = szoveg.Text
     szoveg.Width = jel_szoveg(0).Width + 200
     If szoveg.Width < 500 Then szoveg.Width = 500
+End Sub
+
+Private Sub szoveg_DragDrop(Source As Control, X As Single, Y As Single)
+    szoveg.Visible = False
+    jel_szoveg_DragDrop tabulalo, Source, X, Y
 End Sub
 
 Private Sub terulet_Click()
@@ -974,3 +971,20 @@ Public Sub Ujratolt(Fajlt As String)
     torol
     megnyitas (Fajlt)
 End Sub
+Private Function IrhatE(Index As Integer) As Boolean
+    If proba > 1 And beallitasok.kerdesek.Value = 1 And elemek(Index).kerdesek(elemek(Index).Kovetkezo).Kerdes <> "" And Not elemek(Index).Kitalalta Then
+        Dim ev As String
+        ev = InputBox(elemek(Index).kerdesek(elemek(Index).Kovetkezo).Kerdes, elemek(Index).Kovetkezo & ". kérdés", "")
+        If Trim(LCase(ev)) <> Trim(LCase(elemek(Index).kerdesek(elemek(Index).Kovetkezo).Valasz)) Then
+            If ev <> "" Then
+                elemek(Index).Kovetkezo = elemek(Index).Kovetkezo + 1
+            End If
+            IrhatE = False
+        Else
+            elemek(Index).Kitalalta = True
+            IrhatE = True
+        End If
+    Else
+        IrhatE = True
+    End If
+End Function

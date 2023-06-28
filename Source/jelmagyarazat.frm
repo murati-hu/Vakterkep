@@ -3,15 +3,15 @@ Begin VB.Form jelmagyarazat
    AutoRedraw      =   -1  'True
    BackColor       =   &H80000018&
    Caption         =   "Jelmagyarázat"
-   ClientHeight    =   0
+   ClientHeight    =   165
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   540
+   ClientWidth     =   1485
    ControlBox      =   0   'False
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   ScaleHeight     =   0
-   ScaleWidth      =   540
+   ScaleHeight     =   165
+   ScaleWidth      =   1485
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin Vakterkep2.jel jelm 

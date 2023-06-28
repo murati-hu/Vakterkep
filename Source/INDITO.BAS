@@ -1,4 +1,17 @@
 Attribute VB_Name = "kozos"
+'Vaktérkép és Vaktérkép Szerkesztõ v2
+
+'Fájlcsatornák:
+'               Projektor - 1
+'               Szerkesztõ - 2
+'               Beállítások - 3
+
+
+'Közös, megosztott elérésû modul
+'Az aktív módot meghatározó objektum: Szulo
+
+
+
 Option Explicit
 Public Vakterkep As Program
 Dim Szulo As Object
@@ -28,7 +41,7 @@ End Type
 Sub Main()
 On Error GoTo Hiba
     'If True Then debuger.Show
-    Vakterkep.Verzio = App.Major & "." & App.Minor & " Build: " & App.Revision
+    Vakterkep.Verzio = App.Major & "." & App.Minor ' & " b" & App.Revision
     If Len(App.Path) = 3 Then
             Vakterkep.Konyvtar = App.Path
         Else
@@ -45,16 +58,14 @@ On Error GoTo Hiba
                     szerkeszto.megnyitas (Ertek(Command$))
                 Else
                     'tulajdonsagok.megse.Enabled = False
-                    'tulajdonsagok.Mutat (0)
+                    tulajdonsagok.Mutat (0)
             End If
-        Case "-beallitas_nelkul", "-nobea", "-n"
+        Case "-beall"
             'Beállítások nélkül
             Set Szulo = terkep
+            terkep.megnyitas ("$vt\vakterkep.ini")
             terkep.Show
-        'Case "-megnyit", "-m"
-         '   terkep.megnyitas ("$vt\vakterkep.ini")
-          '  terkep.megnyitas (Ertek(Command$))
-           ' terkep.Show
+            terkep.beall_mnu.Enabled = True
         Case ""
             Set Szulo = terkep
             terkep.megnyitas ("$vt\vakterkep.ini")
@@ -90,7 +101,7 @@ Public Function Konyvtara(Fajlnev As String)
     Konyvtara = Mid(Fajlnev, 1, j)
 End Function
 
-Public Function Atalakit(Adat As String, egyeb As Variant)
+Public Function Atalakit(Adat As String, Optional egyeb As Variant)
     Dim i As Integer, uj As String
     uj = ""
     i = 1
@@ -159,15 +170,15 @@ Public Function V(Kifejezes As Integer) As Byte
     V = Abs(Int(Kifejezes))
 End Function
 Public Sub Megsemmisit()
-    Set Szulo = Nothing
     Unload beallitasok
     Unload jelmagyarazat
     Unload nevjegy
     Unload ertekeles
     Unload nyomtatas
+    Unload tulajdonsagok
     Unload szerkeszto
     Unload terkep
-    Unload tulajdonsagok
+    Set Szulo = Nothing
     End
 End Sub
 Public Function uzenet(Index As Integer, Beszurando As String) As String
@@ -177,9 +188,6 @@ Public Function uzenet(Index As Integer, Beszurando As String) As String
             uzenet = szovegek(Index)
     End If
 End Function
-Public Sub magyar()
-    
-End Sub
 Public Function CsakANeve(Eleres As String)
     CsakANeve = Mid(Eleres, Len(Konyvtara(Eleres)) + 1, Len(Eleres))
 End Function
@@ -204,9 +212,9 @@ End Function
 Public Sub HHSugo(Melyiket As String)
 On Error GoTo Hiba
     If Szulo.Name = "terkep" Then
-            Melyiket = "vakterkep.chm::/page/" & Melyiket
+            Melyiket = "vakterkep.chm::/html/" & Melyiket
         Else
-            Melyiket = "szerkeszto.chm::/page/" & Melyiket
+            Melyiket = "szerkeszto.chm::/html/" & Melyiket
     End If
     Shell "hh.exe " & Vakterkep.Konyvtar & Melyiket, vbNormalFocus
 Exit Sub
@@ -268,4 +276,21 @@ Else
         Szulo.gomb.Visible = False
         
 End If
+End Sub
+Public Sub UzenetAblak(szoveg As String, Optional Cime As String)
+    If Cime = "" Then Cime = "Megnyitási hiba"
+    If szoveg <> "" Then MsgBox szoveg, vbExclamation, Cime
+End Sub
+Public Sub KozosHibak(Hiba As Integer)
+    Select Case Hiba
+        Case 70
+            UzenetAblak "Nem tudok a meghajtóra írni, mert írásvédett.", "Mentési hiba"
+        Case 71
+            UzenetAblak "A lemez nincs a meghajtóban, vagy nincs formázva.", "Mentési hiba"
+        Case 75
+            UzenetAblak "A fájl nem írható, mert írásvédett.", "Mentési hiba"
+        Case Else
+            UzenetAblak Err.Description & "(" & Err.Number & ")", "Ismeretlen mentési hiba"
+    End Select
+    
 End Sub

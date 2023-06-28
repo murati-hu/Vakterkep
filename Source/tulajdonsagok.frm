@@ -18,9 +18,9 @@ Begin VB.Form tulajdonsagok
    Begin VB.Frame tul_lap 
       Height          =   4215
       Index           =   1
-      Left            =   4440
+      Left            =   1920
       TabIndex        =   28
-      Top             =   0
+      Top             =   360
       Width           =   4335
       Begin VB.PictureBox minta 
          Appearance      =   0  'Flat
@@ -31,13 +31,13 @@ Begin VB.Form tulajdonsagok
          Left            =   0
          ScaleHeight     =   1665
          ScaleWidth      =   4305
-         TabIndex        =   63
+         TabIndex        =   59
          Top             =   2520
          Width           =   4335
          Begin Vakterkep2.jel jel 
             Height          =   135
             Left            =   1800
-            TabIndex        =   66
+            TabIndex        =   62
             Top             =   720
             Width           =   135
             _ExtentX        =   873
@@ -51,7 +51,7 @@ Begin VB.Form tulajdonsagok
          Caption         =   "Kitöltés:"
          Height          =   255
          Left            =   120
-         TabIndex        =   62
+         TabIndex        =   58
          Top             =   600
          Width           =   855
       End
@@ -59,7 +59,7 @@ Begin VB.Form tulajdonsagok
          Caption         =   "Láthatatlan alakzat"
          Height          =   255
          Left            =   120
-         TabIndex        =   54
+         TabIndex        =   50
          Top             =   1800
          Width           =   4095
       End
@@ -67,7 +67,7 @@ Begin VB.Form tulajdonsagok
          Height          =   285
          Left            =   1680
          MaxLength       =   2
-         TabIndex        =   44
+         TabIndex        =   40
          Text            =   "1"
          Top             =   1320
          Width           =   495
@@ -77,7 +77,7 @@ Begin VB.Form tulajdonsagok
          Height          =   315
          Left            =   600
          Style           =   2  'Dropdown List
-         TabIndex        =   43
+         TabIndex        =   39
          Top             =   960
          Width           =   3135
       End
@@ -86,7 +86,7 @@ Begin VB.Form tulajdonsagok
          Height          =   315
          Left            =   960
          Style           =   2  'Dropdown List
-         TabIndex        =   41
+         TabIndex        =   37
          Top             =   600
          Width           =   2775
       End
@@ -95,7 +95,7 @@ Begin VB.Form tulajdonsagok
          Index           =   2
          Left            =   3720
          Style           =   1  'Graphical
-         TabIndex        =   40
+         TabIndex        =   36
          Top             =   600
          Width           =   375
       End
@@ -104,7 +104,7 @@ Begin VB.Form tulajdonsagok
          Index           =   1
          Left            =   3720
          Style           =   1  'Graphical
-         TabIndex        =   39
+         TabIndex        =   35
          Top             =   960
          Width           =   375
       End
@@ -113,25 +113,9 @@ Begin VB.Form tulajdonsagok
          Index           =   0
          Left            =   3720
          Style           =   1  'Graphical
-         TabIndex        =   38
+         TabIndex        =   34
          Top             =   240
          Width           =   375
-      End
-      Begin VB.TextBox magassag 
-         Height          =   285
-         Left            =   960
-         TabIndex        =   37
-         Top             =   2160
-         Visible         =   0   'False
-         Width           =   735
-      End
-      Begin VB.TextBox szelesseg 
-         Height          =   285
-         Left            =   960
-         TabIndex        =   36
-         Top             =   1800
-         Visible         =   0   'False
-         Width           =   735
       End
       Begin VB.CommandButton talloz 
          Caption         =   "<"
@@ -173,7 +157,7 @@ Begin VB.Form tulajdonsagok
          Height          =   195
          Index           =   7
          Left            =   720
-         TabIndex        =   45
+         TabIndex        =   41
          Top             =   1320
          Width           =   885
       End
@@ -184,33 +168,9 @@ Begin VB.Form tulajdonsagok
          Height          =   195
          Index           =   6
          Left            =   120
-         TabIndex        =   42
+         TabIndex        =   38
          Top             =   960
          Width           =   420
-      End
-      Begin VB.Label cimke 
-         Alignment       =   1  'Right Justify
-         AutoSize        =   -1  'True
-         Caption         =   "Magasság:"
-         Height          =   195
-         Index           =   4
-         Left            =   120
-         TabIndex        =   35
-         Top             =   2160
-         Visible         =   0   'False
-         Width           =   780
-      End
-      Begin VB.Label cimke 
-         Alignment       =   1  'Right Justify
-         AutoSize        =   -1  'True
-         Caption         =   "Szélesség:"
-         Height          =   195
-         Index           =   3
-         Left            =   120
-         TabIndex        =   34
-         Top             =   1800
-         Visible         =   0   'False
-         Width           =   765
       End
       Begin VB.Label cimke 
          Alignment       =   1  'Right Justify
@@ -227,9 +187,9 @@ Begin VB.Form tulajdonsagok
    Begin VB.Frame tul_lap 
       Height          =   4215
       Index           =   3
-      Left            =   7200
+      Left            =   6720
       TabIndex        =   19
-      Top             =   4680
+      Top             =   1800
       Visible         =   0   'False
       Width           =   4215
       Begin VB.ComboBox szama 
@@ -243,7 +203,7 @@ Begin VB.Form tulajdonsagok
       Begin VB.TextBox segitseg 
          Height          =   2415
          Left            =   120
-         MultiLine       =   -1  'True
+         OLEDragMode     =   1  'Automatic
          ScrollBars      =   2  'Vertical
          TabIndex        =   21
          Top             =   840
@@ -279,16 +239,16 @@ Begin VB.Form tulajdonsagok
    Begin VB.Frame tul_lap 
       Height          =   4215
       Index           =   0
-      Left            =   8760
+      Left            =   5400
       TabIndex        =   13
-      Top             =   480
+      Top             =   240
       Width           =   4335
       Begin VB.OptionButton tipus 
          Caption         =   "Megjegyzés, felirat"
          Height          =   255
          Index           =   2
          Left            =   480
-         TabIndex        =   53
+         TabIndex        =   49
          Top             =   2760
          Width           =   2415
       End
@@ -297,16 +257,16 @@ Begin VB.Form tulajdonsagok
          Height          =   255
          Index           =   1
          Left            =   480
-         TabIndex        =   52
+         TabIndex        =   48
          Top             =   2520
          Width           =   3255
       End
       Begin VB.OptionButton tipus 
-         Caption         =   "Kikérdezendõ elem"
+         Caption         =   "Kikérdezendõ"
          Height          =   255
          Index           =   0
          Left            =   480
-         TabIndex        =   51
+         TabIndex        =   47
          Top             =   2280
          Value           =   -1  'True
          Width           =   2415
@@ -341,7 +301,7 @@ Begin VB.Form tulajdonsagok
          Caption         =   "Tipp szövege:"
          Height          =   255
          Left            =   240
-         TabIndex        =   47
+         TabIndex        =   43
          Top             =   960
          Width           =   1095
       End
@@ -349,7 +309,7 @@ Begin VB.Form tulajdonsagok
          Caption         =   "Név:"
          Height          =   255
          Left            =   240
-         TabIndex        =   46
+         TabIndex        =   42
          Top             =   240
          Width           =   615
       End
@@ -375,7 +335,7 @@ Begin VB.Form tulajdonsagok
          ItemData        =   "tulajdonsagok.frx":0000
          Left            =   840
          List            =   "tulajdonsagok.frx":0002
-         TabIndex        =   58
+         TabIndex        =   54
          Text            =   "Combo1"
          Top             =   960
          Width           =   1095
@@ -390,7 +350,7 @@ Begin VB.Form tulajdonsagok
          Left            =   600
          ScaleHeight     =   2025
          ScaleWidth      =   3105
-         TabIndex        =   56
+         TabIndex        =   52
          Top             =   1800
          Width           =   3135
          Begin VB.Shape kijelolo 
@@ -445,7 +405,7 @@ Begin VB.Form tulajdonsagok
          Left            =   240
          ScaleHeight     =   2655
          ScaleWidth      =   3855
-         TabIndex        =   57
+         TabIndex        =   53
          Top             =   1440
          Visible         =   0   'False
          Width           =   3855
@@ -453,13 +413,13 @@ Begin VB.Form tulajdonsagok
       Begin VB.Label cimke 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
-         Caption         =   "Nagyitas:"
+         Caption         =   "Nagyítás:"
          Height          =   195
          Index           =   10
-         Left            =   120
-         TabIndex        =   59
+         Left            =   105
+         TabIndex        =   55
          Top             =   960
-         Width           =   660
+         Width           =   675
       End
       Begin VB.Label cimke 
          AutoSize        =   -1  'True
@@ -485,7 +445,7 @@ Begin VB.Form tulajdonsagok
    Begin VB.Frame tul_lap 
       Height          =   4215
       Index           =   2
-      Left            =   7200
+      Left            =   4560
       TabIndex        =   6
       Top             =   240
       Width           =   4335
@@ -498,7 +458,7 @@ Begin VB.Form tulajdonsagok
          Left            =   0
          ScaleHeight     =   1665
          ScaleWidth      =   4305
-         TabIndex        =   64
+         TabIndex        =   60
          Top             =   2520
          Width           =   4335
          Begin VB.Label jel_szoveg 
@@ -507,7 +467,7 @@ Begin VB.Form tulajdonsagok
             Caption         =   "jel_szöveg"
             Height          =   195
             Left            =   960
-            TabIndex        =   65
+            TabIndex        =   61
             Top             =   600
             Width           =   750
          End
@@ -516,7 +476,7 @@ Begin VB.Form tulajdonsagok
          Caption         =   "Van háttérszine"
          Height          =   195
          Left            =   240
-         TabIndex        =   61
+         TabIndex        =   57
          Top             =   1560
          Width           =   2655
       End
@@ -526,7 +486,7 @@ Begin VB.Form tulajdonsagok
          Index           =   4
          Left            =   3000
          Style           =   1  'Graphical
-         TabIndex        =   60
+         TabIndex        =   56
          Top             =   1560
          Width           =   975
       End
@@ -534,14 +494,14 @@ Begin VB.Form tulajdonsagok
          Caption         =   "Szöveg nem látszik"
          Height          =   255
          Left            =   240
-         TabIndex        =   55
+         TabIndex        =   51
          Top             =   1800
          Width           =   2055
       End
       Begin VB.ComboBox meret 
          Height          =   315
          Left            =   960
-         TabIndex        =   50
+         TabIndex        =   46
          Text            =   "Combo1"
          Top             =   600
          Width           =   1095
@@ -552,7 +512,7 @@ Begin VB.Form tulajdonsagok
          Index           =   3
          Left            =   3000
          Style           =   1  'Graphical
-         TabIndex        =   49
+         TabIndex        =   45
          Top             =   600
          Width           =   975
       End
@@ -608,7 +568,7 @@ Begin VB.Form tulajdonsagok
          Caption         =   "Betûtípus:"
          Height          =   195
          Left            =   120
-         TabIndex        =   48
+         TabIndex        =   44
          Top             =   240
          Width           =   720
       End
@@ -719,9 +679,6 @@ Private Sub Alakzat_Click()
     Alakzat.ToolTipText = Alakzat.List(Alakzat.ListIndex)
 End Sub
 
-
-
-
 Private Sub athuzva_Click()
     jel_szoveg.FontStrikethru = athuzva.Value
 End Sub
@@ -740,9 +697,6 @@ Private Sub dolt_Click()
     jel_szoveg.FontItalic = dolt.Value
 End Sub
 
-
-
-
 Private Sub elrejt_szov_Click()
     jel_szoveg.Visible = Not CBool(elrejt_szov.Value)
     elrejt.Enabled = jel_szoveg.Visible
@@ -757,36 +711,17 @@ Private Sub felkover_Click()
     jel_szoveg.FontBold = felkover.Value
 End Sub
 
-'Private Sub Form_DragOver(Source As Control, X As Single, Y As Single, State As Integer)
-'     Source.Visible = True
-'End Sub
 
-'Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
-'    Dim ex As Integer, ey As Integer
-'    If KeyCode = 27 And megse.Enabled Then megse_Click
-'    If Not minta.Visible Then Exit Sub
-'    ex = 0
-'    ey = 0
-'    Select Case KeyCode
-'        Case 100
-'            ex = -10
-'        Case 104
-'            ey = -10
-'        Case 102
-'            ex = 10
-'        Case 98
-'            ey = 10
-'    End Select
-'
-'    If Shift = 2 Then
-'            jel.Left = jel.Left + ex
-'            jel.Top = jel.Top + ey
-'        Else
-'            jel_szoveg.Left = jel_szoveg.Left + ex
-'            jel_szoveg.Top = jel_szoveg.Top + ey
-'    End If
-'
-'End Sub
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+     Select Case KeyCode
+        Case 27
+            megse_Click
+        Case 112
+            sugo_Click
+        'Case Else
+        '    MsgBox KeyCode
+    End Select
+End Sub
 
 
 Private Sub Form_Load()
@@ -879,11 +814,6 @@ On Error Resume Next
             oldal.Visible = False
             tul_lap(Index).Visible = True
     End If
-    'If Index = 1 Or Index = 2 Then
-    '        minta.Visible = True
-    '    Else
-    '        minta.Visible = False
-    'End If
     
     minta(0).Visible = False
     minta(1).Visible = False
@@ -898,28 +828,6 @@ End Sub
 Private Sub hatter_Click()
         jel_szoveg.BackStyle = V(hatter.Value)
 End Sub
-
-'Private Sub jel_DragDrop(Source As Control, X As Single, Y As Single)
-'    jel_szoveg.Visible = True
-'End Sub
-
-'Private Sub jel_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-'    px = X
-'    py = Y
-'    jel.Visible = False
-'    jel.Drag
-'End Sub
-
-'Private Sub jel_szoveg_DragDrop(Source As Control, X As Single, Y As Single)
-'    jel.Visible = True
-'End Sub
-
-'Private Sub jel_szoveg_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-'    px = X
-'    py = Y
-'    jel_szoveg.Visible = False
-'    jel_szoveg.Drag
-'End Sub
 
 
 
@@ -936,11 +844,6 @@ Private Sub kitoltes_Click()
      jel.KitoltesTipus = kitoltes.ListIndex
 End Sub
 
-Private Sub magassag_Change()
-On Error Resume Next
-    jel.Height = magassag.Text
-    Kozepre
-End Sub
 
 Private Sub megold_Change()
     segito(szama.ListIndex + 1).Valasz = megold
@@ -976,6 +879,7 @@ On Error Resume Next
             ful(1).Visible = False
             ful(2).Visible = False
             ful(3).Visible = False
+            
         Else
             ful(1).Visible = True
             ful(2).Visible = True
@@ -984,16 +888,6 @@ On Error Resume Next
             Nev.Text = szerkeszto.jel_szoveg(Melyiket).Caption
             Nev_Change
             tipp.Text = szerkeszto.jel_szoveg(Melyiket).ToolTipText
-            'Select Case szerkeszto.jel_szoveg(Melyiket).BackColor
-            '    Case vbHighlight
-            '        Tipus(2).Value = True
-            '    Case &H80000018
-            '        Tipus(1).Value = True
-            '    Case Else
-            '        Tipus(0).Value = True
-            '        valaszt(4).BackColor = szerkeszto.jel_szoveg(Melyiket).BackColor
-            '        hatter.Value = szerkeszto.jel_szoveg(Melyiket).BackStyle
-            'End Select
             Formatuma (Melyiket)
     End If
     ful_Click (0)
@@ -1012,41 +906,6 @@ On Error Resume Next
     Kozepre
 End Sub
 
-'Private Sub minta_DragDrop(Source As Control, X As Single, Y As Single)
-'If TypeOf Source Is Label Then
-'GoTo ok
-'    If X < jel.Left - jel_szoveg.Width Then
-'        X = jel.Left - jel_szoveg.Width
-'    End If
-'
-'    If X > jel.Left + jel.Width Then
-'        X = jel.Left + jel.Width
-'    End If
-'
-'    If Y < jel.Top - jel_szoveg.Height Then
-'        Y = jel.Top - jel_szoveg.Height
-'    End If
-'
-'    If Y > jel.Top + jel.Height Then
-'        Y = jel.Top + jel.Height
-'    End If
-'ok:
-'    jel_szoveg.Move X - px, Y - py
-'    jel_szoveg.Visible = True
-'Else
-'    jel.Move X - px, Y - py
-'    jel.Visible = True
-'End If
-'End Sub
-
-'Private Sub minta_DragOver(Source As Control, X As Single, Y As Single, State As Integer)
-'If X < minta.Width And X > 0 And Y > 0 And Y < minta.Height Then
-'        Source.Visible = False
-'    Else
-'        Source.Visible = True
-'End If
-'End Sub
-
 
 Private Sub nagyito_Change()
     If Right(nagyito.Text, 1) <> "%" And IsNumeric(nagyito.Text) Then
@@ -1064,10 +923,13 @@ End Sub
 
 Private Sub ok_Click()
 Dim i As Integer, nk
-'If kep.Text = "" Then Exit Sub
 If id = 0 Then
     On Error Resume Next
-    megse.Enabled = True
+    If kep.Text = "" Then
+        megse_Click
+        Exit Sub
+    End If
+'megse.Enabled = True
     With szerkeszto
         .Cime = Cime.Text
         .Caption = .Cime & " - Vaktérkép Szerkesztõ " & Vakterkep.Verzio
@@ -1090,9 +952,9 @@ If id = 0 Then
 Else
     With szerkeszto
         For i = 0 To 2
-            If tipus(i).Value Then szerkeszto.tipus id, i + 1
+            If tipus(i).Value Then .tipus id, i + 1
         Next i
-        szerkeszto.latszik id, jel.Bekapcsolva, jel_szoveg.Visible
+        .latszik id, jel.Bekapcsolva, jel_szoveg.Visible
         With .jel_szoveg(id)
             .Caption = Nev.Text
             .ToolTipText = tipp.Text
@@ -1111,9 +973,8 @@ Else
         'szerkeszto.Cimkexy id, jel_szoveg.Left - jel.Left, jel_szoveg.Top - jel.Top
         
         For i = 1 To 10
-            szerkeszto.Kave id, i, segito(i).Kerdes, segito(i).Valasz
+            .Kave id, i, segito(i).Kerdes, segito(i).Valasz
         Next i
-        
         
         With .jel(id)
             .Atlatszo = jel.Atlatszo
@@ -1180,8 +1041,8 @@ megva:
     
     'Jel értékei
         'alap
-    szelesseg.Text = .jel(Index).Width
-    magassag.Text = .jel(Index).Height
+    jel.Width = .jel(Index).Width
+    jel.Height = .jel(Index).Height
     elrejt.Value = V(Not .jel(Index).Visible)
     
     'alakzat
@@ -1203,6 +1064,7 @@ megva:
     vastagsag.Text = .jel(Index).KeretVastagsaga
     valaszt(1).BackColor = .jel(Index).KeretSzine
     End With
+    Kozepre
     Szinez
 End Sub
 
@@ -1224,11 +1086,6 @@ Private Sub szama_Click()
     megold.Text = segito(szama.ListIndex + 1).Valasz
 End Sub
 
-Private Sub szelesseg_Change()
-On Error Resume Next
-    jel.Width = szelesseg.Text
-    Kozepre
-End Sub
 
 Private Sub talloz_Click(Index As Integer)
 Dim w, h
@@ -1295,36 +1152,12 @@ Private Sub terulet_MouseUp(Button As Integer, Shift As Integer, X As Single, Y 
     kijSZ = kijelolo.Width * eredeti.Width / terulet.Width
 End Sub
 
-'Private Sub tipus_Click(Index As Integer)
-    'If tipus(0).Value Then
-    '        jel_szoveg.BackStyle = 0
-    '        hatter.Enabled = True
-    '        valaszt(4).Enabled = True
-    '    Else
-    '        hatter.Enabled = False
-    '        valaszt(4).Enabled = False
-    '        jel_szoveg.BackStyle = 1
-    '        If tipus(1).Value Then
-    '                jel_szoveg.BackColor = &H80000018
-    '            Else
-    '                jel_szoveg.BackColor = vbHighlight
-    '        End If
-    'End If
-'End Sub
 
-
-
-'Private Sub tul_lap_DragDrop(Index As Integer, Source As Control, X As Single, Y As Single)
-'    tul_lap_DragOver Index, Source, X, Y, 0
-'End Sub
-
-'Private Sub tul_lap_DragOver(Index As Integer, Source As Control, X As Single, Y As Single, State As Integer)
-'    Source.Visible = True
-'End Sub
 
 Private Sub valaszt_Click(Index As Integer)
 On Error GoTo megse
     With szerkeszto
+        .pb.Color = valaszt(Index).BackColor
         .pb.ShowColor
         valaszt(Index).BackColor = .pb.Color
     End With
@@ -1389,30 +1222,8 @@ On Error Resume Next
     tipus(tip - 1).Value = True
 End Sub
 Private Sub Kozepre()
-    
-    
-    If jel.Height <= minta(0).Height Then
-            jel.Move jel.Left, (minta(0).Height - jel.Height) / 2
-        Else
-            jel.Move jel.Left, 0
-    End If
-    
-    If jel.Width <= minta(0).Width Then
-            jel.Move (minta(0).Width - jel.Width) / 2
-        Else
-            jel.Move 0
-    End If
-    
-    If jel_szoveg.Height <= minta(1).Height Then
-            jel_szoveg.Move jel_szoveg.Left, (minta(1).Height - jel_szoveg.Height) / 2
-        Else
-            jel_szoveg.Move jel_szoveg.Left, 0
-    End If
-    
-    If jel_szoveg.Width <= minta(1).Width Then
-            jel_szoveg.Move (minta(1).Width - jel_szoveg.Width) / 2
-        Else
-            jel_szoveg.Move 0
-    End If
-    
+    jel.Move jel.Left, (minta(0).Height - jel.Height) / 2
+    jel.Move (minta(0).Width - jel.Width) / 2
+    jel_szoveg.Move jel_szoveg.Left, (minta(1).Height - jel_szoveg.Height) / 2
+    jel_szoveg.Move (minta(1).Width - jel_szoveg.Width) / 2
 End Sub

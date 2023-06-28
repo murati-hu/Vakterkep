@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form szerkeszto 
    BackColor       =   &H8000000C&
    Caption         =   "Vaktérkép Szerkesztõ"
@@ -151,36 +151,37 @@ Begin VB.Form szerkeszto
          Shortcut        =   ^U
       End
       Begin VB.Menu megnyit_mnu 
-         Caption         =   "Megnyitása"
+         Caption         =   "&Megnyitás"
          Shortcut        =   ^M
       End
       Begin VB.Menu v0 
          Caption         =   "-"
       End
       Begin VB.Menu ment_mnu 
-         Caption         =   "Mentése"
+         Caption         =   "Menté&s"
          Shortcut        =   ^S
       End
       Begin VB.Menu ment_mint_mnu 
-         Caption         =   "Mentés másként"
+         Caption         =   "Mentés m&ásként"
          Shortcut        =   ^A
       End
       Begin VB.Menu v1 
          Caption         =   "-"
       End
       Begin VB.Menu olda_mnu 
-         Caption         =   "Projekt tulajdonságai"
+         Caption         =   "Projekt &tulajdonságai"
          Shortcut        =   ^T
       End
       Begin VB.Menu megtekint_mnu 
-         Caption         =   "Megtekintés..."
+         Caption         =   "Megt&ekintés..."
          Enabled         =   0   'False
+         Shortcut        =   ^E
       End
       Begin VB.Menu v2 
          Caption         =   "-"
       End
       Begin VB.Menu kilepes_mnu 
-         Caption         =   "Kilépés"
+         Caption         =   "&Kilépés"
          Shortcut        =   ^K
       End
    End
@@ -198,6 +199,7 @@ Begin VB.Form szerkeszto
       End
       Begin VB.Menu uj_elem_mnu 
          Caption         =   "Új elem"
+         Enabled         =   0   'False
       End
       Begin VB.Menu v3 
          Caption         =   "-"
@@ -207,6 +209,21 @@ Begin VB.Form szerkeszto
       End
       Begin VB.Menu v4 
          Caption         =   "-"
+      End
+      Begin VB.Menu tipus_mnu 
+         Caption         =   "Típusa"
+         Begin VB.Menu tip_mnu 
+            Caption         =   "Kikérdezendõ"
+            Index           =   0
+         End
+         Begin VB.Menu tip_mnu 
+            Caption         =   "Jelmagyarázat"
+            Index           =   1
+         End
+         Begin VB.Menu tip_mnu 
+            Caption         =   "Megjegyzés"
+            Index           =   2
+         End
       End
       Begin VB.Menu igazitas_mnu 
          Caption         =   "Szöveg igazítás"
@@ -248,7 +265,7 @@ Begin VB.Form szerkeszto
          Caption         =   "-"
       End
       Begin VB.Menu nevjegy_mnu 
-         Caption         =   "Névjegy"
+         Caption         =   "&Névjegy"
          Shortcut        =   ^N
       End
    End
@@ -393,6 +410,12 @@ If Not tulajdonsagok.Masolas Then
                 torles_mnu.Enabled = True
                 igazitas_mnu.Enabled = True
                 meretez_mnu.Enabled = True
+                tipus_mnu.Enabled = True
+                Dim i As Integer
+                For i = 0 To 2
+                    tip_mnu(i).Checked = False
+                Next i
+                tip_mnu(elemek(Index).Kovetkezo - 1).Checked = True
                 PopupMenu szerkesztes_mnu ', 0, terulet.Left + jel(tabulalo).Left + X, terulet.Top + jel(tabulalo).Top + Y
             Else
                 If Shift = 1 Then
@@ -468,13 +491,13 @@ Private Sub ment_mint_mnu_Click()
 On Error GoTo megse
 ujra:
         pb.CancelError = True
-        pb.DialogTitle = "Vaktérkép mentése mint ..."
+        pb.DialogTitle = "Vaktérkép mentése másként ..."
         pb.Filter = "Vaktérkép fájlok (*.vtk)|*.vtk"
         pb.FileName = Cime & ".vtk"
         pb.ShowSave
         
         If Not mentes(pb.FileName) Then
-            MsgBox "A megadott fájlhoz nem lehet hozzáférni, kérem adjon meg egy másik nevet..."
+            'MsgBox "A fájl mentése sikertelen volt, kérem adjon meg egy másik nevet!", vbExclamation, "Mentési hiba"
             GoTo ujra
         End If
 megse:
@@ -493,11 +516,11 @@ ujra:
 End If
     'pb.FileName = mentettFajl
         If Not mentes(mentettFajl) Then
-            MsgBox "A megadott fájlhoz nem lehet hozzáférni, kérem adjon meg egy másik nevet..."
+            'MsgBox "A fájl mentése sikertelen volt, kérem adjon meg egy másik nevet!", vbExclamation, "Mentési hiba"
             GoTo ujra
         End If
-        'mentettFajl = pb.FileName
         mentett = True
+        ment_mnu.Enabled = False
 megse:
 End Sub
 
@@ -603,6 +626,7 @@ Private Sub terulet_DragDrop(Source As Control, X As Single, Y As Single)
 jel(tabulalo).Visible = CBool(Mid(elemek(tabulalo).tipp, 1, 1))
 jel_szoveg(tabulalo).Visible = CBool(Mid(elemek(tabulalo).tipp, 2, 1))
 mentett = False
+MentesAktiv
 End Sub
 
 Private Sub terulet_DragOver(Source As Control, X As Single, Y As Single, State As Integer)
@@ -624,8 +648,9 @@ If Not tulajdonsagok.Masolas Then
     If Button = 2 Then
         ux = X
         uy = Y
-        uj_elem_mnu.Enabled = True
+        uj_elem_mnu.Enabled = Len(Kephelye) > 0
         torles_mnu.Enabled = False
+        tipus_mnu.Enabled = False
         igazitas_mnu.Enabled = False
         meretez_mnu.Enabled = False
         PopupMenu szerkesztes_mnu
@@ -634,6 +659,16 @@ If Not tulajdonsagok.Masolas Then
         tulajdonsagok.Masolas = False
         tulajdonsagok.Show vbModal
 End If
+End Sub
+
+Private Sub tip_mnu_Click(Index As Integer)
+    'Dim i As Integer
+    'For i = 0 To 2
+    '    tip_mnu(i).Checked = False
+    'Next i
+    elemek(tabulalo).Kovetkezo = Index + 1
+    mentett = False
+    MentesAktiv
 End Sub
 
 Private Sub torles_mnu_Click()
@@ -690,25 +725,10 @@ Dim i As Integer
     With tulajdonsagok
     If tabulalo <> 0 Then
         tulajdonsagok.tipusa (elemek(tabulalo).Kovetkezo)
+        
         For i = 1 To 10
             .Kave i, elemek(tabulalo).kerdesek(i).Kerdes, elemek(tabulalo).kerdesek(i).Valasz
         Next i
-        
-        'If elemek(tabulalo).Bal < 0 Then
-        '        .jel_szoveg.Left = (tulajdonsagok.minta.Width - Abs(elemek(tabulalo).Bal) - jel(tabulalo).Width) / 2
-        '        .jel.Left = .jel_szoveg.Left + Abs(elemek(tabulalo).Bal)
-        '    Else
-        '        .jel.Left = (tulajdonsagok.minta.Width - Abs(elemek(tabulalo).Bal) - jel_szoveg(tabulalo).Width) / 2
-        '        .jel_szoveg.Left = .jel.Left + elemek(tabulalo).Bal
-        'End If
-       '
-        'If elemek(tabulalo).Felso < 0 Then
-        '        .jel_szoveg.Top = (tulajdonsagok.minta.Height - Abs(elemek(tabulalo).Felso) - jel(tabulalo).Height) / 2
-        '        .jel.Top = .jel_szoveg.Top + Abs(elemek(tabulalo).Felso)
-        '    Else
-        '        .jel.Top = (tulajdonsagok.minta.Height - Abs(elemek(tabulalo).Felso) - jel_szoveg(tabulalo).Height) / 2
-        '        .jel_szoveg.Top = .jel.Top + elemek(tabulalo).Felso
-        'End If
         
     End If
     .Mutat (tabulalo)
@@ -789,9 +809,9 @@ Dim Mappa As String, Fajl As String, emappa As String
 Mappa = Konyvtara(Fajlnev)
 emappa = Mid(CsakANeve(Fajlnev), 1, Len(CsakANeve(Fajlnev)) - 4) & "\"
 Fajl = CsakANeve(Fajlnev)
-'On Error GoTo hiba
+On Error GoTo Hiba
 Open Fajlnev For Output As 2
-    Print #2, ";Vaktérkép " & Vakterkep.Verzio & " által generált térképfájl"
+    Print #2, ";Vaktérkép " & Vakterkep.Verzio & "." & App.Revision & " által generált térképfájl"
     Print #2, ";Muráti Ákos 2003 - Minden jog fenntartva."
     Print #2, ""
     Print #2, "cim=" & Cime
@@ -803,12 +823,20 @@ Open Fajlnev For Output As 2
                 Print #2, seged
             Else
                 On Error Resume Next
-                MkDir emappa
-                FileCopy Kephelye, Mappa & emappa & CsakANeve(Kephelye)
-                Print #2, "\" & emappa & CsakANeve(Kephelye)
+                If MsgBox("Az alapkép elérési útja nem adható meg relatívan. Kívánja, hogy a képet a projekt mellé másoljam? Ha a nemet választja, akkor a teljes elérési út lesz elmentve.", vbYesNo + vbQuestion, "Alapkép mentése") = vbYes Then
+                        MkDir Mappa & emappa
+                        FileCopy Kephelye, Mappa & emappa & CsakANeve(Kephelye)
+                        Print #2, "\" & emappa & CsakANeve(Kephelye)
+                    Else
+                        Print #2, Kephelye
+                End If
         End If
-    Print #2, "kijelol=" & x1 & ";" & y1 & ";" & szel & ";" & mag
-    Print #2, "nagyitas=" & nagyitas
+    If Not (x1 = 0 And y1 = 0 And szel = terulet.Width And mag = terulet.Height) Then
+        Print #2, "kijelol=" & x1 & ";" & y1 & ";" & szel & ";" & mag
+    End If
+    If Not (nagyitas = 1) Then
+        Print #2, "nagyitas=" & nagyitas
+    End If
     
     For i = 1 To jel_szoveg.Count - 1
             Select Case elemek(i).Kovetkezo
@@ -825,7 +853,7 @@ Open Fajlnev For Output As 2
             If Not .Visible Then Kiir "lathatatlan-jel"
             If .ToolTipText <> "" Then Kiir "tipp=" & .ToolTipText
             Kiir "meret=" & .Width & "," & .Height
-            Kiir "jel=" & .jel
+            If .jel <> 0 Then Kiir "jel=" & .jel
             If .jel = 6 Then
                     If MsgBox(jel_szoveg(i).Caption & " térképelem egy másik fájlra hivatkozik. Kívánja, hogy ezt a fájlt a projekt mellé másoljam?", vbQuestion + vbYesNo, "Külsõ fájlok kezelése:") = vbNo Then
                             If RelativEleres(Konyvtara(Fajlnev), .KepElerese) <> "" Then
@@ -840,15 +868,15 @@ Open Fajlnev For Output As 2
                             Kiir "ikon=" & "\" & emappa & CsakANeve(.KepElerese)
                     End If
                 Else
-                    If .HatterSzine <> jel(0).HatterSzine Then Kiir "hatter=" & .HatterSzine
-                    If .KeretTipus <> jel(0).KeretTipus Then Kiir "keret-tipus=" & .KeretTipus
-                    If .KeretVastagsaga <> jel(0).KeretVastagsaga Then Kiir "keret-vastagsag=" & .KeretVastagsaga
-                    If .KeretSzine <> jel(0).KeretSzine Then Kiir "keret-szin=" & .KeretSzine
+                    If .HatterSzine <> -2147483643 Then Kiir "hatter=" & .HatterSzine 'jel(0).HatterSzine
+                    If .KeretTipus <> 1 Then Kiir "keret-tipus=" & .KeretTipus 'jel(0).KeretTipus
+                    If .KeretVastagsaga <> 1 Then Kiir "keret-vastagsag=" & .KeretVastagsaga 'jel(0).KeretVastagsaga
+                    If .KeretSzine <> -2147483640 Then Kiir "keret-szin=" & .KeretSzine  'jel(0).KeretSzine
                     If .Atlatszo Then
                             Kiir "atlatszo"
                         Else
-                            If .KitoltesTipus <> jel(0).KitoltesTipus Then Kiir "kitoltes-tipus=" & .KitoltesTipus
-                            If .KitoltesSzine <> jel(0).KitoltesSzine Then Kiir "kitoltes-szin=" & .KitoltesSzine
+                            If .KitoltesTipus <> 1 Then Kiir "kitoltes-tipus=" & .KitoltesTipus 'jel(0).KitoltesTipus
+                            If .KitoltesSzine <> -2147483640 Then Kiir "kitoltes-szin=" & .KitoltesSzine  'jel(0).KitoltesSzine
                     End If
             End If
         End With
@@ -856,10 +884,10 @@ Open Fajlnev For Output As 2
         With jel_szoveg(i)
             Kiir "szovegXY=" & elemek(i).Bal & "," & elemek(i).Felso
             If Not .Visible Then Kiir "lathatatlan-szoveg"
-            If .FontName <> jel_szoveg(0).FontName Then Kiir "betu-tipus=" & .FontName
-            If .FontSize <> jel_szoveg(0).FontSize Then Kiir "betu-meret=" & .FontSize
-            If .ForeColor <> jel_szoveg(0).ForeColor Then Kiir "betu-szin=" & .ForeColor
-            If .BackStyle = 1 And .BackColor <> jel_szoveg(0).BackColor Then Kiir "betu-hatter=" & .BackColor
+            If .FontName <> szerkeszto.FontName Then Kiir "betu-tipus=" & .FontName  'jel_szoveg(0).FontName
+            If .FontSize <> szerkeszto.FontSize Then Kiir "betu-meret=" & .FontSize
+            If .ForeColor <> -2147483640 Then Kiir "betu-szin=" & .ForeColor
+            If .BackStyle = 1 And .BackColor <> -2147483643 Then Kiir "betu-hatter=" & .BackColor   'jel_szoveg(0).BackColor
                 f = ""
                 If .FontBold Then f = f & "f"
                 If .FontItalic Then f = f & "d"
@@ -876,12 +904,15 @@ Open Fajlnev For Output As 2
         Print #2, "!>"
     Next i
 Close 2
-mentes = True
-megtekint_mnu.Enabled = True
-Exit Function
+    
+    mentes = True
+    megtekint_mnu.Enabled = True
+    Exit Function
+    
 Hiba:
-mentes = False
-Close 2
+    KozosHibak Err.Number
+    mentes = False
+    Close 2
 End Function
 Private Sub Kiir(Mit As String)
     Print #2, Chr(9) & Mit
@@ -891,10 +922,9 @@ Dim sor As String, i As Integer, j As Integer, ker As Integer, megvan As Boolean
 Dim id As Integer, KID As Integer
 Dim kulcsszo As String, parameter As String, kep As String
 id = 0
-Fajlnev = Atalakit(Fajlnev, "")
+Fajlnev = Atalakit(Fajlnev)
 On Error GoTo Hiba
     Open Fajlnev For Input As 1
-Kovetkezosor:
         Do While Not EOF(1)
             Line Input #1, sor
             On Error GoTo Hiba
@@ -986,14 +1016,14 @@ Kovetkezosor:
                 Case "pozicio", "xy", "koordianatak"
                     On Error Resume Next
                     'If obj.Name <> "jelm" Then
-                        obj.Left = CSng(Atalakit(Kicsontoz(parameter, ",", 0), ""))
-                        obj.Top = CSng(Atalakit(Kicsontoz(parameter, ",", 1), ""))
+                        obj.Left = CSng(Atalakit(Kicsontoz(parameter, ",", 0)))
+                        obj.Top = CSng(Atalakit(Kicsontoz(parameter, ",", 1)))
                     'End If
                 Case "meret", "meretek"
                     On Error Resume Next
                     'If aze Then
-                        obj.Width = CLng(Atalakit(Kicsontoz(parameter, ",", 0), ""))
-                        obj.Height = CLng(Atalakit(Kicsontoz(parameter, ",", 1), ""))
+                        obj.Width = CLng(Atalakit(Kicsontoz(parameter, ",", 0)))
+                        obj.Height = CLng(Atalakit(Kicsontoz(parameter, ",", 1)))
                     'End If
                 Case "tipp"
                     obj.ToolTipText = parameter
@@ -1114,39 +1144,48 @@ kihagy:
     
 Exit Function
 Hiba:
+    'Dim uzenet As String
     Select Case Err.Number
         Case 52
-            MsgBox "A '" & Fajlnev & "' fájl nem tölthetõ be.", vbInformation, "Hábás fájl adott meg!"
-            'Exit Function
+            UzenetAblak "A '" & Fajlnev & "' fájl nem tölthetõ be."
+            'Close 1
+            mentett = True
+            uj_mnu_Click
         Case 53
             If Fajlnev <> Vakterkep.Konyvtar & "vakterkep.ini" Then
-                MsgBox "A megadott fájl nem található!", vbCritical, "A megadott fájl nem található!"
+                UzenetAblak "A szerkesztésre megadott fájl nem található!"
+                'Close 1
+                mentett = True
+                uj_mnu_Click
             End If
-            'Exit Function
-        'Case 7
-         '   MsgBox "A Kibõvített Jelek ActiveX objektum nem található. Kérem telepítse újra a Vaktérképet.", vbCritical, "Végzetes hiba"
-          '  End
         Case Else
             If MsgBox("A megadott projekt hibás bejegyzéseket tartalmaz, ami bizonytalanná teheti a program futását. Kívánja folytatni töltést?", vbQuestion + vbYesNo, "Ismeretlen hiba") = vbYes Then
-                MsgBox "A hiba oka: " & Err.Description, vbInformation, "Hiba(" & Err.Number & ")"
+                UzenetAblak "A hiba oka(" & Err.Number & "): " & Err.Description
                 On Error Resume Next
-                GoTo Kovetkezosor
+                GoTo kihagy
             Else
+                'Close 1
+                mentett = True
                 uj_mnu_Click
             End If
         End Select
-    
+        'If uzenet <> "" Then MsgBox uzenet, vbExclamation, "Megnyitási hiba"
     Close 1
     Exit Function
+
 kephiba:
     If MsgBox("A megadott kép hibás, ismeretlen tömörítésû vagy nem található a megadott helyen." & vbCrLf & _
            "Kívánja folytatni a töltést a hiba javításához?", vbCritical + vbYesNo, "Képbetöltési hiba") = vbYes Then
+            terulet.Picture = Nothing
+            terulet.Cls
             'Kephelye = ""
-            GoTo Kovetkezosor
+            GoTo kihagy
         Else
             Close 1
-            torol
+            mentett = True
+            uj_mnu_Click
     End If
+    
 End Function
 Private Sub lezaras()
 On Error Resume Next

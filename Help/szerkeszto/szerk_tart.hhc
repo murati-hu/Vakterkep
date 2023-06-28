@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bevezet&eacute;s">
+		<param name="Local" value="html\kezdo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="A Szerkeszt&otilde; haszn&aacute;lata">
+		<param name="Local" value="html\szerk.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="&Uacute;j projekt l&eacute;trehoz&aacute;sa">
+			<param name="Local" value="html\uj.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Megnyit&aacute;s">
+			<param name="Local" value="html\megnyit.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Projekt tulajdons&aacute;gai">
+			<param name="Local" value="html\ptul.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Elemek felv&eacute;tele &eacute;s form&aacute;z&aacute;sa">
+			<param name="Local" value="html\elem.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Projekt ment&eacute;se vagy ment&eacute;se m&aacute;s n&eacute;ven">
+			<param name="Local" value="html\ment.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Funkci&oacute;billenty&ucirc;k">
+		<param name="Local" value="html\bill.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Men&uuml;szerkezet">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Projekt">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="&Uacute;j projekt">
+				<param name="Local" value="html\uj.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Megnyit&aacute;s">
+				<param name="Local" value="html\megnyit.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Ment&eacute;s">
+				<param name="Local" value="html\ment.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Ment&eacute;s m&aacute;sk&eacute;nt">
+				<param name="Local" value="html\ment.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Projekt Tulajdons&aacute;gai">
+				<param name="Local" value="html\ptul.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Kil&eacute;p&eacute;s">
+				<param name="Local" value="html\kilep.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="S&uacute;g&oacute;">
+			<param name="Local" value="html\sugo.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="S&uacute;g&oacute;">
+				<param name="Local" value="html\sugo.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="N&eacute;vjegy">
+				<param name="Local" value="html\sugo.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+</UL>
+</BODY></HTML>

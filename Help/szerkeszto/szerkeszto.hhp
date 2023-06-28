@@ -1,28 +1,25 @@
 [OPTIONS]
 Compatibility=1.1 or later
 Compiled file=szerkeszto.chm
-Contents file=szerkeszto.hhc
-Default topic=page\kezdo.htm
-Display compile progress=Yes
-Error log file=szerkeszto.log
+Contents file=szerk_tart.hhc
+Default topic=html\kezdo.htm
+Display compile progress=No
 Full-text search=Yes
-Index file=szerkeszto.hhk
 Language=0x40e magyar
-Title=Vaktérkép Szerkesztõ Súgó
+Title=Vaktérkép Szerkesztõ
 
 
 [FILES]
-page\bill.htm
-page\elem.htm
-page\eula.htm
-page\kilep.htm
-page\megnyit.htm
-page\ment.htm
-page\ptul.htm
-page\sugo.htm
-page\szerk.htm
-page\uj.htm
-page\kezdo.htm
+html\bill.htm
+html\elem.htm
+html\kezdo.htm
+html\kilep.htm
+html\megnyit.htm
+html\ment.htm
+html\ptul.htm
+html\sugo.htm
+html\szerk.htm
+html\uj.htm
 
 [INFOTYPES]
 

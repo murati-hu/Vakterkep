@@ -6,7 +6,8 @@ Begin VB.Form nyomtatas
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   6540
-   ControlBox      =   0   'False
+   Icon            =   "nyomtatas.frx":0000
+   KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -115,9 +116,19 @@ Option Explicit
 Dim arany As Double 'Az eredti képméret és a minta közötti arány
 Const nyomtatoarany = 0.01789 'nyomtató képpontjai és a Twipek közötti arány
 
-
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+     Select Case KeyCode
+        Case 27
+            megse_Click
+        Case 112
+            sugo_Click
+        'Case Else
+        '    MsgBox KeyCode
+    End Select
+End Sub
 Private Sub Form_Load()
 On Error Resume Next
+    Me.Icon = terkep.Icon
     Me.Caption = terkep.Cime & " nyomtása"
     If terkep.terulet.Width > terkep.terulet.Height Then
                 arany = terkep.terulet.Width / nyomtatando.Width
@@ -126,18 +137,26 @@ On Error Resume Next
                 arany = terkep.terulet.Height / nyomtatando.Height
                 nyomtatando.Width = terkep.terulet.Width / arany
     End If
-    
     Vazol ("kepre")
+    szelesseg.Text = nyomtatando.ScaleWidth * nyomtatoarany
     
-    ok.Move nyomtatando.Left + nyomtatando.Width - ok.Width, nyomtatando.Top + nyomtatando.Height + 200
-    megse.Move ok.Left - 200 - megse.Width, ok.Top
-    sugo.Move nyomtatando.Left, ok.Top
-    
-    Me.Height = ok.Top + ok.Height + nyomtatando.Top + 610
+    Me.Height = nyomtatando.Top + nyomtatando.Height + 610 + 660
     Me.Width = 2 * nyomtatando.Left + nyomtatando.Width + 120
     
+    Form_Resize
+    If megse.Left < meret.Left + meret.Width Then
+        Me.Width = Me.Width + meret.Left + meret.Width - megse.Left + 100
+        nyomtatando.Left = (Me.ScaleWidth - nyomtatando.Width) / 2
+        Form_Resize
+    End If
+End Sub
+
+Private Sub Form_Resize()
+On Error Resume Next
+    sugo.Move 100, nyomtatando.Top + nyomtatando.Height + 200
     meret.Move sugo.Left + sugo.Width + 100, sugo.Top - ((meret.Height - sugo.Height) / 2)
-    szelesseg.Text = nyomtatando.ScaleWidth * nyomtatoarany
+    ok.Move Me.ScaleWidth - 100 - ok.Width, sugo.Top
+    megse.Move ok.Left - 200 - megse.Width, sugo.Top
 End Sub
 
 Private Sub magassag_Change()
@@ -154,8 +173,8 @@ Private Sub ok_Click()
 End Sub
 Private Sub Vazol(mire As String)
     Dim i As Integer, j As Integer
-    Dim hova As Object, nagyit As Double, db As Integer
-    On Error Resume Next
+    Dim hova As Object, nagyit As Double, db As Integer, sz As String
+    On Error GoTo Hiba
     
     With terkep
         If mire = "kepre" Then
@@ -168,14 +187,20 @@ Private Sub Vazol(mire As String)
     
         'Kép megalkotása:
         db = 0
+        
         hova.PaintPicture .terulet.Picture, 0, 0, nyomtatando.Width * nagyit, nyomtatando.Height * nagyit
     
         For i = 1 To .jel.Count - 1
             db = db + 1
-            
-            For j = 1 To Int(.jel(i).Width / (2.5 * arany) * nagyit)
-                hova.Circle ((.jel(i).Left + .jel(i).Width / 2) / arany * nagyit, (.jel(i).Top + .jel(i).Height / 2) / arany * nagyit), j, vbBlack
-            Next j
+            sz = .jel_szoveg(i).Caption
+            If .jel(i).jel <> 6 Then
+                For j = 1 To Int(.jel(i).Width / (2.5 * arany) * nagyit)
+                    hova.Circle ((.jel(i).Left + .jel(i).Width / 2) / arany * nagyit, (.jel(i).Top + .jel(i).Height / 2) / arany * nagyit), j, vbBlack
+                Next j
+            Else
+                hova.PaintPicture LoadPicture(.jel(i).KepElerese), .jel(i).Left / arany * nagyit, .jel(i).Top / arany * nagyit, .jel(i).Width / arany * nagyit, .jel(i).Height / arany * nagyit
+            End If
+                
             
             'Kikérdezendõ elem sorszáma
             hova.CurrentX = (.jel_szoveg(i).Left + .jel_szoveg(i).Width / 2) / arany * nagyit
@@ -202,14 +227,32 @@ Private Sub Vazol(mire As String)
             
             'megjegyzés kirajolása
             If .megj(i).Visible Then
-                For j = 1 To Int(.megj(i).Width / (2.5 * arany) * nagyit)
-                    hova.Circle ((.megj(i).Left + .megj(i).Width / 2) / arany * nagyit, (.megj(i).Top + .megj(i).Height / 2) / arany * nagyit), j, .megj_szoveg(i).ForeColor
-                Next j
+                If .megj(i).jel <> 6 Then
+                    For j = 1 To Int(.megj(i).Width / (2.5 * arany) * nagyit)
+                        hova.Circle ((.megj(i).Left + .megj(i).Width / 2) / arany * nagyit, (.megj(i).Top + .megj(i).Height / 2) / arany * nagyit), j, .megj_szoveg(i).ForeColor
+                    Next j
+                Else
+                    hova.PaintPicture LoadPicture(.megj(i).KepElerese), .megj(i).Left / arany * nagyit, .megj(i).Top / arany * nagyit, .megj(i).Width / arany * nagyit, .megj(i).Height / arany * nagyit
+                End If
             End If
         Next i
     End With
     
     If mire = "nyomtatora" Then Printer.EndDoc 'Ha nyomtatóra küldtük, akkor lezárni a csatornát
+    Exit Sub
+Hiba:
+    Dim hibauzenet
+    Select Case Err.Number
+        Case 482
+            hibauzenet = "nincs nyomtató telepítve."
+        Case 380, 13
+            hibauzenet = "hibás nyomtatási méretet adott meg."
+        Case 6
+            hibauzenet = "túl nagy nyomtatási méretet adott meg."
+        Case Else
+            hibauzenet = Err.Description
+    End Select
+    MsgBox "A projekt nyomtatása meghiúsult, mert " & hibauzenet, vbCritical, "Nyomtatási hiba (" & Err.Number & ")"
 End Sub
 
 Private Sub sugo_Click()

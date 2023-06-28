@@ -4,7 +4,7 @@ Begin VB.Form nevjegy
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Vaktérkép névjegye - Muráti Ákos"
-   ClientHeight    =   3615
+   ClientHeight    =   3375
    ClientLeft      =   2340
    ClientTop       =   1935
    ClientWidth     =   4515
@@ -13,22 +13,14 @@ Begin VB.Form nevjegy
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   2495.137
+   ScaleHeight     =   2329.485
    ScaleMode       =   0  'User
    ScaleWidth      =   4239.818
    ShowInTaskbar   =   0   'False
-   Begin VB.Image kep 
-      Height          =   3000
-      Left            =   0
-      Picture         =   "nevjegy.frx":000C
-      Stretch         =   -1  'True
-      Top             =   0
-      Width           =   4500
-   End
    Begin VB.Label url 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Vaktérkép 2.0 Weboldalának megtekintése"
+      Caption         =   "www.vakterkep.ini.hu"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -40,15 +32,15 @@ Begin VB.Form nevjegy
       EndProperty
       Height          =   195
       Index           =   1
-      Left            =   480
+      Left            =   120
       TabIndex        =   1
       Top             =   3120
-      Width           =   3675
+      Width           =   1860
    End
    Begin VB.Label url 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "E-mail küldése"
+      Caption         =   "muratiakos@hotmail.com"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -60,10 +52,18 @@ Begin VB.Form nevjegy
       EndProperty
       Height          =   195
       Index           =   0
-      Left            =   1560
+      Left            =   2280
       TabIndex        =   0
-      Top             =   3360
-      Width           =   1245
+      Top             =   3120
+      Width           =   2115
+   End
+   Begin VB.Image kep 
+      Height          =   3000
+      Left            =   0
+      Picture         =   "nevjegy.frx":000C
+      Stretch         =   -1  'True
+      Top             =   0
+      Width           =   4500
    End
 End
 Attribute VB_Name = "nevjegy"
@@ -72,8 +72,14 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+
+
+Private Sub Form_Click()
+    Unload Me
+End Sub
+
 Private Sub Form_Load()
-    Me.Caption = "Vaktérkép névjegye - Muráti Ákos"
+    Me.Caption = "Vaktérkép " & Vakterkep.Verzio & "." & App.Revision & " névjegye - Muráti Ákos"
     Me.Icon = terkep.Icon
 End Sub
 
@@ -92,10 +98,10 @@ End Sub
 Private Sub url_Click(Index As Integer)
     Select Case Index
         Case 0
-            Shell "explorer mailto:b0murako@gyakg.u-szeged.hu", vbMinimizedNoFocus
+            Shell "explorer mailto:muratiakos@hotmail.com", vbMinimizedNoFocus
             'Shell "outlook -c IPM.Note /m murako@index.hu", vbNormalFocus
         Case 1
-            Shell "explorer http://www.tar.hu/vakterkep2002"
+            Shell "explorer http://www.vakterkep.ini.hu"
     End Select
 End Sub
 

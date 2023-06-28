@@ -3,15 +3,16 @@ Begin VB.Form behuzo
    AutoRedraw      =   -1  'True
    BackColor       =   &H00FFFFFF&
    Caption         =   "Behúzó"
-   ClientHeight    =   0
+   ClientHeight    =   105
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   540
+   ClientWidth     =   915
    ClipControls    =   0   'False
    ControlBox      =   0   'False
    LinkTopic       =   "Form1"
-   ScaleHeight     =   0
-   ScaleWidth      =   540
+   ScaleHeight     =   105
+   ScaleWidth      =   915
+   ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin VB.Label szoveg 
       Appearance      =   0  'Flat

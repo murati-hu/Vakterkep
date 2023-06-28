@@ -32,10 +32,6 @@
   !define MUI_UNINSTALLER
   !define MUI_UNCONFIRMPAGE
   
-  ;!define MUI_HEADERBITMAP "${NSISDIR}\Contrib\Icons\modern-header.bmp"
-  ;!define MUI_ICON "${NSISDIR}\Contrib\Icons\setup.ico"
-  ;!define MUI_UNICON "${NSISDIR}\Contrib\Icons\setup.ico"
-  
 ;--------------------------------
 ;Languages
  
@@ -69,6 +65,27 @@
 
 Section "${VT}" Vakterkep
 	SectionIn RO
+	
+	;*****************************
+	detailprint ">>> Korábban telepített komponensek eltávolítása..."
+	;Régi Szerkesztõ törlése:
+		delete "$SMPROGRAMS\${VT}\${SZERK}.lnk"
+	;Súgó törlése
+		delete "$SMPROGRAMS\${VT}\${VT} Súgó.lnk"
+		delete "$INSTDIR\vakterkep.chm"
+	;Szerk súgó törlése
+		delete "$SMPROGRAMS\${VT}\${SZERK} Súgó.lnk"
+		delete "$INSTDIR\szerkeszto.chm"
+	;Társítás törlése
+		deleteregkey "HKCR" ".vtk" ""
+	;Eltávolító törlése
+		delete "$INSTDIR\eltavolit.exe"
+		delete "$SMPROGRAMS\${VT}\Eltávolítás.lnk"
+		
+	
+	detailprint ""
+	;*****************************
+
 	WriteRegStr HKCU "Software\${VT}" "" $INSTDIR
 
 	detailprint ">>> Microsoft Commondialog ActiveX vezérlõ telepítése..."
@@ -88,6 +105,9 @@ Section "${VT}" Vakterkep
   	CreateDirectory "$SMPROGRAMS\${VT}"
 	CreateShortCut "$SMPROGRAMS\${VT}\${VT}.lnk" "$INSTDIR\vakterkep.exe"
 
+	file "vakterkep.url"
+	CreateShortCut "$SMPROGRAMS\${VT}\${VT} Online.lnk" "$INSTDIR\vakterkep.url"
+
 	writeregstr "HKCR" "Vakterkep" "" "Vaktérkép Projekt"
 	writeregstr "HKCR" "Vakterkep\DefaultIcon" "" "$INSTDIR\vakterkep.ico,0"
 	writeregstr "HKCR" "Vakterkep\shell" "" "Open"
@@ -102,7 +122,7 @@ Section "${SZERK}" Szerkeszto
 	CreateShortCut "$SMPROGRAMS\${VT}\${SZERK}.lnk" "$INSTDIR\vakterkep.exe" "-sz" "$INSTDIR\vakterkep.ico" 0
 	
 	writeregstr "HKCR" "Vakterkep\shell\" "" "Open"
-	writeregstr "HKCR" "Vakterkep\shell\edit" "" "&Szerkesztés"
+	writeregstr "HKCR" "Vakterkep\shell\edit" "" "&Vaktérkép Szerkesztõ"
 	writeregstr "HKCR" "Vakterkep\shell\edit\command" "" "$INSTDIR\vakterkep.exe -sz=%1"
 	writeregstr "HKCR" "Vakterkep\shell\kezi" "" "&Kézi szerkesztés Jegyzettömbbel"
 	writeregstr "HKCR" "Vakterkep\shell\kezi\command" "" "notepad.exe %1"
@@ -165,6 +185,7 @@ Sectionend
 
 Section "Uninstall"
 	deleteregkey "HKCR" ".vtk" ""
+	deleteregkey "HKCR" "Vakterkep" ""
 	delete "$INSTDIR\*.*"
 	delete "$SMPROGRAMS\${VT}\*.*"
 	rmdir "$SMPROGRAMS\${VT}"

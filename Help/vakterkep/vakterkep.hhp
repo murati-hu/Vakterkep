@@ -1,30 +1,27 @@
 [OPTIONS]
 Compatibility=1.1 or later
 Compiled file=vakterkep.chm
-Contents file=vakterkep.hhc
-Default topic=page\kezdo.htm
-Display compile progress=Yes
+Contents file=vakterkep_tart.hhc
+Default topic=html\kezdo.htm
+Display compile progress=No
 Full-text search=Yes
-Index file=vakterkep.hhk
 Language=0x40e magyar
-Title=Vaktérkép 2 Súgó
+Title=Vaktérkép Súgó
 
 
 [FILES]
-page\ert.htm
-page\hasznal.htm
-page\jelm.htm
-page\megnyit.htm
-page\beall.htm
-page\bill.htm
-page\kilep.htm
-page\sugo.htm
-page\eula.htm
-page\hiba.htm
-page\uj.htm
-page\kieg.htm
-page\kezdo.htm
-page\nyomtat.htm
+html\beall.htm
+html\bill.htm
+html\ert.htm
+html\hasznal.htm
+html\jelm.htm
+html\kezdo.htm
+html\kieg.htm
+html\kilep.htm
+html\megnyit.htm
+html\nyomtat.htm
+html\sugo.htm
+html\uj.htm
 
 [INFOTYPES]
 
