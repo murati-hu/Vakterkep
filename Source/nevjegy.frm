@@ -1,72 +1,84 @@
 VERSION 5.00
-Begin VB.Form frmAbout 
-   BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "Vaktérkép és Vaktérkép Szerkesztõ Névjegye"
-   ClientHeight    =   4170
+Begin VB.Form nevjegy 
+   AutoRedraw      =   -1  'True
+   BackColor       =   &H00FFFFFF&
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Vaktérkép névjegye - Muráti Ákos"
+   ClientHeight    =   3615
    ClientLeft      =   2340
    ClientTop       =   1935
-   ClientWidth     =   4875
+   ClientWidth     =   4515
    ClipControls    =   0   'False
    Icon            =   "nevjegy.frx":0000
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   2878.208
+   ScaleHeight     =   2495.137
    ScaleMode       =   0  'User
-   ScaleWidth      =   4577.877
+   ScaleWidth      =   4239.818
    ShowInTaskbar   =   0   'False
-   Begin VB.PictureBox kep 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      AutoSize        =   -1  'True
-      BackColor       =   &H80000005&
-      ForeColor       =   &H80000008&
-      Height          =   3330
-      Left            =   202
-      Picture         =   "nevjegy.frx":8EDA
-      ScaleHeight     =   3300
-      ScaleWidth      =   4500
-      TabIndex        =   1
-      ToolTipText     =   "A kilépéshez kattints ide..."
-      Top             =   120
-      Width           =   4530
+   Begin VB.Image kep 
+      Height          =   3000
+      Left            =   0
+      Picture         =   "nevjegy.frx":000C
+      Stretch         =   -1  'True
+      Top             =   0
+      Width           =   4500
    End
    Begin VB.Label url 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Vaktérkép honlapja - http://www.tar.hu/vakterkep2002"
+      Caption         =   "Vaktérkép 2.0 Weboldalának megtekintése"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   238
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
       Index           =   1
       Left            =   480
-      MousePointer    =   10  'Up Arrow
-      TabIndex        =   2
-      Top             =   3480
-      Width           =   3945
+      TabIndex        =   1
+      Top             =   3120
+      Width           =   3675
    End
    Begin VB.Label url 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "E-mail:  b0murako@gyakg.u-szeged.hu"
+      Caption         =   "E-mail küldése"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   238
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
       Index           =   0
-      Left            =   840
-      MousePointer    =   10  'Up Arrow
+      Left            =   1560
       TabIndex        =   0
-      Top             =   3840
-      Width           =   2775
+      Top             =   3360
+      Width           =   1245
    End
 End
-Attribute VB_Name = "frmAbout"
+Attribute VB_Name = "nevjegy"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-
+Option Explicit
 Private Sub Form_Load()
-    Me.Caption = App.Title & " névjegye"
+    Me.Caption = "Vaktérkép névjegye - Muráti Ákos"
+    Me.Icon = terkep.Icon
 End Sub
 
 Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Dim i As Integer
     For i = 0 To url.Count - 1
         url(i).FontUnderline = False
         url(i).ForeColor = vbBlack
@@ -80,13 +92,15 @@ End Sub
 Private Sub url_Click(Index As Integer)
     Select Case Index
         Case 0
-            Shell "explorer mailto:b0murako@gyakg.u-szeged.hu", vbHide
+            Shell "explorer mailto:b0murako@gyakg.u-szeged.hu", vbMinimizedNoFocus
+            'Shell "outlook -c IPM.Note /m murako@index.hu", vbNormalFocus
         Case 1
             Shell "explorer http://www.tar.hu/vakterkep2002"
     End Select
 End Sub
 
 Private Sub url_Mousemove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Dim i As Integer
 For i = 0 To url.Count - 1
         url(i).FontUnderline = False
         url(i).ForeColor = vbBlack

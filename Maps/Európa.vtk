@@ -1,24 +1,85 @@
-cim=Európa
-terkep=\zk_eu.gif
-alahuzott
-kover
-meret=9,75
-szin=4227327
-elem=3,8618,8963,Budapest
-alahuzott
-kover
-meret=9,75
-szin=4227327
-elem=3,4118,6908,London
-alahuzott
-kover
-meret=9,75
-szin=4227327
-elem=3,6788,10838,Róma
-szin=-2147483630
-elem=3,8888,9638,Szeged
-alahuzott
-kover
-meret=9,75
-szin=4227327
-elem=7,3,0,Fõváros
+;Vaktérkép 2.0 által generált térképfájl
+;Muráti Ákos 2003 - Minden jog fenntartva.
+
+cim=Névtelen projekt
+kep=\Térképek\europa_z.gif
+kijelol=0;0;18945;15240
+nagyitas=0,75
+<megjegyzes=London
+	xy=3105,5160
+	meret=150,150
+	jel=3
+	keret-tipus=0
+	kitoltes-tipus=0
+	kitoltes-szin=4227327
+	szovegXY=-315,-240
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=4227327
+	formazas=fa
+!>
+<megjegyzes=Budapest
+	xy=6458,6742
+	meret=150,150
+	jel=3
+	keret-tipus=0
+	kitoltes-tipus=0
+	kitoltes-szin=4227327
+	szovegXY=52,-292
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=4227327
+	formazas=fa
+!>
+<megjegyzes=Róma
+	xy=5108,8198
+	meret=150,150
+	jel=3
+	keret-tipus=0
+	kitoltes-tipus=0
+	kitoltes-szin=4227327
+	szovegXY=-173,-263
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=4227327
+	formazas=fa
+!>
+<megjegyzes=Párizs
+	xy=3420,6300
+	meret=150,150
+	jel=3
+	keret-tipus=0
+	kitoltes-tipus=0
+	kitoltes-szin=4227327
+	szovegXY=135,-45
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=4227327
+	formazas=fa
+!>
+<jelmagyarazat=Fõváros
+	xy=142,1718
+	meret=150,150
+	jel=3
+	keret-tipus=0
+	kitoltes-tipus=0
+	kitoltes-szin=4227327
+	szovegXY=188,-53
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=4227327
+	formazas=fa
+!>
+<megjegyzes=Bécs
+	xy=5782,6442
+	meret=150,150
+	jel=3
+	keret-tipus=0
+	kitoltes-tipus=0
+	kitoltes-szin=4227327
+	szovegXY=83,-217
+	betu-tipus=Arial
+	betu-meret=9,75
+	betu-szin=4227327
+	formazas=fa
+!>

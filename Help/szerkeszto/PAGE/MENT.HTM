@@ -7,7 +7,7 @@
 <body>
 <h3>Vaktérkép projektek mentése</h3>
 <ol>
-	<li><p>Kattintsunk a <b>Fájl</b> menü <b>Térkép mentése</b> menüpontra
+	<li><p>Kattintsunk a <b>Projekt</b> menü <b>Projekt mentése</b> menüpontra
 	vagy használjuk a  <b>[CTRL] + [S]</b> billentyûkombinációt a Vaktérkép
 	Szerkesztõ fõablakából.
 	<a href="#" onclick="mutat('ment')">Kép mutatása/elrejtése</a></p>
@@ -17,8 +17,15 @@
 	<li><p>A megjelenõ párbeszédablakban válassza ki a mentés mappáját, adjon egy fájlnevet
 	és kattintson a <b>Mentés</b> gombra.</p>
 	</li>
-</ol>
 
+</ol>
+<h4>Képek mentése</h4>
+<p>Ha a projektünk tartalmaz képeket, akkor a Vaktérkép Szerkesztõ automatikusan felajánlja a képek csatolását
+a projekthez. Ilyenkor a projekt 'fájlnév_elemei' néven létrehoz egy mappát amibe bemásolja az összes használt képet.
+
+Ha ezt ön elutasítja, akkor a program megpróbál létrehozni egy relatív elérési utat, ami csak úgy lehetséges, hogy
+a projekt szülõkönyvtárában vagy annak valamely mappájában van a kép. Ha ez nem sikerül, akkor a teljes elérési utat
+tárolja el.</p>
 <script language="JavaScript">latszat()</script>
 </body>
 </html>

@@ -19,6 +19,6 @@ function latszat() {
 }
 
 function kapcsolat() {
-	document.write('<p><b><address>Muráti Ákos<br>e-mail: <a href="mailto:b0murako@gyakg.u-szeged.hu">b0murako@gyakg.u-szeged.hu</a><br>honlap: <a href="http://www.tar.hu/murako">www.tar.hu/murako</a><br></address></b></p>');
+	document.write('<h4>Kapcsolatfelvétel</h4><p><b><address>Muráti Ákos<br>e-mail: <a href="mailto:murako@index.hu">murako@index.hu</a><br>Honlap: <a href="http://www.murako.ini.hu">www.murako.ini.hu</a><br></address></b></p>');
 
 }

@@ -1,5 +1,5 @@
 VERSION 5.00
-Begin VB.Form bizi 
+Begin VB.Form ertekeles 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Értékelés"
    ClientHeight    =   3285
@@ -8,6 +8,7 @@ Begin VB.Form bizi
    ClientWidth     =   2970
    ControlBox      =   0   'False
    Icon            =   "ertekeles.frx":0000
+   KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -207,14 +208,18 @@ Begin VB.Form bizi
       Width           =   1335
    End
 End
-Attribute VB_Name = "bizi"
+Attribute VB_Name = "ertekeles"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub javitas_Click()
 
+
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = 112 Then HHSugo ("ert.htm")
 End Sub
+
+
 
 Private Sub ok_Click()
 Me.Hide

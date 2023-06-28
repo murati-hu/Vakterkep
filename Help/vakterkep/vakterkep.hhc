@@ -17,11 +17,11 @@
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Haszn&aacute;lat">
+			<param name="Name" value="Vakt&eacute;rk&eacute;p haszn&aacute;lata">
 			<param name="Local" value="page\hasznal.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Vakt&eacute;rk&eacute;pek megnyit&aacute;sa">
+			<param name="Name" value="Projektek megnyit&aacute;sa">
 			<param name="Local" value="page\megnyit.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
@@ -49,6 +49,10 @@
 			<param name="Local" value="page\hiba.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Nyomtat&aacute;s">
+			<param name="Local" value="page\nyomtat.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Kieg&eacute;sz&iacute;t&otilde; lehet&otilde;s&eacute;gek">
 			<param name="Local" value="page\kieg.htm">
 			</OBJECT>
@@ -72,8 +76,12 @@
 				<param name="Local" value="page\uj.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="T&eacute;rk&eacute;p megnyit&aacute;sa">
+				<param name="Name" value="Megnyit&aacute;s">
 				<param name="Local" value="page\megnyit.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Nyomtat...">
+				<param name="Local" value="page\nyomtat.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Kil&eacute;p&eacute;s">

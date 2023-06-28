@@ -74,6 +74,16 @@
 		<param name="Local" value="page\beall.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Anyagi t&aacute;mogat&aacute;s">
+		<param name="Name" value="Üdvözlöm a Vaktérkép 2 Súgójában">
+		<param name="Local" value="page\kezdo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Aacute;tutal&aacute;si sz&aacute;mlasz&aacute;m">
+		<param name="Name" value="Üdvözlöm a Vaktérkép 2 Súgójában">
+		<param name="Local" value="page\kezdo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Be&aacute;ll&iacute;t&aacute;sok">
 		<param name="Name" value="Vaktérkép beállításai">
 		<param name="Local" value="page\beall.htm">
@@ -97,11 +107,6 @@
 		<param name="Name" value="Egy&eacute;ni be&aacute;ll&iacute;t&aacute;sok">
 		<param name="Name" value="Vaktérkép beállításai">
 		<param name="Local" value="page\beall.htm">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="E-mail nekem">
-		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
-		<param name="Local" value="page\index.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="&Eacute;rt&eacute;kel&eacute;s">
@@ -185,7 +190,7 @@
 		<param name="Local" value="page\kieg.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="KIl&eacute;p&eacute;s">
+		<param name="Name" value="Kil&eacute;p&eacute;s">
 		<param name="Name" value="Kilépés a Vaktérképbõl">
 		<param name="Local" value="page\kilep.htm">
 		</OBJECT>
@@ -193,6 +198,11 @@
 		<param name="Name" value="M&aacute;sol&aacute;s, terjeszt&eacute;s, jogok">
 		<param name="Name" value="Felhasználói License Szerzõdés">
 		<param name="Local" value="page\eula.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Megjegyz&eacute;sek">
+		<param name="Name" value="Kiegészítõ lehetõségek">
+		<param name="Local" value="page\kieg.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Megnyit&aacute;s">
@@ -213,6 +223,11 @@
 		<param name="Name" value="Null&aacute;z&aacute;s">
 		<param name="Name" value="Újra Kezd">
 		<param name="Local" value="page\uj.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Nyomtat&aacute;s">
+		<param name="Name" value="Projektek nyomtatása">
+		<param name="Local" value="page\nyomtat.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Piros elemek">
@@ -242,6 +257,11 @@
 		<param name="Local" value="page\eula.htm">
 		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
 		<param name="Local" value="page\index.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Projektek nyomtat&aacute;sa">
+		<param name="Name" value="Projektek nyomtatása">
+		<param name="Local" value="page\nyomtat.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Rendszerf&aacute;jlok">

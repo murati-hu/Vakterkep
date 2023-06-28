@@ -7,7 +7,7 @@ Display compile progress=Yes
 Full-text search=Yes
 Index file=vakterkep.hhk
 Language=0x40e magyar
-Title=Vaktérkép Súgó
+Title=Vaktérkép 2 Súgó
 
 
 [FILES]
@@ -24,6 +24,7 @@ page\hiba.htm
 page\uj.htm
 page\kieg.htm
 page\kezdo.htm
+page\nyomtat.htm
 
 [INFOTYPES]
 

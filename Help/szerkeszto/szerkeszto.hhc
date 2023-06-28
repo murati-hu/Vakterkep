@@ -18,16 +18,16 @@
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="&Uacute;j T&eacute;rk&eacute;p">
+			<param name="Name" value="Szerkeszt&otilde; haszn&aacute;lata">
+			<param name="Local" value="page\szerk.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="&Uacute;j Projekt">
 			<param name="Local" value="page\uj.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="T&eacute;rk&eacute;p Megnyit&aacute;sa">
+			<param name="Name" value="Projekt Megnyit&aacute;sa">
 			<param name="Local" value="page\megnyit.htm">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Szerkeszt&eacute;s">
-			<param name="Local" value="page\szerk.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Projekt tulajdons&aacute;gai">
@@ -51,23 +51,23 @@
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="T&eacute;rk&eacute;pek">
+			<param name="Name" value="Projektek">
 			</OBJECT>
 		<UL>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="&Uacute;j T&eacute;rk&eacute;p">
+				<param name="Name" value="&Uacute;j Projekt">
 				<param name="Local" value="page\uj.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="T&eacute;rk&eacute;p megnyit&aacute;sa">
+				<param name="Name" value="Projekt megnyit&aacute;sa">
 				<param name="Local" value="page\megnyit.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="T&eacute;rk&eacute;p ment&eacute;se">
+				<param name="Name" value="Projekt ment&eacute;se">
 				<param name="Local" value="page\ment.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Tulajdons&aacute;gok">
+				<param name="Name" value="Projekt tulajdons&aacute;gai">
 				<param name="Local" value="page\ptul.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
@@ -77,13 +77,18 @@
 		</UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="S&uacute;g&oacute;">
-			<param name="Local" value="page\sugo.htm">
 			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="S&uacute;g&oacute;">
+				<param name="Local" value="page\sugo.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="N&eacute;vjegy">
+				<param name="Local" value="page\sugo.htm">
+				</OBJECT>
+		</UL>
 	</UL>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Vakt&eacute;rk&eacute;p projektek k&eacute;zi szerkeszt&eacute;se">
-		<param name="Local" value="page\kezi.htm">
-		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Felhaszn&aacute;l&oacute;i License Szerz&otilde;d&eacute;s">
 		<param name="Local" value="page\eula.htm">

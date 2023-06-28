@@ -1,86 +1,303 @@
+;Vaktérkép 2.0 által generált térképfájl
+;Muráti Ákos 2003 - Minden jog fenntartva.
+
 cim=Nagy Magyarország
-terkep=\nmo.GIF
-elem=3,2498,1823,Pozsony
-kerdes=1,1,Régen gyakran voltak itt gyûlések\nSok sikert a többihez\n\nÜdv: Muráti Ákos
-kerdes=2,2,Szlovákia fõvárosa
-kerdes=3,3,Írd má be hogy "POZSONY"
-kerdes=4,4,Írd má be hogy "POZSONY"
-kerdes=5,5,Írd má be hogy "POZSONY"
-alahuzott
-kover
-szin=4227327
-elem=3,4013,2558,Buda
-kerdes=1,elsõ megoldás,Hozzácsatolták egy másik városhoz
-kerdes=2,harmadik,NEM PEST!
-kerdes=3,negyedik,Pszzt!!! BUDA!!!
-kerdes=4,ötödik,Mondom!!!!\n\nBBBUUUDDDAAAA!\nNa. Hülyegyerek
-tipp=Budapest lesz a neve késõbb...
-kover
-szin=4210816
-elem=3,4868,4028,Szeged
-alahuzott
-kover
-szin=33023
-elem=3,1823,1703,Bécs
-tipp=Ausztria Fõvárossa
-elem=3,7583,3263,Kolozsvár
-elem=3,5318,743,Lõcse
-elem=3,5723,1118,Kassa
-elem=3,5813,1868,Tokaj
-elem=3,6038,2513,Várad
-elem=3,3593,2888,Székesfehérvár
-elem=3,3218,2213,Komárom
-elem=3,4073,2213,Esztergom
-elem=3,3308,2723,Pannonhalma
-elem=3,5753,4628,Temesvár
-elem=3,8363,3773,Segesvár
-elem=3,5813,4043,Csanád
-elem=3,6188,3923,Arad
-elem=3,7238,4493,Lippa
-alahuzott
-kover
-szin=4227327
-elem=3,3023,128,Prága
-elem=3,4973,2333,Eger
-kover
-meret=17,25
-szin=32768
-elem=1,4373,6188,Török birodalom
-kover
-meret=17,25
-szin=32768
-balra
-elem=1,9728,263,Lengyelország
-alahuzott
-kover
-szin=4227327
-elem=7,3,0,Fõváros
-kover
-meret=13,5
-szin=32768
-elem=7,1,0,Ország
-kover
-meret=12
-szin=255
-elem=1,473,5018,Dalmácia
-kover
-meret=12
-szin=255
-elem=1,7103,2513,Erdély
-kover
-meret=12
-szin=255
-elem=1,3668,968,Felvidék
-kover
-meret=12
-szin=255
-elem=1,2123,2918,Dunántúl
-kover
-meret=17,25
-szin=32768
-elem=1,98,1868,NRB
-kover
-meret=12
-szin=255
-elem=7,1,0,Magyar területek
-elem=7,3,0,Városok
+kep=\Térképek\nagy_mo.gif
+kijelol=0;0;10245;6645
+nagyitas=1
+<megjegyzes=Szeged
+	xy=4815,4020
+	meret=250,250
+	jel=3
+	hatter=4227327
+	keret-tipus=0
+	keret-vastagsag=2
+	keret-szin=128
+	kitoltes-szin=128
+	szovegXY=126,207
+	betu-szin=4227327
+	formazas=fa
+!>
+<megjegyzes=Csanád
+	xy=5812,4028
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=-542,-105
+!>
+<megjegyzes=Arad
+	xy=6082,3892
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=195,-13
+!>
+<megjegyzes=Temesvár
+	xy=5768,4718
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=142,-38
+!>
+<megjegyzes=Lippa
+	xy=7252,4448
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=109,144
+!>
+<megjegyzes=Segesvár
+	xy=8228,3728
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=208,71
+!>
+<megjegyzes=Kolozsvár
+	xy=7628,3172
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=182,-19
+!>
+<megjegyzes=Esztergom
+	xy=4058,2212
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=73,-169
+!>
+<megjegyzes=Komárom
+	xy=3442,2182
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=-704,191
+!>
+<megjegyzes=Pozsony
+	xy=2588,1852
+	meret=250,250
+	jel=3
+	hatter=4227327
+	keret-tipus=0
+	keret-vastagsag=2
+	keret-szin=128
+	kitoltes-szin=128
+	szovegXY=269,-5
+	betu-szin=4227327
+	formazas=fa
+!>
+<megjegyzes=Bécs
+	xy=1758,1684
+	meret=250,250
+	jel=3
+	hatter=4227327
+	keret-tipus=0
+	keret-vastagsag=2
+	keret-szin=128
+	kitoltes-szin=128
+	szovegXY=-399,175
+	betu-szin=4227327
+	formazas=fa
+!>
+<megjegyzes=Buda
+	xy=4012,2408
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=182,-4
+!>
+<megjegyzes=Várad
+	xy=5962,2648
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=164,11
+!>
+<megjegyzes=Eger
+	xy=5062,2182
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=74,-184
+!>
+<megjegyzes=Tokaj
+	xy=5798,1868
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=152,116
+!>
+<megjegyzes=Kassa
+	xy=5685,1065
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=124,-34
+!>
+<megjegyzes=Lõcse
+	xy=5258,668
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=124,-34
+!>
+<megjegyzes=Prága
+	xy=2842,248
+	meret=250,250
+	jel=3
+	hatter=4227327
+	keret-tipus=0
+	keret-vastagsag=2
+	keret-szin=128
+	kitoltes-szin=128
+	szovegXY=-512,10
+	betu-szin=4227327
+	formazas=fa
+!>
+<megjegyzes=Dalmácia
+	xy=236,5089
+	lathatatlan-jel
+	meret=135,135
+	jel=0
+	szovegXY=214,-154
+	betu-tipus=Tahoma
+	betu-meret=15,75
+	betu-szin=15511571
+	formazas=f
+!>
+<megjegyzes=Felvidék
+	xy=3712,1148
+	lathatatlan-jel
+	meret=135,135
+	jel=0
+	szovegXY=128,-38
+	betu-tipus=Tahoma
+	betu-meret=13,5
+	betu-szin=15511571
+	formazas=f
+!>
+<megjegyzes=Dunántúl
+	xy=1777,2843
+	lathatatlan-jel
+	meret=135,135
+	jel=0
+	szovegXY=128,-38
+	betu-tipus=Tahoma
+	betu-meret=13,5
+	betu-szin=15511571
+	formazas=f
+!>
+<megjegyzes=Erdély
+	xy=6172,3083
+	lathatatlan-jel
+	meret=135,135
+	jel=0
+	szovegXY=128,-38
+	betu-tipus=Tahoma
+	betu-meret=13,5
+	betu-szin=15511571
+	formazas=f
+!>
+<megjegyzes=Török Birodalom
+	xy=5820,6148
+	meret=200,200
+	jel=0
+	hatter=4241190
+	keret-tipus=0
+	szovegXY=195,-193
+	betu-meret=24
+	betu-szin=6473526
+	formazas=f
+!>
+<megjegyzes=Lengyelország
+	xy=8820,600
+	meret=200,200
+	jel=0
+	hatter=4241190
+	keret-tipus=0
+	szovegXY=-2070,-495
+	betu-meret=24
+	betu-szin=6473526
+	formazas=f
+!>
+<megjegyzes=NRB
+	xy=510,2520
+	tipp=Ez csak egy rövidítés
+	meret=200,200
+	jel=0
+	hatter=4241190
+	keret-tipus=0
+	szovegXY=-401,209
+	betu-meret=24
+	betu-szin=6473526
+	formazas=f
+!>
+<jelmagyarazat=Nagyváros
+	xy=75,60
+	meret=250,250
+	jel=3
+	hatter=4227327
+	keret-tipus=0
+	keret-vastagsag=2
+	keret-szin=128
+	kitoltes-szin=128
+	szovegXY=296,56
+	betu-szin=4227327
+	formazas=fa
+!>
+<jelmagyarazat=Országrész
+	xy=-38,428
+	lathatatlan-jel
+	meret=135,135
+	jel=0
+	szovegXY=124,-34
+	betu-tipus=Tahoma
+	betu-meret=13,5
+	betu-szin=15511571
+	formazas=f
+!>
+<jelmagyarazat=Város
+	xy=90,780
+	meret=160,160
+	jel=3
+	hatter=0
+	keret-tipus=0
+	szovegXY=174,-28
+!>
+<jelmagyarazat=Ország
+	xy=-4,1201
+	meret=200,200
+	jel=0
+	hatter=4241190
+	keret-tipus=0
+	szovegXY=229,-181
+	betu-meret=24
+	betu-szin=6473526
+	formazas=f
+!>
+<megjegyzes=Alföld
+	xy=4358,3578
+	lathatatlan-jel
+	meret=135,135
+	jel=0
+	szovegXY=-308,-98
+	betu-tipus=Tahoma
+	betu-meret=13,5
+	betu-szin=15511571
+	formazas=f
+!>

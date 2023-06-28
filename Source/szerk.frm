@@ -1,72 +1,45 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Begin VB.Form szerk 
+Begin VB.Form szerkeszto 
    BackColor       =   &H8000000C&
    Caption         =   "Vaktérkép Szerkesztõ"
-   ClientHeight    =   5130
+   ClientHeight    =   5070
    ClientLeft      =   165
    ClientTop       =   855
-   ClientWidth     =   6600
+   ClientWidth     =   6540
    Icon            =   "szerk.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   ScaleHeight     =   5130
-   ScaleWidth      =   6600
+   ScaleHeight     =   5070
+   ScaleWidth      =   6540
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin MSComDlg.CommonDialog pb 
+      Left            =   240
+      Top             =   4080
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+   End
    Begin VB.CommandButton gomb 
       Caption         =   "T"
       Height          =   255
       Left            =   5760
-      TabIndex        =   7
+      TabIndex        =   2
       Top             =   4320
-      Visible         =   0   'False
       Width           =   255
-   End
-   Begin MSComctlLib.StatusBar sb 
-      Align           =   2  'Align Bottom
-      Height          =   255
-      Left            =   0
-      TabIndex        =   6
-      Top             =   4875
-      Width           =   6600
-      _ExtentX        =   11642
-      _ExtentY        =   450
-      _Version        =   393216
-      BeginProperty Panels {8E3867A5-8586-11D1-B16A-00C0F0283628} 
-         NumPanels       =   2
-         BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
-            AutoSize        =   1
-            Object.Width           =   5786
-            MinWidth        =   1235
-         EndProperty
-         BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
-            AutoSize        =   1
-            Object.Width           =   5257
-            MinWidth        =   706
-         EndProperty
-      EndProperty
-   End
-   Begin MSComDlg.CommonDialog pb 
-      Left            =   120
-      Top             =   3360
-      _ExtentX        =   847
-      _ExtentY        =   847
-      _Version        =   393216
-      CancelError     =   -1  'True
    End
    Begin VB.HScrollBar jb 
       Height          =   255
       Left            =   720
-      TabIndex        =   4
+      TabIndex        =   1
       Top             =   4320
       Width           =   5055
    End
    Begin VB.VScrollBar fl 
       Height          =   3855
       Left            =   5760
-      TabIndex        =   3
+      TabIndex        =   0
       Top             =   480
       Width           =   255
    End
@@ -78,861 +51,1194 @@ Begin VB.Form szerk
       ForeColor       =   &H80000008&
       Height          =   3855
       Left            =   720
-      MousePointer    =   2  'Cross
       ScaleHeight     =   3825
       ScaleWidth      =   5025
-      TabIndex        =   1
+      TabIndex        =   3
       Top             =   480
       Width           =   5055
-      Begin VB.TextBox szoveg 
+      Begin VB.PictureBox ba 
          Appearance      =   0  'Flat
-         Height          =   285
-         Left            =   1080
-         MousePointer    =   3  'I-Beam
-         TabIndex        =   0
-         Top             =   720
+         BackColor       =   &H00FFFFFF&
+         ForeColor       =   &H80000008&
+         Height          =   90
+         Left            =   0
+         ScaleHeight     =   60
+         ScaleWidth      =   60
+         TabIndex        =   9
+         Top             =   240
          Visible         =   0   'False
-         Width           =   255
+         Width           =   90
       End
-      Begin VB.Label fedo 
-         BackStyle       =   0  'Transparent
-         Height          =   255
+      Begin VB.PictureBox bf 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         ForeColor       =   &H80000008&
+         Height          =   90
+         Left            =   0
+         ScaleHeight     =   60
+         ScaleWidth      =   60
+         TabIndex        =   8
+         Top             =   0
+         Visible         =   0   'False
+         Width           =   90
+      End
+      Begin VB.PictureBox jf 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         ForeColor       =   &H80000008&
+         Height          =   90
+         Left            =   840
+         ScaleHeight     =   60
+         ScaleWidth      =   60
+         TabIndex        =   7
+         Top             =   0
+         Visible         =   0   'False
+         Width           =   90
+      End
+      Begin VB.PictureBox ja 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         ForeColor       =   &H80000008&
+         Height          =   90
+         Left            =   840
+         ScaleHeight     =   60
+         ScaleWidth      =   60
+         TabIndex        =   6
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   90
+      End
+      Begin Vakterkep2.jel jel 
+         Height          =   200
          Index           =   0
-         Left            =   1680
-         MousePointer    =   1  'Arrow
+         Left            =   600
          TabIndex        =   5
-         Top             =   3360
+         Top             =   2520
          Visible         =   0   'False
-         Width           =   255
+         Width           =   200
+         _ExtentX        =   344
+         _ExtentY        =   344
+         KitoltesSzine   =   -2147483640
+         KeretSzine      =   -2147483640
+         HatterSzine     =   -2147483643
       End
-      Begin VB.Label cimke 
+      Begin VB.Shape keret 
+         Height          =   375
+         Left            =   0
+         Top             =   0
+         Visible         =   0   'False
+         Width           =   975
+      End
+      Begin VB.Label jel_szoveg 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
          BackStyle       =   0  'Transparent
-         Caption         =   "Címke"
+         Caption         =   "Jel szöveg"
          ForeColor       =   &H80000008&
          Height          =   195
          Index           =   0
-         Left            =   2280
-         MousePointer    =   1  'Arrow
-         TabIndex        =   2
-         Top             =   3360
+         Left            =   840
+         TabIndex        =   4
+         Top             =   2520
          Visible         =   0   'False
-         Width           =   450
-      End
-      Begin VB.Shape pont 
-         BorderColor     =   &H00000000&
-         BorderStyle     =   0  'Transparent
-         FillStyle       =   0  'Solid
-         Height          =   135
-         Index           =   0
-         Left            =   2040
-         Shape           =   3  'Circle
-         Top             =   3360
-         Visible         =   0   'False
-         Width           =   135
+         Width           =   750
       End
    End
    Begin VB.Menu file 
-      Caption         =   "&Térképek"
-      Begin VB.Menu new 
-         Caption         =   "&Új térkép"
+      Caption         =   "&Projekt"
+      Begin VB.Menu uj_mnu 
+         Caption         =   "&Új projekt"
          Shortcut        =   ^U
       End
-      Begin VB.Menu v5 
-         Caption         =   "-"
-      End
-      Begin VB.Menu open 
-         Caption         =   "Térkép megnyitása"
+      Begin VB.Menu megnyit_mnu 
+         Caption         =   "Megnyitása"
          Shortcut        =   ^M
       End
-      Begin VB.Menu save 
-         Caption         =   "Térkép mentése"
-         Shortcut        =   ^S
-      End
-      Begin VB.Menu v4 
+      Begin VB.Menu v0 
          Caption         =   "-"
       End
-      Begin VB.Menu tuls 
-         Caption         =   "Tulajdonságok"
-         Shortcut        =   ^T
+      Begin VB.Menu ment_mnu 
+         Caption         =   "Mentése"
+         Shortcut        =   ^S
+      End
+      Begin VB.Menu ment_mint_mnu 
+         Caption         =   "Mentés másként"
+         Shortcut        =   ^A
       End
       Begin VB.Menu v1 
          Caption         =   "-"
       End
-      Begin VB.Menu exit 
-         Caption         =   "Kilépés"
-         Shortcut        =   ^K
+      Begin VB.Menu olda_mnu 
+         Caption         =   "Projekt tulajdonságai"
+         Shortcut        =   ^T
       End
-   End
-   Begin VB.Menu edit 
-      Caption         =   "Szerkesztés"
-      Visible         =   0   'False
-      Begin VB.Menu uj 
-         Caption         =   "Új pont"
-         Begin VB.Menu elem 
-            Caption         =   "Város"
-            Index           =   1
-         End
-         Begin VB.Menu elem 
-            Caption         =   "Terület"
-            Index           =   2
-         End
-      End
-      Begin VB.Menu rename 
-         Caption         =   "Átnevez"
-      End
-      Begin VB.Menu del 
-         Caption         =   "Töröl"
-      End
-      Begin VB.Menu v3 
-         Caption         =   "-"
-      End
-      Begin VB.Menu props 
-         Caption         =   "Tulajdonságok"
-      End
-   End
-   Begin VB.Menu sugo 
-      Caption         =   "&Súgó"
-      Begin VB.Menu help 
-         Caption         =   "Súgó"
-         Shortcut        =   {F1}
+      Begin VB.Menu megtekint_mnu 
+         Caption         =   "Megtekintés..."
+         Enabled         =   0   'False
       End
       Begin VB.Menu v2 
          Caption         =   "-"
       End
-      Begin VB.Menu nevjegy 
+      Begin VB.Menu kilepes_mnu 
+         Caption         =   "Kilépés"
+         Shortcut        =   ^K
+      End
+   End
+   Begin VB.Menu szerkesztes_mnu 
+      Caption         =   "Szerkesztés"
+      Visible         =   0   'False
+      Begin VB.Menu nev_mnu 
+         Caption         =   "Névtelen"
+         Enabled         =   0   'False
+         Visible         =   0   'False
+      End
+      Begin VB.Menu v6 
+         Caption         =   "-"
+         Visible         =   0   'False
+      End
+      Begin VB.Menu uj_elem_mnu 
+         Caption         =   "Új elem"
+      End
+      Begin VB.Menu v3 
+         Caption         =   "-"
+      End
+      Begin VB.Menu torles_mnu 
+         Caption         =   "Töröl"
+      End
+      Begin VB.Menu v4 
+         Caption         =   "-"
+      End
+      Begin VB.Menu igazitas_mnu 
+         Caption         =   "Szöveg igazítás"
+         Begin VB.Menu szoveg_igazit 
+            Caption         =   "Alá"
+            Index           =   0
+         End
+         Begin VB.Menu szoveg_igazit 
+            Caption         =   "Fölé"
+            Index           =   1
+         End
+         Begin VB.Menu szoveg_igazit 
+            Caption         =   "Középre"
+            Index           =   2
+         End
+         Begin VB.Menu szoveg_igazit 
+            Caption         =   "Jobbra"
+            Index           =   3
+         End
+         Begin VB.Menu szoveg_igazit 
+            Caption         =   "Balra"
+            Index           =   4
+         End
+      End
+      Begin VB.Menu meretez_mnu 
+         Caption         =   "Jel méretezése"
+      End
+      Begin VB.Menu tulajdonsag_mnu 
+         Caption         =   "Tulajdonságok"
+      End
+   End
+   Begin VB.Menu sugo_mnu 
+      Caption         =   "&Súgó"
+      Begin VB.Menu sugo_mnup 
+         Caption         =   "Súgó"
+         Shortcut        =   {F1}
+      End
+      Begin VB.Menu v5 
+         Caption         =   "-"
+      End
+      Begin VB.Menu nevjegy_mnu 
          Caption         =   "Névjegy"
          Shortcut        =   ^N
       End
    End
 End
-Attribute VB_Name = "szerk"
+Attribute VB_Name = "szerkeszto"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+'Globális konstansként nem definiált Egyéni tulajdonság - jelm: &H80000018
 Option Explicit
-Public aktualis As Integer, teljes As Integer, athelyez As Boolean
-Dim px As Integer, py As Integer, segitseg(1 To 256, 1 To 5) As String, megoldas(1 To 256, 1 To 5) As String
-Dim mozgatott As Integer
-Public kepneve As String, terkepneve As String
-Public szerkesztett As Boolean, koppint As Boolean
-
-Private Sub cimke_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
-    fedo_Mousedown Index, Button, Shift, X, Y
-End Sub
-
-Private Sub exit_Click()
-If szerkesztett Then
-    i = MsgBox("Kilépés elõtt szeretné elmenteni a változtatásokat?", vbQuestion + vbYesNoCancel, "Kilépés és mentés megerõsítése")
-    Select Case i
-        Case vbYes
-            save_Click
-        Case vbCancel
-            Exit Sub
-    End Select
-End If
-Unload Me
-End Sub
-
-Private Sub fedo_Mousedown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
-Select Case Button
-    Case 1
-        jobbklikk (Index)
-    Case 2
-        aktualis = Index
-        elemmenu
-End Select
-End Sub
-
+Public Cime As String, Kephelye As String, obj As Object, tabulalo As Integer, mentett As Boolean
+Public x1 As Double, y1 As Double, szel As Double, mag As Double, nagyitas As Double
+Dim elemek(1 To 1024) As elem
+Dim ures As elem, ux As Single, uy As Single
+Dim mentettFajl As String, meretez As Boolean
 
 Private Sub fl_Change()
-terulet.Top = fl.Value
+    terulet.Top = fl.Value
 End Sub
 
-Private Sub Form_KeyPress(KeyAscii As Integer)
-Dim ful  As String
-    Select Case KeyAscii
-        Case 13 And szoveg.Visible
-            cimke(aktualis).Caption = szoveg.Text
-            'cimke(aktualis).Width = (Len(szoveg.Text)) * 100 + 200
-            szoveg.Visible = False
-            aktualis = 0
-        Case 27
-            If koppint Then
-                jobbklikk (aktualis)
-            Else
-                If szoveg.Visible Then
-                    szoveg.Visible = False
-                    aktualis = 0
-                End If
-            End If
-    End Select
+Private Sub Form_DragOver(Source As Control, X As Single, Y As Single, State As Integer)
+    jel(tabulalo).Visible = True
+    jel_szoveg(tabulalo).Visible = True
 End Sub
+
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+    'MsgBox KeyCode
+    terulet.SetFocus
+    Select Case Shift
+        Case 0
+            Select Case KeyCode
+                Case 39, 40
+                    If jel.Count = 1 Then
+                        tabulalo = 0
+                        Exit Sub
+                    End If
+                    tabulalo = tabulalo + 1
+                    If tabulalo > jel.Count - 1 Then tabulalo = 1
+                    megjelol (tabulalo)
+        
+                Case 37, 38
+                    If jel.Count = 1 Then
+                        tabulalo = 0
+                        Exit Sub
+                    End If
+                    tabulalo = tabulalo - 1
+                    If tabulalo < 1 Then tabulalo = jel.Count - 1
+                    megjelol (tabulalo)
+        
+                Case 13
+                    If meretez Then
+                            meretez = False
+                            megjelol (tabulalo)
+                        Else
+                            jel_DblClick (tabulalo)
+                    End If
+                Case 46
+                    torles_mnu_Click
+                Case 27
+                    If meretez Then
+                            meretez = False
+                            megjelol (tabulalo)
+                        Else
+                            tabulalo = 0
+                            megjelol (tabulalo)
+                    End If
+            End Select
+        Case 1
+            
+    End Select
+            
+End Sub
+
 
 Private Sub Form_Load()
-On Error Resume Next
-terulet.Move terulet.Left, terulet.Top, 6000, 5000
-Me.Caption = "Vaktérkép Szerkesztõ " & App.Major & "." & App.Minor
-szerkesztett = False
+    torol
+    tulajdonsagok.Hide
 End Sub
 
-Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-sb.Panels(1).Text = "Ez nem"
-sb.Panels(2).Text = "rajzterület"
-End Sub
-
-Private Sub Form_Resize()
-On Error Resume Next
-Dim X As Integer, Y As Integer
-X = (szerk.ScaleWidth - terulet.Width) / 2
-Y = (szerk.ScaleHeight - terulet.Height - sb.Height) / 2
-
-fl.Move szerk.ScaleWidth - fl.Width, 0, fl.Width, szerk.ScaleHeight - fl.Width - sb.Height
-jb.Move 0, szerk.ScaleHeight - jb.Height - sb.Height, szerk.ScaleWidth - jb.Height, jb.Height
-terulet.Move X, Y
-
-If szerk.ScaleWidth - terulet.Width < 0 Then
-        jb.SmallChange = Int(szerk.ScaleWidth - terulet.Width / 100)
-        jb.LargeChange = Int(szerk.ScaleWidth - terulet.Width / 10)
-        jb.Max = szerk.ScaleWidth - terulet.Width
-        jb.Min = 0
-        jb.Visible = True
-    Else
-        jb.Visible = False
-End If
-
-If szerk.ScaleHeight - terulet.Height < 0 Then
-        fl.SmallChange = Int(szerk.ScaleHeight - terulet.Height / 100)
-        fl.LargeChange = Int(szerk.ScaleHeight - terulet.Height / 10)
-        fl.Max = szerk.ScaleHeight - terulet.Height - sb.Height
-        fl.Min = 0
-        fl.Visible = True
-    Else
-        fl.Visible = False
-End If
-
-If fl.Visible Or jb.Visible Then
-        gomb.Move fl.Left, jb.Top
-        gomb.Visible = True
-Else
-        gomb.Visible = False
-End If
+Public Sub Form_Resize()
+Pozicional
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-totalki
+    If Not menti Then
+        Cancel = 1
+        Exit Sub
+    End If
+    Megsemmisit
+    End
+End Sub
+
+Private Sub foszerk_mnu_Click()
+    If tabulalo = 0 Then
+            terulet_MouseUp 2, 0, 0, 0
+        Else
+            jel_MouseDown tabulalo, 2, 0, 0, 0
+    End If
 End Sub
 
 Private Sub gomb_Click()
-tuls_Click
-End Sub
-
-Private Sub help_Click()
-On Error GoTo hiba
-Shell "hh.exe " & eleres & "\szerkeszto.chm", vbNormalFocus
-Exit Sub
-hiba:
-    MsgBox "Az ön Windowsa nem képes kezelni a HTML Help fájlokat.", vbInformation, "Súgó nem tölthetõ be"
-
+    tulajdonsag_mnu_Click
 End Sub
 
 Private Sub jb_Change()
-terulet.Left = jb.Value
+    terulet.Left = jb.Value
 End Sub
 
-Private Sub nevjegy_Click()
-frmAbout.Show vbModal
-End Sub
 
-Private Sub new_Click()
-If szerkesztett Then
-    i = MsgBox("Új projekt létrehozásával, minden eddigi munka el fog veszni." & vbCrLf & vbCrLf & "Kívánja menteni a jelenlegi projektet?", vbYesNoCancel + vbQuestion, "Új projekt létrehozása...")
-    
-    Select Case i
-        Case vbYes
-            save_Click
-            alaphelyzet
-        Case vbNo
-            alaphelyzet
-    End Select
-Else
-        alaphelyzet
-End If
-Form_Resize
-
-End Sub
-
-Private Sub open_Click()
-On Error GoTo hiba
-pb.DialogTitle = "Térkép megnyitása ..."
-pb.Filter = "Térkép projektek (*.vtk)|*.vtk"
-pb.FileName = "*.vtk"
-pb.ShowOpen
-
-Call alaphelyzet
-tolt (pb.FileName)
-szerkesztett = False
-hiba:
-End Sub
-
-Public Sub beiro()
-szoveg.Width = (Len(cimke(aktualis).Caption)) * 100 + 200
-szoveg.Text = cimke(aktualis).Caption
-szoveg.Move cimke(aktualis).Left, cimke(aktualis).Top
-szoveg.Visible = True
-szerkesztett = True
-End Sub
-Public Sub tolt(fajlnev As String)
-Dim parancs As String, ertek As String, kod As Integer, sor As String, ker As Integer, i As Integer
-Dim tipus As Byte, X As Integer, Y As Integer, nev As String, szin As ColorConstants
-Dim kover As Boolean, dolt As Boolean, alahuzott As Boolean, meret As Byte
-Dim konyvtar As String, jobbra As Boolean, feltolt(1 To 10) As String, lathatatlan As Boolean
-
-'konyvtar meghatározása
-j = 0
-    For i = 1 To Len(fajlnev)
-        If Mid(fajlnev, i, 1) = "\" Then j = i
-    Next i
-konyvtar = Mid(fajlnev, 1, j)
-
-'alapertekek megadasa
-meret = 9
-szin = vbBlack
-kod = 0
-dolt = False
-kover = False
-alahuzott = False
-jobbra = False
-lathatatlan = False
-
-terulet.Picture = Nothing
-terulet.Move 0, 0, Me.ScaleWidth, Me.ScaleHeight
-Call Form_Resize
-'project töltése
-
-On Error GoTo fajlhiba
-Open fajlnev For Input As 1
-    Do While Not EOF(1)
-        On Error Resume Next 'Hibás értékeket ugorja át
-        Line Input #1, sor
-            parancs = ""
-            ertek = ""
-            For ker = 1 To Len(sor)
-            If Mid(sor, ker, 1) = "=" Then
-                parancs = Mid(sor, 1, ker - 1)
-                ertek = Mid(sor, ker + 1, Len(sor) - ker)
-                GoTo gyorski
-            End If
-        Next ker
-    If parancs = "" Then parancs = sor
-    parancs = LCase(parancs)
-gyorski:
-    Select Case parancs
-        Case "cim"
-            Me.Caption = ertek & " - Vaktérkép Szerkesztõ " & App.Major & "." & App.Minor
-            terkepneve = ertek
-        Case "terkep"
-            
-            If Mid(ertek, 1, 1) = "\" Then
-                    ertek = Mid(ertek, 2, Len(ertek) - 1)
-                    terulet.Picture = LoadPicture(konyvtar & ertek)
-                    kepneve = konyvtar & ertek
-                Else
-                    terulet.Picture = LoadPicture(ertek)
-                    kepneve = ertek
-            End If
-        Case "szin"
-            szin = ertek
-        Case "kover"
-            kover = True
-        Case "dolt"
-            dolt = True
-        Case "alahuzott"
-            alahuzott = True
-        Case "meret"
-            meret = ertek
-        Case "lathatatlan"
-            lathatatlan = True
-        Case "balra"
-            jobbra = True
-        Case "elem"
-            kod = kod + 1
-           For i = 1 To 10
-                feltolt(i) = ""
-            Next i
-            i = 1
-            j = 1
-        
-                    For ker = 1 To Len(ertek)
-                        If Mid(ertek, ker, 1) = "," Then
-                            feltolt(j) = Mid(ertek, i, ker - i)
-                            i = ker + 1
-                            j = j + 1
-                        End If
-                    Next
-                    feltolt(j) = Mid(ertek, i, Len(ertek) + 1 - i)
-                    
-                    
-                    nev = feltolt(4)
-                    X = feltolt(2)
-                    Y = feltolt(3)
-                    tipus = feltolt(1)
-                    
-                    'MsgBox tipus & "    " & X & " " & Y & " " & nev
-                     Select Case tipus
-                        Case 0 To 6
-                            Load pont(kod)
-                            pont(kod).Left = X
-                            pont(kod).Top = Y
-                            pont(kod).BorderColor = szin
-                            pont(kod).FillColor = szin
-                            'pont(kod).Visible = True
-                            
-                            
-                            Load cimke(kod)
-                            cimke(kod).Caption = nev
-                            cimke(kod).ForeColor = szin
-                            cimke(kod).FontBold = kover
-                            cimke(kod).FontItalic = dolt
-                            cimke(kod).FontUnderline = alahuzott
-                            cimke(kod).FontSize = meret
-                            cimke(kod).Top = Y - 30
-                            Call igazit(kod, Abs(CInt(jobbra)))
-                               
-                                
-                            'cimke(kod).Width = Len(nev) * 100 + 200 /* az autosize miatt
-                            cimke(kod).Visible = True
-                            Load fedo(kod)
-                            fedo(kod).Move pont(kod).Left, pont(kod).Top, pont(kod).Width, pont(kod).Height
-                            fedo(kod).Visible = True
-                            
-                            If lathatatlan = False Then
-                                pont(kod).Shape = tipus
-                                pont(kod).Visible = True
-                            End If
-                        Case 7
-                             
-                            Load pont(kod)
-                            pont(kod).Left = 0
-                            pont(kod).Top = 30
-                            'pont(kod).Shape = X
-                            pont(kod).BorderColor = szin
-                            pont(kod).FillColor = szin
-                            'pont(kod).Visible = True
-                            
-                            
-                            Load cimke(kod)
-                            cimke(kod).FontSize = meret
-                            cimke(kod).Caption = nev
-                            cimke(kod).ForeColor = szin
-                            cimke(kod).FontBold = kover
-                            cimke(kod).FontItalic = dolt
-                            cimke(kod).FontUnderline = alahuzott
-                            cimke(kod).Top = 0
-                            cimke(kod).BorderStyle = 1
-                            Call igazit(kod, 0)
-                            cimke(kod).Visible = True
-                            
-                            Load fedo(kod)
-                            fedo(kod).Move pont(kod).Left, pont(kod).Top, pont(kod).Width, pont(kod).Height
-                            fedo(kod).Visible = True
-                                                   
-                                                   
-                            If lathatatlan = False Then
-                                pont(kod).Shape = X
-                                pont(kod).Visible = True
-                            End If
-                            
-                End Select
-                meret = 9
-                szin = vbBlack
-                dolt = False
-                kover = False
-                alahuzott = False
-                jobbra = False
-                lathatatlan = False
-objkkod:
-        Case "hatarok"
-            i = 1
-            j = 1
-        
-                    For ker = 1 To Len(ertek)
-                        If Mid(ertek, ker, 1) = "," Then
-                            feltolt(j) = Mid(ertek, i, ker - i)
-                            i = ker + 1
-                            j = j + 1
-                        End If
-                    Next
-                    feltolt(j) = Mid(ertek, i, Len(ertek) + 1 - i)
-                    
-                    For i = 1 To 4
-                        opciok.hatarok(i) = feltolt(i)
-                    Next i
-            opciok.beall.Value = 1
-        Case "kerdes"
-            For i = 1 To 10
-                feltolt(i) = ""
-            Next i
-            i = 1
-            j = 1
-        
-                    For ker = 1 To Len(ertek)
-                     If j < 3 Then
-                        If Mid(ertek, ker, 1) = "," Then
-                            feltolt(j) = Mid(ertek, i, ker - i)
-                            i = ker + 1
-                            j = j + 1
-                        End If
-                    Else
-                        GoTo ki2
-                    End If
-                    Next
-ki2:
-                    feltolt(j) = Mid(ertek, i, Len(ertek) + 1 - i)
-            If feltolt(2) = "" Then feltolt(2) = " "
-            'MsgBox feltolt(1) & " - " & feltolt(2) & "  - " & feltolt(3)
-            i = feltolt(1)
-            megoldas(kod, i) = feltolt(2)
-            ertek = feltolt(3)
-            'ertek = Mid(ertek, 3, Len(ertek) - 2)
-            'Do While Right(ertek, 2) = "\n"
-             '   Line Input #1, k
-            '    ertek = Mid(ertek, 1, Len(ertek) - 2) & vbCrLf & k
-            'Loop
-            
-            k = ""
-            j = 1
-            Do While j <= Len(ertek)
-                If Mid(ertek, j, 2) = "\n" Then
-                    k = k & vbCrLf
-                    j = j + 2
-                Else
-                    k = k & Mid(ertek, j, 1)
-                    j = j + 1
-                End If
-            Loop
-            ertek = k
-            
-            'MsgBox ertek
-            segitseg(kod, i) = ertek
-            
-        Case "vege"
-            Close 1
+Private Sub jel_DblClick(Index As Integer)
+    If tulajdonsagok.Masolas Then
+            tulajdonsagok.Formatuma (Index)
+            tulajdonsagok.Show vbModal
             Exit Sub
-    End Select
-ki:
-    Loop
-Close 1
-teljes = kod
-Form_Resize
-Exit Sub
-
-fajlhiba:
-    MsgBox "A megadott elérési út helytelen, vagy nem Vaktérkép fájl.(" & fajlnev & ")", vbCritical, "A projekt nem nyitható meg..."
-        alaphelyzet
-        Close 1
-        Exit Sub
-
-
-End Sub
-
-
-
-Public Sub picopen()
-On Error GoTo megse
-    pb.DialogTitle = "Kép megnyitása..."
-    pb.Filter = "Bitmap képek(*.bmp)|*.bmp|GIF képek(*.gif)|*.gif|Jpg képek(*.jpg)|*.jpg|JPE képek(*.jpe)|*.jpe|Jpeg képek(*.jpeg)|*.jpeg|Minden fájl(*.*)|*.*"
-    pb.FileName = ""
-    pb.ShowOpen
-    terulet.Picture = LoadPicture(pb.FileName)
-    tul.kep = pb.FileName
-megse:
-    Form_Resize
-    szerkesztett = True
-End Sub
-
-
-Private Sub rename_Click()
-beiro
-End Sub
-
-
-
-Private Sub save_Click()
-Dim konyvtar As String, kepfajl As String
-On Error GoTo megse
-be:
-    pb.DialogTitle = "Térkép mentése..."
-    pb.Filter = "Vaktérkép projekt(*.vtk)|*.vtk"
-    pb.FileName = terkepneve & ".vtk"
-    pb.ShowSave
-
-'csak a fájlnév meghat
-j = 0
-    For i = 1 To Len(pb.FileName)
-        If Mid(pb.FileName, i, 1) = "\" Then j = i
-    Next i
-kepfajl = Mid(pb.FileName, j + 1, Len(pb.FileName) - j)   ' csak a mentendõ képfájl
-        
-If Dir(pb.FileName) = kepfajl Then
-    i = MsgBox("A megadott fájl már létezik. Kívánja felülírni?", vbYesNo + vbQuestion, "Létezõ fájl")
-    If i = vbNo Then
-        GoTo be
     End If
-End If
-'belsõ struktúra
- j = 0
-    For i = 1 To Len(pb.FileName)
-        If Mid(pb.FileName, i, 1) = "\" Then j = i
-    Next i
-konyvtar = Mid(pb.FileName, 1, j) 'mentés könyvtára
-j = 0
-    For i = 1 To Len(kepneve)
-        If Mid(kepneve, i, 1) = "\" Then j = i
-    Next i
-kepfajl = Mid(kepneve, j + 1, Len(kepneve) - j) ' csak a mentendõ képfájl
-        
-        
-'mentés
-On Error Resume Next
-        FileCopy kepneve, konyvtar & kepfajl
-       k = "\" & kepfajl
-        mentes pb.FileName
-megse:
-szerkesztett = False
+    If meretez Then
+            meretez = False
+            jel_MouseDown tabulalo, 1, 0, 0, 0
+            Exit Sub
+    End If
+    tulajdonsag_mnu_Click
 End Sub
 
-Private Sub szoveg_Change()
-szoveg.Width = (Len(szoveg.Text) + 1) * 120 + 150
+Private Sub jel_DragDrop(Index As Integer, Source As Control, X As Single, Y As Single)
+    terulet_DragDrop Source, jel(Index).Left + X, jel(Index).Top + Y
+End Sub
+
+Private Sub jel_DragOver(Index As Integer, Source As Control, X As Single, Y As Single, State As Integer)
+    If TypeOf Source Is PictureBox Then
+        terulet_DragDrop Source, jel(Index).Left + X, jel(Index).Top + Y
+    End If
+End Sub
+
+Private Sub jel_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+If Not tulajdonsagok.Masolas Then
+        tabulalo = Index
+        megjelol (tabulalo)
+        nev_mnu.Caption = jel_szoveg(tabulalo).Caption
+        If Button = 2 Then
+                uj_elem_mnu.Enabled = False
+                torles_mnu.Enabled = True
+                igazitas_mnu.Enabled = True
+                meretez_mnu.Enabled = True
+                PopupMenu szerkesztes_mnu ', 0, terulet.Left + jel(tabulalo).Left + X, terulet.Top + jel(tabulalo).Top + Y
+            Else
+                If Shift = 1 Then
+                    ux = X
+                    uy = Y
+                    jel_szoveg(Index).Visible = False
+                    jel(Index).Visible = False
+                    jel(Index).Drag
+                End If
+        End If
+    Else
+        tulajdonsagok.Formatuma (Index)
+        tulajdonsagok.Show vbModal
+End If
+End Sub
+
+Private Sub jel_szoveg_Click(Index As Integer)
+    jel_MouseDown Index, 1, 0, 0, 0
+End Sub
+
+Private Sub jel_szoveg_DblClick(Index As Integer)
+    jel_DblClick (Index)
+End Sub
+
+Private Sub jel_szoveg_DragDrop(Index As Integer, Source As Control, X As Single, Y As Single)
+    terulet_DragDrop Source, jel_szoveg(Index).Left + X, jel_szoveg(Index).Top + Y
+End Sub
+
+
+Private Sub jel_szoveg_DragOver(Index As Integer, Source As Control, X As Single, Y As Single, State As Integer)
+    If TypeOf Source Is PictureBox Then
+        terulet_DragDrop Source, jel_szoveg(Index).Left + X, jel_szoveg(Index).Top + Y
+    End If
+End Sub
+
+Private Sub jel_szoveg_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If Button = 1 And Shift = 1 And Not tulajdonsagok.Masolas Then
+            tabulalo = Index
+            ux = X
+            uy = Y
+            'jel(Index).Visible = False
+            jel_szoveg(Index).Visible = False
+            jel_szoveg(Index).Drag
+        Else
+            jel_MouseDown Index, Button, Shift, 0, 0
+    End If
+End Sub
+
+Private Sub kilepes_mnu_Click()
+    Unload Me
+End Sub
+
+Private Sub megnyit_mnu_Click()
+On Error GoTo megse
+    If Not menti Then Exit Sub
+ujra:
+        pb.CancelError = True
+        pb.DialogTitle = "Vaktérkép megnyitása ..."
+        pb.Filter = "Vaktérkép fájlok (*.vtk)|*.vtk"
+        pb.FileName = "*.vtk"
+        pb.ShowOpen
+        torol
+        megnyitas (pb.FileName)
+megse:
+End Sub
+
+Private Sub megtekint_mnu_Click()
+    If Not menti Then Exit Sub
+    Shell Vakterkep.Konyvtar & App.EXEName & ".exe " & mentettFajl, vbNormalFocus
+End Sub
+
+Private Sub ment_mint_mnu_Click()
+On Error GoTo megse
+ujra:
+        pb.CancelError = True
+        pb.DialogTitle = "Vaktérkép mentése mint ..."
+        pb.Filter = "Vaktérkép fájlok (*.vtk)|*.vtk"
+        pb.FileName = Cime & ".vtk"
+        pb.ShowSave
+        
+        If Not mentes(pb.FileName) Then
+            MsgBox "A megadott fájlhoz nem lehet hozzáférni, kérem adjon meg egy másik nevet..."
+            GoTo ujra
+        End If
+megse:
+End Sub
+
+Private Sub ment_mnu_Click()
+On Error GoTo megse
+If mentettFajl = "" Then
+ujra:
+        pb.CancelError = True
+        pb.DialogTitle = "Vaktérkép mentése ..."
+        pb.Filter = "Vaktérkép fájlok (*.vtk)|*.vtk"
+        pb.FileName = Cime & ".vtk"
+        pb.ShowSave
+        mentettFajl = pb.FileName
+End If
+    'pb.FileName = mentettFajl
+        If Not mentes(mentettFajl) Then
+            MsgBox "A megadott fájlhoz nem lehet hozzáférni, kérem adjon meg egy másik nevet..."
+            GoTo ujra
+        End If
+        'mentettFajl = pb.FileName
+        mentett = True
+megse:
+End Sub
+
+
+
+Private Sub meretez_mnu_Click()
+    meretez = True
+    megjelol (tabulalo)
+End Sub
+
+Private Sub nevjegy_mnu_Click()
+    nevjegy.Show vbModal
+End Sub
+
+Private Sub olda_mnu_Click()
+    tulajdonsagok.Mutat (0)
+End Sub
+
+
+Private Sub sugo_mnup_Click()
+    HHSugo ("kezdo.htm")
+End Sub
+
+
+
+
+Private Sub szoveg_igazit_Click(Index As Integer)
+    With jel_szoveg(tabulalo)
+        Select Case Index
+            Case 0 'Alá
+                .Left = jel(tabulalo).Left + ((jel(tabulalo).Width - .Width) / 2)
+                .Top = jel(tabulalo).Top + jel(tabulalo).Height
+            Case 1 'Fölé
+                .Left = jel(tabulalo).Left + ((jel(tabulalo).Width - .Width) / 2)
+                .Top = jel(tabulalo).Top - .Height
+            Case 2 'Középre
+                .Left = jel(tabulalo).Left + ((jel(tabulalo).Width - .Width) / 2)
+                .Top = jel(tabulalo).Top + ((jel(tabulalo).Height - .Height) / 2)
+            Case 3 'jobbra
+                .Left = jel(tabulalo).Left + jel(tabulalo).Width
+                .Top = jel(tabulalo).Top + ((jel(tabulalo).Height - .Height) / 2)
+            Case 4 'balra
+                .Left = jel(tabulalo).Left - .Width
+                .Top = jel(tabulalo).Top + ((jel(tabulalo).Height - .Height) / 2)
+        End Select
+        
+        Cimkexy tabulalo, .Left - jel(tabulalo).Left, .Top - jel(tabulalo).Top
+        
+
+    End With
+End Sub
+
+Private Sub terulet_DblClick()
+    If Not tulajdonsagok.Masolas Then
+            tulajdonsagok.Mutat (0)
+        Else
+            tulajdonsagok.Masolas = False
+            tulajdonsagok.Show vbModal
+    End If
 End Sub
 
 Private Sub terulet_DragDrop(Source As Control, X As Single, Y As Single)
-    fedo(mozgatott).Move X, Y
-    pont(mozgatott).Move X, Y
-    cimke(mozgatott).Move X, Y - 30
-    igazit mozgatott, cimke(mozgatott).Alignment
+'MsgBox Source.Name
+    If TypeOf Source Is jel Then
+        jel(tabulalo).Left = X - ux
+        jel(tabulalo).Top = Y - uy
     
-End Sub
-
-Private Sub terulet_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-aktualis = 0
-szoveg.Visible = False
-px = X
-py = Y
-    Select Case Button
-        Case 2
-            rename.Enabled = False
-            del.Enabled = False
-            PopupMenu edit
-            rename.Enabled = True
-            del.Enabled = True
-    End Select
-End Sub
-
-Private Sub terulet_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-If athelyez = True Then
-    pont(aktualis).Move X - 67, Y - 67
-    fedo(aktualis).Move pont(aktualis).Left, pont(aktualis).Top
-    cimke(aktualis).Top = pont(aktualis).Top - 30
-    Call igazit(aktualis, cimke(aktualis).Alignment)
-End If
-
-
-
-sb.Panels(1).Text = "X=" & X
-sb.Panels(2).Text = "Y=" & Y
-End Sub
-Public Sub alaphelyzet()
-On Error Resume Next
-    For i = 1 To teljes
-        Unload cimke(i)
-        Unload pont(i)
-        Unload fedo(i)
-    Next i
-    'terkepneve = "Névtelen"
-    teljes = 0
-    terulet.Picture = Nothing
-    aktualis = 0
-    terkepneve = ""
-    kepneve = ""
-    Form_Load
-End Sub
-Private Sub elemmenu()
-If szoveg.Visible = False Then
-    uj.Enabled = False
-            PopupMenu edit
-    uj.Enabled = True
-End If
-End Sub
-Private Sub del_click()
-i = MsgBox("Biztos törölni akarja a kijelölt elemet (" & cimke(aktualis).Caption & ")", vbYesNo + vbCritical, "Törlés megerõsítése")
-    If i = vbYes Then
-        Unload cimke(aktualis)
-        Unload pont(aktualis)
-        Unload fedo(aktualis)
+        Cimkexy tabulalo, CSng(elemek(tabulalo).Bal), CSng(elemek(tabulalo).Felso)
+        If meretez Then jel_MouseDown tabulalo, 1, 0, 0, 0
     End If
-aktualis = 0
-szerkesztett = True
-End Sub
-Private Sub elem_click(Index As Integer)
-px = px - 67
-py = py - 67
-    teljes = teljes + 1
-                        Load pont(teljes)
-                            pont(teljes).Left = px
-                            pont(teljes).Top = py
-                            pont(teljes).Visible = True
-                        Load cimke(teljes)
-                            cimke(teljes).Top = py - 30
-                            cimke(teljes).Left = pont(teljes).Width + px + 15
-                            cimke(teljes).Visible = True
-                        Load fedo(teljes)
-                            fedo(teljes).Move pont(teljes).Left, pont(teljes).Top, pont(teljes).Width, pont(teljes).Height
-                            fedo(teljes).Visible = True
-    Select Case Index
-        Case 1
-            pont(teljes).Shape = 3
-            cimke(teljes).Caption = "Új város"
-        Case 2
-            pont(teljes).Shape = 1
-            cimke(teljes).Caption = "Új terület"
-    End Select
-    aktualis = teljes
-    beiro
-End Sub
-Private Sub props_click()
-If aktualis <> 0 Then
-    k = ""
-    For i = 1 To 5
-        If segitseg(aktualis, i) = "" Then segitseg(aktualis, i) = " "
-        k = k & segitseg(aktualis, i) & "||"
-        'MsgBox k
-    Next i
-    tul.segitobe (k)
-    
-    k = ""
-    For i = 1 To 5
-        If megoldas(aktualis, i) = "" Then megoldas(aktualis, i) = " "
-        k = k & megoldas(aktualis, i) & "||"
-        'MsgBox k
-    Next i
-    tul.megoldasba (k)
-    
-End If
-    tul.Show vbModal
-End Sub
-
-
-Private Sub tuls_Click()
-aktualis = 0
-props_click
-End Sub
-Public Sub mentes(fajlnev As String)
-On Error GoTo atugrik
-If k = "\" Then
-        MsgBox "Nem adta meg a háttérképet. Így nem menthetem el a projektet.", vbInformation, "Hiányzó kép"
-        Exit Sub
-End If
-    '"masolas
-    Open fajlnev For Output As 2
-        Print #2, "cim=" & terkepneve
-        Print #2, "terkep=" & k
-        With tul
-        If .ponthat.Value = 1 Then
-            Print #2, "hatarok=" & .hatarok(1) & "," & .hatarok(2) & "," & .hatarok(3) & "," & .hatarok(4)
-        End If
-        End With
-        For i = 1 To teljes
-            
-            If cimke(i).FontItalic Then Print #2, "dolt"
-            If cimke(i).FontUnderline Then Print #2, "alahuzott"
-            If cimke(i).FontBold Then Print #2, "kover"
-            If pont(i).Visible = False Then Print #2, "lathatatlan"
-            If cimke(i).FontSize <> 8.25 Then Print #2, "meret=" & cimke(i).FontSize
-            If cimke(i).ForeColor <> 0 Then Print #2, "szin=" & cimke(i).ForeColor
-            If cimke(i).BorderStyle = 1 Then
-                    Print #2, "elem=7," & pont(i).Shape & ",0," & cimke(i).Caption
-                Else
-                    If cimke(i).Alignment = 1 Then Print #2, "balra"
-                    Print #2, "elem=" & pont(i).Shape & "," & pont(i).Left & "," & pont(i).Top & "," & cimke(i).Caption
-                    For j = 1 To 5
-                        If Trim(segitseg(i, j)) <> "" And Trim(megoldas(i, j)) <> "" Then
-                            Print #2, "kerdes=" & j & "," & Trim(megoldas(i, j)) & "," & perenbe(Trim(segitseg(i, j)))
-                        End If
-                    Next j
-                    If Trim(cimke(i).ToolTipText) <> "" Then Print #2, "tipp=" & Trim(perenbe(cimke(i).ToolTipText))
-            End If
-    
-                
-atugrik:
-        Next i
-    
-    Close 2
-End Sub
-Public Sub igazit(elem As Integer, zaras As Byte)
-    Select Case zaras
-        Case 0
-            'ponttól jobbra
-            cimke(elem).Left = pont(elem).Left + pont(elem).Width + 15
-        Case 1
-            'ponttól blra
-            cimke(elem).Left = pont(elem).Left - (cimke(elem).Width + 15)
-    End Select
-cimke(elem).Alignment = zaras
-End Sub
-Public Sub segitsegford(segitsegek As String)
-'On Error Resume Next
-Dim ker As Integer
-If aktualis = 0 Or Len(segitsegek) = 10 Then Exit Sub
-For i = 1 To 5
-    segitseg(aktualis, i) = ""
-Next i
-
-    i = 1
-    j = 1
-        For ker = 1 To Len(segitsegek)
-            If Mid(segitsegek, ker, 2) = "||" Then
-                    segitseg(aktualis, j) = Trim(Mid(segitsegek, i, ker - i))
-                    i = ker + 2
-                    j = j + 1
-             End If
-        Next
+    If TypeOf Source Is Label Then
+        jel_szoveg(tabulalo).Left = X - ux
+        jel_szoveg(tabulalo).Top = Y - uy
         
-End Sub
-Public Sub megoldasford(megoldasok As String)
-'On Error Resume Next
-If aktualis = 0 Or Len(megoldasok) = 10 Then Exit Sub
-For i = 1 To 5
-        megoldas(aktualis, i) = ""
-Next i
-
-If Len(megoldasok) = 10 Then Exit Sub
-Dim ker As Integer
-    i = 1
-    j = 1
-       
-        For ker = 1 To Len(megoldasok)
-            If Mid(megoldasok, ker, 2) = "||" Then
-                    megoldas(aktualis, j) = Trim(Mid(megoldasok, i, ker - i))
-                    i = ker + 2
-                    j = j + 1
-             End If
-        Next
-End Sub
-
-Private Sub jobbklikk(id As Integer)
-    If Not szoveg.Visible Then
-    mozgatott = id
-    If koppint Then
-            tul.formatuma (id)
-            tul.Visible = True
-            koppint = False
-    Else
-        fedo(id).Drag
+        'jel(tabulalo).Left = jel_szoveg(tabulalo).Left - elemek(tabulalo).Bal
+        'jel(tabulalo).Top = jel_szoveg(tabulalo).Top - elemek(tabulalo).Felso
+        'elemek(tabulalo).Bal = jel_szoveg(tabulalo).Left - jel(tabulalo).Left
+        'elemek(tabulalo).Felso = jel_szoveg(tabulalo).Top - jel(tabulalo).Top
+        Cimkexy tabulalo, jel_szoveg(tabulalo).Left - jel(tabulalo).Left, jel_szoveg(tabulalo).Top - jel(tabulalo).Top
     End If
+    If TypeOf Source Is PictureBox Then
+        On Error Resume Next
+        Source.Left = X - ux
+        Source.Top = Y - uy
+        With jel(tabulalo)
+            Select Case Source.Name
+                Case "bf"
+                    .Move bf.Left, bf.Top, jf.Left - bf.Left + jf.Width, ba.Top - bf.Top + ba.Height
+                    'Passzint (tabulalo)
+                Case "ba"
+                    .Move ba.Left, .Top, .Left + .Width - ba.Left, ba.Top + ba.Height - .Top
+                    'Passzint (tabulalo)
+                Case "jf"
+                    .Move .Left, jf.Top, jf.Left + jf.Width - .Left, ja.Top + ja.Height - jf.Top
+                    'Passzint (tabulalo)
+                Case "ja"
+                    .Move .Left, jf.Top, ja.Left + ja.Width - .Left, ja.Top + ja.Height - .Top
+                    'Passzint (tabulalo)
+            End Select
+        End With
+        Passzint (tabulalo)
+    End If
+jel(tabulalo).Visible = CBool(Mid(elemek(tabulalo).tipp, 1, 1))
+jel_szoveg(tabulalo).Visible = CBool(Mid(elemek(tabulalo).tipp, 2, 1))
+mentett = False
+End Sub
+
+Private Sub terulet_DragOver(Source As Control, X As Single, Y As Single, State As Integer)
+'MsgBox Source.Name
+    jel_szoveg(tabulalo).Visible = False
+    If TypeOf Source Is jel Then
+        jel(tabulalo).Visible = False
+    End If
+    If TypeOf Source Is PictureBox Then
+        terulet_DragDrop Source, X, Y
+    End If
+End Sub
+
+Private Sub terulet_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+If Not tulajdonsagok.Masolas Then
+    tabulalo = 0
+    megjelol (tabulalo)
+    nev_mnu.Caption = Cime
+    If Button = 2 Then
+        ux = X
+        uy = Y
+        uj_elem_mnu.Enabled = True
+        torles_mnu.Enabled = False
+        igazitas_mnu.Enabled = False
+        meretez_mnu.Enabled = False
+        PopupMenu szerkesztes_mnu
+    End If
+    Else
+        tulajdonsagok.Masolas = False
+        tulajdonsagok.Show vbModal
+End If
+End Sub
+
+Private Sub torles_mnu_Click()
+    If tabulalo = 0 Then Exit Sub
+    If MsgBox("Biztosan törölni akarja a(z) " & jel_szoveg(tabulalo).Caption & " nevû elemet?", vbQuestion + vbYesNo, "Törlés megerõsítése") = vbNo Then Exit Sub
+
+        With jel_szoveg(tabulalo)
+            .Left = jel_szoveg(jel_szoveg.Count - 1).Left
+            .Top = jel_szoveg(jel_szoveg.Count - 1).Top
+            .Caption = jel_szoveg(jel_szoveg.Count - 1).Caption
+            .ToolTipText = jel_szoveg(jel_szoveg.Count - 1).ToolTipText
+            .BackStyle = jel_szoveg(jel_szoveg.Count - 1).BackStyle
+            .BackColor = jel_szoveg(jel_szoveg.Count - 1).BackColor
+            
+            .Font = jel_szoveg(jel_szoveg.Count - 1).Font
+            .FontBold = jel_szoveg(jel_szoveg.Count - 1).FontBold
+            .FontItalic = jel_szoveg(jel_szoveg.Count - 1).FontItalic
+            .FontSize = jel_szoveg(jel_szoveg.Count - 1).FontSize
+            .FontStrikethru = jel_szoveg(jel_szoveg.Count - 1).FontStrikethru
+            .FontUnderline = jel_szoveg(jel_szoveg.Count - 1).FontUnderline
+            .ForeColor = jel_szoveg(jel_szoveg.Count - 1).ForeColor
+        End With
+        
+        With jel(tabulalo)
+            .Left = jel(jel.Count - 1).Left
+            .Top = jel(jel.Count - 1).Top
+            .ToolTipText = jel(jel.Count - 1).ToolTipText
+            .HatterSzine = jel(jel.Count - 1).HatterSzine
+            .Height = jel(jel.Count - 1).Height
+            .jel = jel(jel.Count - 1).jel
+            If jel(jel.Count - 1).jel = 6 Then
+                .KepElerese = jel(jel.Count - 1).KepElerese
+            End If
+            .KeretSzine = jel(jel.Count - 1).KeretSzine
+            .KeretTipus = jel(jel.Count - 1).KeretTipus
+            .KeretVastagsaga = jel(jel.Count - 1).KeretVastagsaga
+            .KitoltesTipus = jel(jel.Count - 1).KitoltesTipus
+            .KitoltesSzine = jel(jel.Count - 1).KitoltesSzine
+            .Width = jel(jel.Count - 1).Width
+            .Visible = jel(jel.Count - 1).Visible
+        End With
+        elemek(tabulalo) = elemek(jel.Count - 1)
+    
+    elemek(jel.Count - 1) = ures
+    Unload jel(jel.Count - 1)
+    Unload jel_szoveg(jel_szoveg.Count - 1)
+    mentett = False
+    Form_KeyDown 37, 0
+    
+End Sub
+
+Private Sub tulajdonsag_mnu_Click()
+Dim i As Integer
+    With tulajdonsagok
+    If tabulalo <> 0 Then
+        tulajdonsagok.tipusa (elemek(tabulalo).Kovetkezo)
+        For i = 1 To 10
+            .Kave i, elemek(tabulalo).kerdesek(i).Kerdes, elemek(tabulalo).kerdesek(i).Valasz
+        Next i
+        
+        'If elemek(tabulalo).Bal < 0 Then
+        '        .jel_szoveg.Left = (tulajdonsagok.minta.Width - Abs(elemek(tabulalo).Bal) - jel(tabulalo).Width) / 2
+        '        .jel.Left = .jel_szoveg.Left + Abs(elemek(tabulalo).Bal)
+        '    Else
+        '        .jel.Left = (tulajdonsagok.minta.Width - Abs(elemek(tabulalo).Bal) - jel_szoveg(tabulalo).Width) / 2
+        '        .jel_szoveg.Left = .jel.Left + elemek(tabulalo).Bal
+        'End If
+       '
+        'If elemek(tabulalo).Felso < 0 Then
+        '        .jel_szoveg.Top = (tulajdonsagok.minta.Height - Abs(elemek(tabulalo).Felso) - jel(tabulalo).Height) / 2
+        '        .jel.Top = .jel_szoveg.Top + Abs(elemek(tabulalo).Felso)
+        '    Else
+        '        .jel.Top = (tulajdonsagok.minta.Height - Abs(elemek(tabulalo).Felso) - jel_szoveg(tabulalo).Height) / 2
+        '        .jel_szoveg.Top = .jel.Top + elemek(tabulalo).Felso
+        'End If
+        
+    End If
+    .Mutat (tabulalo)
+    End With
+End Sub
+
+Private Sub uj_elem_mnu_Click()
+    Load jel(jel.Count)
+    With jel(jel.Count - 1)
+        .Left = .BalKozep(ux)
+        .Top = .FelsoKozep(uy)
+        .Visible = True
+    End With
+    
+    Load jel_szoveg(jel_szoveg.Count)
+    With jel_szoveg(jel_szoveg.Count - 1)
+        .Caption = "Elem" & jel.Count - 1
+        Cimkexy jel_szoveg.Count - 1, jel(jel.Count - 1).Width, (jel(jel.Count - 1).Height - jel_szoveg(jel.Count - 1).Height) / 2
+        .Visible = True
+    End With
+    tabulalo = jel.Count - 1
+    elemek(tabulalo).Kovetkezo = 1
+    elemek(tabulalo).tipp = "11"
+    megjelol (tabulalo)
+    mentett = False
+    MentesAktiv
+End Sub
+
+Private Sub uj_mnu_Click()
+    If Not menti Then Exit Sub
+    torol
+    terulet.Width = nevjegy.kep.Width
+    terulet.Height = nevjegy.kep.Height
+    terulet.Picture = Nothing
+    Unload tulajdonsagok
+    
+    Form_Resize
+    'tulajdonsagok.megse.Enabled = False
+    tulajdonsagok.Mutat (0)
+End Sub
+Private Sub torol()
+    Dim i As Integer
+    For i = 1 To jel.Count - 1
+        Unload jel(i)
+        Unload jel_szoveg(i)
+        elemek(i) = ures
+    Next i
+    tabulalo = 0
+    Me.Caption = "Vaktérkép Szerkesztõ " & Vakterkep.Verzio
+    ment_mnu.Enabled = False
+    ment_mint_mnu.Enabled = False
+    megtekint_mnu.Enabled = False
+    Cime = "Névtelen projekt"
+    Kephelye = ""
+    nagyitas = 1
+    x1 = 0
+    y1 = 0
+    szel = 0
+    mag = 0
+    mentett = False
+    mentettFajl = ""
+End Sub
+Public Sub Cimkexy(Index As Integer, Bal As Single, Felso As Single)
+    elemek(Index).Bal = Bal
+    elemek(Index).Felso = Felso
+    
+    jel_szoveg(Index).Left = jel(Index).Left + Bal
+    jel_szoveg(Index).Top = jel(Index).Top + Felso
+End Sub
+Public Sub Kave(Index As Integer, Hanyadik As Integer, Kerdes As String, Valasz As String)
+    elemek(Index).kerdesek(Hanyadik).Kerdes = Kerdes
+    elemek(Index).kerdesek(Hanyadik).Valasz = Valasz
+End Sub
+Public Function mentes(Fajlnev As String) As Boolean
+Dim i As Integer, j As Integer, f As String, seged As Variant
+Dim Mappa As String, Fajl As String, emappa As String
+
+Mappa = Konyvtara(Fajlnev)
+emappa = Mid(CsakANeve(Fajlnev), 1, Len(CsakANeve(Fajlnev)) - 4) & "\"
+Fajl = CsakANeve(Fajlnev)
+'On Error GoTo hiba
+Open Fajlnev For Output As 2
+    Print #2, ";Vaktérkép " & Vakterkep.Verzio & " által generált térképfájl"
+    Print #2, ";Muráti Ákos 2003 - Minden jog fenntartva."
+    Print #2, ""
+    Print #2, "cim=" & Cime
+    Print #2, "kep=";
+        seged = ""
+        If RelativEleres(Konyvtara(Fajlnev), Kephelye) <> "" Then seged = "\" & RelativEleres(Konyvtara(Fajlnev), Kephelye)
+        If RelativEleres(Vakterkep.Konyvtar, Kephelye) <> "" Then seged = "$vt\" & RelativEleres(Vakterkep.Konyvtar, Kephelye)
+        If seged <> "" Then
+                Print #2, seged
+            Else
+                On Error Resume Next
+                MkDir emappa
+                FileCopy Kephelye, Mappa & emappa & CsakANeve(Kephelye)
+                Print #2, "\" & emappa & CsakANeve(Kephelye)
+        End If
+    Print #2, "kijelol=" & x1 & ";" & y1 & ";" & szel & ";" & mag
+    Print #2, "nagyitas=" & nagyitas
+    
+    For i = 1 To jel_szoveg.Count - 1
+            Select Case elemek(i).Kovetkezo
+                Case 3
+                    Print #2, "<megjegyzes";
+                Case 2
+                    Print #2, "<jelmagyarazat";
+                Case 1
+                    Print #2, "<elem";
+            End Select
+        With jel(i)
+            Print #2, "=" & jel_szoveg(i).Caption
+            Kiir "xy=" & .Left & "," & .Top
+            If Not .Visible Then Kiir "lathatatlan-jel"
+            If .ToolTipText <> "" Then Kiir "tipp=" & .ToolTipText
+            Kiir "meret=" & .Width & "," & .Height
+            Kiir "jel=" & .jel
+            If .jel = 6 Then
+                    If MsgBox(jel_szoveg(i).Caption & " térképelem egy másik fájlra hivatkozik. Kívánja, hogy ezt a fájlt a projekt mellé másoljam?", vbQuestion + vbYesNo, "Külsõ fájlok kezelése:") = vbNo Then
+                            If RelativEleres(Konyvtara(Fajlnev), .KepElerese) <> "" Then
+                                    Kiir "ikon=" & "\" & RelativEleres(Konyvtara(Fajlnev), .KepElerese)
+                                Else
+                                    Kiir "ikon=" & .KepElerese
+                            End If
+                        Else
+                            On Error Resume Next
+                            MkDir Mappa & emappa
+                            FileCopy .KepElerese, Mappa & emappa & CsakANeve(.KepElerese)
+                            Kiir "ikon=" & "\" & emappa & CsakANeve(.KepElerese)
+                    End If
+                Else
+                    If .HatterSzine <> jel(0).HatterSzine Then Kiir "hatter=" & .HatterSzine
+                    If .KeretTipus <> jel(0).KeretTipus Then Kiir "keret-tipus=" & .KeretTipus
+                    If .KeretVastagsaga <> jel(0).KeretVastagsaga Then Kiir "keret-vastagsag=" & .KeretVastagsaga
+                    If .KeretSzine <> jel(0).KeretSzine Then Kiir "keret-szin=" & .KeretSzine
+                    If .Atlatszo Then
+                            Kiir "atlatszo"
+                        Else
+                            If .KitoltesTipus <> jel(0).KitoltesTipus Then Kiir "kitoltes-tipus=" & .KitoltesTipus
+                            If .KitoltesSzine <> jel(0).KitoltesSzine Then Kiir "kitoltes-szin=" & .KitoltesSzine
+                    End If
+            End If
+        End With
+        
+        With jel_szoveg(i)
+            Kiir "szovegXY=" & elemek(i).Bal & "," & elemek(i).Felso
+            If Not .Visible Then Kiir "lathatatlan-szoveg"
+            If .FontName <> jel_szoveg(0).FontName Then Kiir "betu-tipus=" & .FontName
+            If .FontSize <> jel_szoveg(0).FontSize Then Kiir "betu-meret=" & .FontSize
+            If .ForeColor <> jel_szoveg(0).ForeColor Then Kiir "betu-szin=" & .ForeColor
+            If .BackStyle = 1 And .BackColor <> jel_szoveg(0).BackColor Then Kiir "betu-hatter=" & .BackColor
+                f = ""
+                If .FontBold Then f = f & "f"
+                If .FontItalic Then f = f & "d"
+                If .FontUnderline Then f = f & "a"
+                If .FontStrikethru Then f = f & "k"
+                If f <> "" Then Kiir "formazas=" & f
+        End With
+        
+        For j = 1 To 10
+            If elemek(i).kerdesek(j).Kerdes <> "" Or elemek(i).kerdesek(j).Valasz <> "" Then
+                Kiir "kerdes=" & elemek(i).kerdesek(j).Kerdes & "|" & elemek(i).kerdesek(j).Valasz
+            End If
+        Next j
+        Print #2, "!>"
+    Next i
+Close 2
+mentes = True
+megtekint_mnu.Enabled = True
+Exit Function
+Hiba:
+mentes = False
+Close 2
+End Function
+Private Sub Kiir(Mit As String)
+    Print #2, Chr(9) & Mit
+End Sub
+Public Function megnyitas(Fajlnev As String) As Boolean
+Dim sor As String, i As Integer, j As Integer, ker As Integer, megvan As Boolean
+Dim id As Integer, KID As Integer
+Dim kulcsszo As String, parameter As String, kep As String
+id = 0
+Fajlnev = Atalakit(Fajlnev, "")
+On Error GoTo Hiba
+    Open Fajlnev For Input As 1
+Kovetkezosor:
+        Do While Not EOF(1)
+            Line Input #1, sor
+            On Error GoTo Hiba
+            kulcsszo = ""
+            parameter = ""
+            If Mid(sor, 1, 1) = ";" Or Mid(sor, 1, 1) = "#" Or Mid(sor, 1, 1) = "/" Or Mid(sor, 1, 1) = "[" Or sor = "" Then GoTo kihagy
+            kulcsszo = LCase(Utasitas(sor))
+            parameter = Ertek(sor)
+            
+            'Parancs formázgatása
+            If kulcsszo = "" Then kulcsszo = sor
+            kulcsszo = Korulmetel(kulcsszo)
+            kulcsszo = Trim(kulcsszo)
+            parameter = Trim(parameter)
+            
+            'MsgBox kulcsszo & " := " & parameter
+        
+            
+            Select Case kulcsszo
+' ######################## Projektekkel összefüggõ beállítások #################################
+                Case "cim", "cime"
+                    Cime = parameter
+                    Me.Caption = parameter & " - " & "Vaktérkép Szerkesztõ " & Vakterkep.Verzio
+                Case "terkep", "kep"
+                    On Error GoTo kephiba
+                        parameter = Atalakit(parameter, Konyvtara(Fajlnev))
+                        Kephelye = parameter
+                        terulet.Picture = LoadPicture(parameter)
+                        x1 = 0
+                        y1 = 0
+                        szel = terulet.Width
+                        mag = terulet.Height
+                        Form_Resize
+                    
+                Case "kijelol"
+                    On Error GoTo kephiba
+                    x1 = Kicsontoz(parameter, ";", 0)
+                    y1 = Kicsontoz(parameter, ";", 1)
+                    szel = Kicsontoz(parameter, ";", 2)
+                    mag = Kicsontoz(parameter, ";", 3)
+                    
+                    terulet.Width = szel
+                    terulet.Height = mag
+                    
+                    terulet.Cls
+                    atmeretez (Kephelye)
+                    Form_Resize
+                    
+                Case "nagyitas"
+                    On Error GoTo kephiba
+                        nagyitas = parameter
+                        terulet.Width = terulet.Width * parameter
+                        terulet.Height = terulet.Height * parameter
+                    
+                        terulet.Cls
+                        atmeretez (Kephelye)
+                        Form_Resize
+                Case "!>"
+                    lezaras
+                ' ############# OBJEKTUMOK
+                    
+                Case "<elem", "<megjegyzes", "<jelmagyarazat"
+                    lezaras
+                    id = id + 1
+                    Load jel(id)
+                    Set obj = jel(id)
+                    obj.Height = 135
+                    obj.Width = 135
+                    obj.Visible = True
+                    
+                    Load jel_szoveg(id)
+                    jel_szoveg(id).Caption = parameter
+                    elemek(id).Kovetkezo = 1
+                    
+                    Select Case kulcsszo
+                        Case "<megjegyzes"
+                            elemek(id).Kovetkezo = 3
+                        Case "<jelmagyarazat"
+                            elemek(id).Kovetkezo = 2
+                    End Select
+                    
+                    jel_szoveg(id).Visible = True
+                    'alapértelmezések:
+                    elemek(id).Bal = obj.Width
+                    elemek(id).Felso = 0
+                    KID = 0
+                    
+                '######## KOZOS TULAJDONSAGOK
+                Case "pozicio", "xy", "koordianatak"
+                    On Error Resume Next
+                    'If obj.Name <> "jelm" Then
+                        obj.Left = CSng(Atalakit(Kicsontoz(parameter, ",", 0), ""))
+                        obj.Top = CSng(Atalakit(Kicsontoz(parameter, ",", 1), ""))
+                    'End If
+                Case "meret", "meretek"
+                    On Error Resume Next
+                    'If aze Then
+                        obj.Width = CLng(Atalakit(Kicsontoz(parameter, ",", 0), ""))
+                        obj.Height = CLng(Atalakit(Kicsontoz(parameter, ",", 1), ""))
+                    'End If
+                Case "tipp"
+                    obj.ToolTipText = parameter
+                    'If aze Then
+                        jel_szoveg(id).ToolTipText = parameter
+                    'End If
+                
+                Case "betu-tipus"
+                    On Error Resume Next
+                    'If aze Then
+                            jel_szoveg(id).FontName = parameter
+                    'End If
+                    
+                Case "betu-meret"
+                    On Error Resume Next
+                    parameter = CDbl(parameter)
+                    'If aze Then
+                            jel_szoveg(id).FontSize = parameter
+                    'End If
+                    
+                Case "betu-szin"
+                    On Error Resume Next
+                    parameter = CLng(parameter)
+                    'If aze Then
+                            jel_szoveg(id).ForeColor = parameter
+                    'End If
+                
+                Case "betu-hatter"
+                    On Error Resume Next
+                    parameter = CLng(parameter)
+                        jel_szoveg(id).BackStyle = 1
+                        jel_szoveg(id).BackColor = parameter
+                    
+                Case "formazas"
+                    parameter = LCase(parameter)
+                    'If aze Then
+                            jel_szoveg(id).FontBold = VanEBenne(parameter, "f")
+                            jel_szoveg(id).FontItalic = VanEBenne(parameter, "d")
+                            jel_szoveg(id).FontUnderline = VanEBenne(parameter, "a")
+                            jel_szoveg(id).FontStrikethru = VanEBenne(parameter, "k")
+                    'End If
+                        
+                ' ########## ELEM EGYEDITULAJDONSÁGAI
+                Case "kerdes"
+                    'If aze Then
+                        KID = KID + 1
+                        elemek(id).kerdesek(KID).Kerdes = Kicsontoz(parameter, "|", 0)
+                        elemek(id).kerdesek(KID).Valasz = Kicsontoz(parameter, "|", 1)
+                    'End If
+                Case "jel", "alakzat"
+                    'If aze Then
+                        obj.jel = CByte(parameter) Mod 7
+                    'End If
+                
+                Case "ikon", "jelkep", "szimbolum"
+                    On Error Resume Next
+                    'If aze Then
+                        obj.jel = 6
+                        obj.KepElerese = Atalakit(parameter, Konyvtara(Fajlnev))
+                    'End If
+                    
+                Case "szovegxy", "cimkexy", "cimke"
+                    On Error Resume Next
+                    'If aze Then
+                            elemek(id).Bal = Kicsontoz(parameter, ",", 0)
+                            elemek(id).Felso = Kicsontoz(parameter, ",", 1)
+                            igazit (id)
+                    'End If
+                Case "hatter"
+                    On Error Resume Next
+                    'If aze Then
+                        obj.HatterSzine = parameter
+                    'End If
+                Case "atlatszo"
+                    'If aze Then
+                        obj.Atlatszo = True
+                    'End If
+                Case "kitoltes-szin"
+                    On Error Resume Next
+                    'If aze Then
+                        obj.KitoltesSzine = parameter
+                    'End If
+                Case "kitoltes-tipus"
+                    On Error Resume Next
+                    'If aze Then
+                        obj.KitoltesTipus = parameter
+                    'End If
+                Case "keret-szin"
+                    On Error Resume Next
+                    'If aze Then
+                        obj.KeretSzine = parameter
+                    'End If
+                Case "keret-tipus"
+                    On Error Resume Next
+                    'If aze Then
+                        obj.KeretTipus = parameter
+                    'End If
+                Case "keret-vastagsag"
+                    On Error Resume Next
+                    'If aze Then
+                        obj.KeretVastagsaga = parameter
+                    'End If
+                Case "lathatatlan-jel"
+                    If jel_szoveg(id).Visible Then obj.Visible = False
+                Case "lathatatlan-szoveg"
+                    If obj.Visible Then jel_szoveg(id).Visible = False
+            End Select
+kihagy:
+        Loop
+    
+    If aze Then lezaras
+    Close 1
+    Form_KeyDown 27, 0
+    mentett = True
+    mentettFajl = Fajlnev
+    ment_mint_mnu.Enabled = True
+    megtekint_mnu.Enabled = True
+    
+Exit Function
+Hiba:
+    Select Case Err.Number
+        Case 52
+            MsgBox "A '" & Fajlnev & "' fájl nem tölthetõ be.", vbInformation, "Hábás fájl adott meg!"
+            'Exit Function
+        Case 53
+            If Fajlnev <> Vakterkep.Konyvtar & "vakterkep.ini" Then
+                MsgBox "A megadott fájl nem található!", vbCritical, "A megadott fájl nem található!"
+            End If
+            'Exit Function
+        'Case 7
+         '   MsgBox "A Kibõvített Jelek ActiveX objektum nem található. Kérem telepítse újra a Vaktérképet.", vbCritical, "Végzetes hiba"
+          '  End
+        Case Else
+            If MsgBox("A megadott projekt hibás bejegyzéseket tartalmaz, ami bizonytalanná teheti a program futását. Kívánja folytatni töltést?", vbQuestion + vbYesNo, "Ismeretlen hiba") = vbYes Then
+                MsgBox "A hiba oka: " & Err.Description, vbInformation, "Hiba(" & Err.Number & ")"
+                On Error Resume Next
+                GoTo Kovetkezosor
+            Else
+                uj_mnu_Click
+            End If
+        End Select
+    
+    Close 1
+    Exit Function
+kephiba:
+    If MsgBox("A megadott kép hibás, ismeretlen tömörítésû vagy nem található a megadott helyen." & vbCrLf & _
+           "Kívánja folytatni a töltést a hiba javításához?", vbCritical + vbYesNo, "Képbetöltési hiba") = vbYes Then
+            'Kephelye = ""
+            GoTo Kovetkezosor
+        Else
+            Close 1
+            torol
+    End If
+End Function
+Private Sub lezaras()
+On Error Resume Next
+    obj.ZOrder 1
+    If jel_szoveg.Count > 1 Then
+        igazit (jel_szoveg.Count - 1)
+        jel_szoveg(jel_szoveg.Count - 1).ZOrder (0)
+    End If
+    latszik jel_szoveg.Count - 1, jel(jel.Count - 1).Visible, jel_szoveg(jel_szoveg.Count - 1).Visible
+   obj = Nothing
+End Sub
+Private Sub igazit(Index As Integer)
+    Cimkexy Index, CSng(elemek(Index).Bal), CSng(elemek(Index).Felso)
+End Sub
+Public Sub tipus(Index As Integer, tipusa As Byte)
+    elemek(Index).Kovetkezo = tipusa
+End Sub
+Public Sub latszik(Index As Integer, JelLathato As Boolean, JelSzovegLathato As Boolean)
+    elemek(Index).tipp = Abs(JelLathato) & Abs(JelSzovegLathato)
+End Sub
+Private Function menti() As Boolean
+Dim valaszt
+If Not mentett And Kephelye <> "" Then
+    valaszt = MsgBox("A '" & Cime & "' módosításait nem mentette el. Kívánja most menteni azt?", vbYesNoCancel + vbExclamation, "Módosítások mentése")
+    Select Case valaszt
+        Case vbYes
+            menti = True
+            ment_mnu_Click
+        Case vbCancel
+            menti = False
+        Case vbNo
+            menti = True
+    End Select
+Else
+    menti = True
+End If
+End Function
+Private Sub atmeretez(kep As String)
+On Error Resume Next
+    terulet.PaintPicture LoadPicture(kep), 0, 0, terulet.Width, terulet.Height, x1, y1, szel, mag
+End Sub
+Public Sub MentesAktiv()
+If szerkeszto.Kephelye <> "" Then
+    szerkeszto.ment_mint_mnu.Enabled = True
+    szerkeszto.ment_mnu.Enabled = True
+End If
+End Sub
+Public Sub Passzint(id As Integer)
+With jel(id)
+    bf.Move .Left, .Top
+    ba.Move .Left, .Top + .Height - ja.Height
+    jf.Move .Left + .Width - jf.Width, .Top
+    ja.Move .Left + .Width - jf.Width, .Top + .Height - ja.Height
+    keret.Move .Left, .Top, .Width, .Height
+End With
+    If id = 0 Then
+            meretez = False
+        Else
+            Cimkexy id, jel_szoveg(id).Left - jel(id).Left, jel_szoveg(id).Top - jel(id).Top
     End If
     
+    ba.Visible = meretez
+    bf.Visible = meretez
+    ja.Visible = meretez
+    jf.Visible = meretez
+    keret.Visible = meretez
+End Sub
+Private Sub ja_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If Button = 1 Then
+        ux = X
+        uy = Y
+        ja.Drag
+    End If
+End Sub
+Private Sub jf_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If Button = 1 Then
+        ux = X
+        uy = Y
+        jf.Drag
+    End If
+End Sub
+Private Sub bf_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If Button = 1 Then
+        ux = X
+        uy = Y
+        bf.Drag
+    End If
+End Sub
+Private Sub ba_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If Button = 1 Then
+        ux = X
+        uy = Y
+        ba.Drag
+    End If
 End Sub
