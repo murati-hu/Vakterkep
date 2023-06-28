@@ -6,7 +6,7 @@ Begin VB.Form szerk
    Caption         =   "Vaktérkép Szerkesztõ"
    ClientHeight    =   5130
    ClientLeft      =   165
-   ClientTop       =   750
+   ClientTop       =   855
    ClientWidth     =   6600
    Icon            =   "szerk.frx":0000
    KeyPreview      =   -1  'True
@@ -186,9 +186,6 @@ Begin VB.Form szerk
       Begin VB.Menu del 
          Caption         =   "Töröl"
       End
-      Begin VB.Menu replace 
-         Caption         =   "Áthelyez"
-      End
       Begin VB.Menu v3 
          Caption         =   "-"
       End
@@ -219,16 +216,12 @@ Attribute VB_Exposed = False
 Option Explicit
 Public aktualis As Integer, teljes As Integer, athelyez As Boolean
 Dim px As Integer, py As Integer, segitseg(1 To 256, 1 To 5) As String, megoldas(1 To 256, 1 To 5) As String
+Dim mozgatott As Integer
 Public kepneve As String, terkepneve As String
 Public szerkesztett As Boolean, koppint As Boolean
 
-Private Sub cimke_Mousedown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
-    If Button = 2 Then
-        aktualis = Index
-        elemmenu
-    Else
-        jobbklikk (Index)
-    End If
+Private Sub cimke_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+    fedo_Mousedown Index, Button, Shift, X, Y
 End Sub
 
 Private Sub exit_Click()
@@ -247,11 +240,7 @@ End Sub
 Private Sub fedo_Mousedown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Select Case Button
     Case 1
-        If athelyez = True And aktualis = Index Then
-                replace_Click
-            Else
-                jobbklikk (Index)
-        End If
+        jobbklikk (Index)
     Case 2
         aktualis = Index
         elemmenu
@@ -670,15 +659,7 @@ Private Sub rename_Click()
 beiro
 End Sub
 
-Private Sub replace_Click()
-athelyez = Not athelyez
-If athelyez = True Then
-    replace.Caption = "Rögzít"
-Else
-    replace.Caption = "Áthelyez"
-End If
 
-End Sub
 
 Private Sub save_Click()
 Dim konyvtar As String, kepfajl As String
@@ -728,6 +709,14 @@ Private Sub szoveg_Change()
 szoveg.Width = (Len(szoveg.Text) + 1) * 120 + 150
 End Sub
 
+Private Sub terulet_DragDrop(Source As Control, X As Single, Y As Single)
+    fedo(mozgatott).Move X, Y
+    pont(mozgatott).Move X, Y
+    cimke(mozgatott).Move X, Y - 30
+    igazit mozgatott, cimke(mozgatott).Alignment
+    
+End Sub
+
 Private Sub terulet_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 aktualis = 0
 szoveg.Visible = False
@@ -737,11 +726,9 @@ py = Y
         Case 2
             rename.Enabled = False
             del.Enabled = False
-            replace.Enabled = False
             PopupMenu edit
             rename.Enabled = True
             del.Enabled = True
-            replace.Enabled = True
     End Select
 End Sub
 
@@ -937,9 +924,15 @@ Dim ker As Integer
 End Sub
 
 Private Sub jobbklikk(id As Integer)
+    If Not szoveg.Visible Then
+    mozgatott = id
     If koppint Then
             tul.formatuma (id)
             tul.Visible = True
             koppint = False
+    Else
+        fedo(id).Drag
     End If
+    End If
+    
 End Sub

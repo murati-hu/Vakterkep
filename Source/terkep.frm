@@ -5,7 +5,7 @@ Begin VB.Form terkep
    Caption         =   "Vaktérkép"
    ClientHeight    =   4680
    ClientLeft      =   165
-   ClientTop       =   735
+   ClientTop       =   855
    ClientWidth     =   6120
    Icon            =   "terkep.frx":0000
    KeyPreview      =   -1  'True
@@ -108,7 +108,6 @@ Begin VB.Form terkep
       Begin VB.Shape pont 
          BorderColor     =   &H00000000&
          BorderStyle     =   0  'Transparent
-         DrawMode        =   1  'Blackness
          FillStyle       =   0  'Solid
          Height          =   135
          Index           =   0
@@ -204,6 +203,7 @@ ttip_el
 aktualis = Index
 beiro
 End Sub
+
 
 Private Sub cimke_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
     kijelol (ttip)
@@ -443,7 +443,7 @@ Call ttip_el
 i = aktualis
 Call Form_KeyPress(27)
 aktualis = i
-If ((megoldas(aktualis, egyeni(aktualis)) = "" Or hanyadik = 0 Or cimke(aktualis).LinkTimeout = 0) And egyeni(aktualis) <= 4) Then
+If (megoldas(aktualis, egyeni(aktualis)) = "" Or hanyadik = 0 Or cimke(aktualis).LinkTimeout = 0) Then
 mehet:
     'If (cimke(aktualis).LinkTimeout = 50 And opciok.segito = 1 And hanyadik > 0) Then Exit Sub
     szoveg.Width = (Len(cimke(aktualis).Caption)) * 100 + 200
@@ -460,6 +460,7 @@ Else
         Exit Sub
     Else
         If Trim(UCase(k)) <> Trim(UCase(megoldas(aktualis, egyeni(aktualis)))) Then
+            MsgBox k
             egyeni(aktualis) = egyeni(aktualis) + 1
             If egyeni(aktualis) = 5 Then egyeni(aktualis) = 4
         Else

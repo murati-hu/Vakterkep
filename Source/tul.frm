@@ -256,6 +256,14 @@ Begin VB.Form tul
       Top             =   480
       Visible         =   0   'False
       Width           =   4215
+      Begin VB.CheckBox cimke_chk 
+         Caption         =   "Cimke"
+         Height          =   255
+         Left            =   2040
+         TabIndex        =   45
+         Top             =   1680
+         Width           =   1455
+      End
       Begin VB.CheckBox lathatatlan 
          Caption         =   "Láthatatlan jel"
          Height          =   195
