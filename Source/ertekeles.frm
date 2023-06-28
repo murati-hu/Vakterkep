@@ -6,6 +6,7 @@ Begin VB.Form bizi
    ClientLeft      =   45
    ClientTop       =   330
    ClientWidth     =   2970
+   ControlBox      =   0   'False
    Icon            =   "ertekeles.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -14,21 +15,34 @@ Begin VB.Form bizi
    ScaleWidth      =   2970
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton javitas 
-      Caption         =   "Javítás"
-      Height          =   255
-      Left            =   240
-      TabIndex        =   14
-      Top             =   2880
-      Width           =   1095
-   End
    Begin VB.CommandButton ok 
       Caption         =   "OK"
+      Default         =   -1  'True
       Height          =   255
-      Left            =   1680
+      Left            =   960
       TabIndex        =   0
       Top             =   2880
       Width           =   975
+   End
+   Begin VB.Label cetli 
+      BackStyle       =   0  'Transparent
+      Caption         =   "%"
+      Height          =   255
+      Index           =   7
+      Left            =   2760
+      TabIndex        =   15
+      Top             =   1440
+      Width           =   135
+   End
+   Begin VB.Label cetli 
+      BackStyle       =   0  'Transparent
+      Caption         =   "/"
+      Height          =   255
+      Index           =   6
+      Left            =   2280
+      TabIndex        =   14
+      Top             =   1440
+      Width           =   135
    End
    Begin VB.Label neve 
       Alignment       =   2  'Center
@@ -118,13 +132,13 @@ Begin VB.Form bizi
    End
    Begin VB.Label cetli 
       BackStyle       =   0  'Transparent
-      Caption         =   "/ 100%"
+      Caption         =   "100"
       Height          =   255
       Index           =   3
-      Left            =   2280
+      Left            =   2400
       TabIndex        =   7
       Top             =   1440
-      Width           =   615
+      Width           =   375
    End
    Begin VB.Label szazalek 
       Alignment       =   1  'Right Justify
@@ -198,6 +212,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub javitas_Click()
+
+End Sub
+
 Private Sub ok_Click()
-Unload Me
+Me.Hide
 End Sub

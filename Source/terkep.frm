@@ -3,44 +3,45 @@ Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form terkep 
    BackColor       =   &H8000000A&
    Caption         =   "Vaktérkép"
-   ClientHeight    =   4890
+   ClientHeight    =   4680
    ClientLeft      =   165
-   ClientTop       =   855
-   ClientWidth     =   6615
+   ClientTop       =   750
+   ClientWidth     =   6120
    Icon            =   "terkep.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   ScaleHeight     =   4890
-   ScaleWidth      =   6615
+   ScaleHeight     =   4680
+   ScaleWidth      =   6120
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
-   Begin VB.Timer kuldo 
+   Begin VB.CommandButton gomb 
+      Caption         =   "J"
+      Height          =   255
+      Left            =   5640
+      TabIndex        =   7
+      Top             =   4200
+      Visible         =   0   'False
+      Width           =   255
+   End
+   Begin VB.Timer ora 
       Enabled         =   0   'False
       Interval        =   1000
       Left            =   120
-      Top             =   120
+      Top             =   1560
    End
    Begin VB.HScrollBar jb 
       Height          =   255
-      Left            =   -120
+      Left            =   360
       TabIndex        =   4
-      Top             =   4080
-      Width           =   5535
+      Top             =   4200
+      Width           =   5295
    End
    Begin VB.VScrollBar fl 
-      Height          =   4575
+      Height          =   4095
       Left            =   5640
       TabIndex        =   3
-      Top             =   0
+      Top             =   120
       Width           =   255
-   End
-   Begin MSComDlg.CommonDialog pb 
-      Left            =   1320
-      Top             =   0
-      _ExtentX        =   847
-      _ExtentY        =   847
-      _Version        =   393216
-      CancelError     =   -1  'True
    End
    Begin VB.PictureBox terulet 
       Appearance      =   0  'Flat
@@ -49,124 +50,12 @@ Begin VB.Form terkep
       BackColor       =   &H80000005&
       ForeColor       =   &H80000008&
       Height          =   4050
-      Left            =   720
+      Left            =   360
       ScaleHeight     =   4020
       ScaleWidth      =   5220
       TabIndex        =   0
-      Top             =   480
+      Top             =   120
       Width           =   5250
-      Begin VB.Frame opciok 
-         BorderStyle     =   0  'None
-         Height          =   3375
-         Left            =   -120
-         TabIndex        =   6
-         Top             =   4680
-         Visible         =   0   'False
-         Width           =   4575
-         Begin VB.TextBox hatarok 
-            Height          =   285
-            Index           =   4
-            Left            =   1920
-            MaxLength       =   2
-            TabIndex        =   17
-            Text            =   "91"
-            Top             =   1320
-            Width           =   375
-         End
-         Begin VB.TextBox hatarok 
-            Height          =   285
-            Index           =   3
-            Left            =   1920
-            MaxLength       =   2
-            TabIndex        =   16
-            Text            =   "75"
-            Top             =   960
-            Width           =   375
-         End
-         Begin VB.TextBox hatarok 
-            Height          =   285
-            Index           =   2
-            Left            =   1920
-            MaxLength       =   2
-            TabIndex        =   15
-            Text            =   "60"
-            Top             =   600
-            Width           =   375
-         End
-         Begin VB.TextBox hatarok 
-            Height          =   285
-            Index           =   1
-            Left            =   1920
-            MaxLength       =   2
-            TabIndex        =   14
-            Text            =   "52"
-            Top             =   120
-            Width           =   375
-         End
-         Begin VB.TextBox pont1 
-            Height          =   285
-            Left            =   1800
-            MaxLength       =   1
-            TabIndex        =   13
-            Text            =   "1"
-            Top             =   2160
-            Width           =   255
-         End
-         Begin VB.Label cetli 
-            Caption         =   "pont"
-            Height          =   255
-            Index           =   5
-            Left            =   2160
-            TabIndex        =   12
-            Top             =   2160
-            Width           =   615
-         End
-         Begin VB.Label cetli 
-            Caption         =   "Egy feladatra adható"
-            Height          =   255
-            Index           =   4
-            Left            =   120
-            TabIndex        =   11
-            Top             =   2160
-            Width           =   1695
-         End
-         Begin VB.Label cetli 
-            Caption         =   "Példás alsó határa:"
-            Height          =   255
-            Index           =   3
-            Left            =   120
-            TabIndex        =   10
-            Top             =   1320
-            Width           =   1695
-         End
-         Begin VB.Label cetli 
-            Caption         =   "Jó alsó határa:"
-            Height          =   255
-            Index           =   2
-            Left            =   120
-            TabIndex        =   9
-            Top             =   960
-            Width           =   1695
-         End
-         Begin VB.Label cetli 
-            Caption         =   "Közepes alsó határa:"
-            Height          =   255
-            Index           =   1
-            Left            =   120
-            TabIndex        =   8
-            Top             =   600
-            Width           =   1695
-         End
-         Begin VB.Label cetli 
-            Caption         =   "Elégséges alsó határa:"
-            Height          =   255
-            Index           =   0
-            Left            =   120
-            TabIndex        =   7
-            Top             =   120
-            Width           =   1695
-         End
-      End
       Begin VB.TextBox szoveg 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
@@ -177,13 +66,26 @@ Begin VB.Form terkep
          Visible         =   0   'False
          Width           =   255
       End
+      Begin VB.Label segito 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000018&
+         BorderStyle     =   1  'Fixed Single
+         ForeColor       =   &H80000017&
+         Height          =   225
+         Left            =   1080
+         TabIndex        =   6
+         Top             =   1560
+         Visible         =   0   'False
+         Width           =   75
+      End
       Begin VB.Label fedo 
          BackStyle       =   0  'Transparent
          Height          =   255
          Index           =   0
-         Left            =   1920
+         Left            =   840
          TabIndex        =   5
-         Top             =   3360
+         Top             =   3840
          Visible         =   0   'False
          Width           =   255
       End
@@ -196,6 +98,7 @@ Begin VB.Form terkep
          Left            =   1440
          TabIndex        =   1
          Top             =   3810
+         UseMnemonic     =   0   'False
          Visible         =   0   'False
          Width           =   450
       End
@@ -211,29 +114,56 @@ Begin VB.Form terkep
          Width           =   135
       End
    End
+   Begin MSComDlg.CommonDialog pb 
+      Left            =   1800
+      Top             =   1440
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+      CancelError     =   -1  'True
+   End
    Begin VB.Menu file 
       Caption         =   "&Fájl"
+      Begin VB.Menu retrn 
+         Caption         =   "Újra kezd"
+         Enabled         =   0   'False
+         Shortcut        =   ^U
+      End
       Begin VB.Menu open 
          Caption         =   "Térkép megnyitása"
-         Shortcut        =   ^O
+         Shortcut        =   ^M
+      End
+      Begin VB.Menu nyomtat 
+         Caption         =   "Nyomtatás..."
+         Visible         =   0   'False
       End
       Begin VB.Menu v1 
          Caption         =   "-"
       End
       Begin VB.Menu exit 
          Caption         =   "Kilépés"
-         Shortcut        =   ^X
+         Shortcut        =   ^K
       End
    End
-   Begin VB.Menu ellenorzes 
-      Caption         =   "&Ellenõrzés"
-      Begin VB.Menu szigor 
-         Caption         =   "Szigor"
-         Visible         =   0   'False
+   Begin VB.Menu eszkozok 
+      Caption         =   "&Eszközök"
+      Begin VB.Menu jelm 
+         Caption         =   "Jelmagyarázat"
+         Enabled         =   0   'False
+         Shortcut        =   ^J
+      End
+      Begin VB.Menu v6 
+         Caption         =   "-"
       End
       Begin VB.Menu ertekeles 
          Caption         =   "Értékelés"
+         Enabled         =   0   'False
          Shortcut        =   ^E
+      End
+      Begin VB.Menu sett 
+         Caption         =   "Beállítások..."
+         Shortcut        =   ^B
+         Visible         =   0   'False
       End
    End
    Begin VB.Menu sugo 
@@ -247,7 +177,7 @@ Begin VB.Form terkep
       End
       Begin VB.Menu nevjegy 
          Caption         =   "Névjegy"
-         Shortcut        =   ^A
+         Shortcut        =   ^N
       End
    End
 End
@@ -257,13 +187,22 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Dim aktualis As Integer, koordinatak As Boolean
-Dim nevek(0 To 256) As String, hibak(0 To 256) As Integer, teljes As Integer
-Dim eleres As String, ellenorzo(1 To 256) As Integer
+Dim aktualis As Byte, ttip As Byte
+Dim segitseg(1 To 256, 0 To 4) As String, hanyadik As Byte
+Dim nevek(0 To 256) As String, pontok(0 To 256) As Double
+Dim megoldas(1 To 256, 0 To 4) As String, egyeni(1 To 256) As Byte
+Dim gyorstip(1 To 256) As String
+
 
 Private Sub cimke_Click(Index As Integer)
+ttip_el
 aktualis = Index
 beiro
+End Sub
+
+Private Sub cimke_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+    ttip = Index
+    ora.Enabled = True
 End Sub
 
 Private Sub exit_Click()
@@ -271,70 +210,99 @@ Unload Me
 End Sub
 
 Private Sub fedo_Click(Index As Integer)
+ttip_el
 aktualis = Index
 beiro
 End Sub
 
 
 Private Sub ertekeles_Click()
-On Error Resume Next
-Dim talalatok As Integer
-Dim k As Integer
-For i = 1 To teljes
-    If Trim(UCase(nevek(i))) = Trim(UCase(cimke(i).Caption)) Then
-            talalatok = talalatok + 1
+'On Error Resume Next
+Dim jo As Integer
+If hanyadik = 5 Then
+    bizi.Show
+    Exit Sub
+End If
+
+For i = 1 To (cimke.Count - 1)
+    If pontok(i) = 0 Then 'And cimke(i).Visible = True
+        If Trim(UCase(nevek(i))) = Trim(UCase(cimke(i).Caption)) Then
             cimke(i).BackStyle = 1
             cimke(i).BackColor = vbGreen
+            cimke(i).Enabled = False
+            fedo(i).Enabled = False
+            If hanyadik = 0 Or opciok.segito = 0 Then
+                pontok(i) = opciok.pont
+            Else
+                pontok(i) = opciok.pont * ((100 - ((egyeni(i) + 1) * opciok.szazal)) / 100)
+            End If
+            jo = jo + 1
         Else
-            hibak(i) = 1
             cimke(i).BackStyle = 1
-            cimke(i).BackColor = vbRed
-            
-            
+            cimke(i).BackColor = 9934847 'vbRed
+        End If
+    Else
+        jo = jo + 1
     End If
-    
 Next i
 
-bizi.helyes.Caption = talalatok
-bizi.hibak.Caption = teljes - talalatok
-bizi.szazalek = Format(talalatok / teljes * 100, "##,##")
-bizi.pontok = talalatok * pont1
-bizi.maxpont = "/ " & teljes * pont1
+hanyadik = hanyadik + 1
+
+j = 0
+For i = 1 To (cimke.Count - 1)
+    j = j + pontok(i)
+    'If cimke(i).Enabled Then
+        'cimke(i).ToolTipText = segitseg(i, hanyadik)
+    'End If
+Next i
+
+
+bizi.helyes.Caption = jo
+bizi.hibak.Caption = (cimke.Count - 1) - jo
+bizi.pontok.Caption = j
+bizi.maxpont.Caption = (cimke.Count - 1) * opciok.pont
+
+bizi.szazalek.Caption = Format(CDbl(bizi.pontok.Caption) / CDbl(bizi.maxpont.Caption) * 100, "##,##")
+If bizi.szazalek.Caption = "" Then bizi.szazalek.Caption = 0
 Select Case CByte(bizi.szazalek)
-    Case 0 To hatarok(1) - 1
+    Case 0 To opciok.hatarok(1) - 1
         bizi.jegy = 1
         bizi.neve = "Elégtelen"
-        'If bizi.szazalek = 0 Then bizi.jegy = bizi.jegy & ",": bizi.neve = bizi.neve & " alá"
-        'If bizi.szazalek = hatarok(1) - 1 Then bizi.jegy = bizi.jegy & "*": bizi.neve = "Csillagos " & bizi.neve
-    
-    Case hatarok(1) To hatarok(2) - 1
+       
+    Case opciok.hatarok(1) To opciok.hatarok(2) - 1
         bizi.jegy = 2
         bizi.neve = "Elégséges"
-        'If bizi.szazalek = hatarok(1) Then bizi.jegy = bizi.jegy & ",": bizi.neve = bizi.neve & " alá"
-        'If bizi.szazalek = hatarok(2) - 1 Then bizi.jegy = bizi.jegy & "*": bizi.neve = "Csillagos " & bizi.neve
-    
-    Case hatarok(2) To hatarok(3) - 1
+        
+    Case opciok.hatarok(2) To opciok.hatarok(3) - 1
         bizi.jegy = 3
         bizi.neve = "Közepes"
-        'If bizi.szazalek = hatarok(2) Then bizi.jegy = bizi.jegy & ",": bizi.neve = bizi.neve & " alá"
-        'If bizi.szazalek = hatarok(3) - 1 Then bizi.jegy = bizi.jegy & "*": bizi.neve = "Csillagos " & bizi.neve
-
-    Case hatarok(3) To hatarok(4) - 1
+        
+    Case opciok.hatarok(3) To opciok.hatarok(4) - 1
         bizi.jegy = 4
         bizi.neve = "Jó"
-        'If bizi.szazalek = hatarok(3) Then bizi.jegy = bizi.jegy & ",": bizi.neve = bizi.neve & " alá"
-        'If bizi.szazalek = hatarok(4) - 1 Then bizi.jegy = bizi.jegy & "*": bizi.neve = "Csillagos " & bizi.neve
         
-    Case hatarok(4) To 100
+    Case opciok.hatarok(4) To 100
         bizi.jegy = 5
         bizi.neve = "Példás"
-        'If bizi.szazalek = hatarok(4) Then bizi.jegy = bizi.jegy & ",": bizi.neve = bizi.neve & " alá"
-        'If bizi.szazalek = 100 Then bizi.jegy = bizi.jegy & "*": bizi.neve = "Csillagos " & bizi.neve
-
-        
 End Select
-bizi.Show vbModal
 
+If hanyadik = 5 Then
+    ertekeles.Caption = "Értékelés mutatása"
+    bizi.Caption = "Utólsó értékelés"
+Else
+    If hanyadik = 4 Then
+        ertekeles.Caption = "Utolsó értékelés"
+    Else
+        ertekeles.Caption = hanyadik + 1 & ". értékelés"
+    End If
+    bizi.Caption = hanyadik & ". értékelés"
+End If
+bizi.Show vbModal
+End Sub
+
+Private Sub fedo_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+    ttip = Index
+    ora.Enabled = True
 End Sub
 
 Private Sub fl_Change()
@@ -343,12 +311,10 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
 Dim ful  As String
-'MsgBox KeyAscii
 If szoveg.Visible Then
     Select Case KeyAscii
         Case 13
             cimke(aktualis).Caption = szoveg.Text
-            'cimke(aktualis).Width = (Len(szoveg.Text)) * 100 + 200
             szoveg.Visible = False
             aktualis = 0
         Case 27
@@ -357,31 +323,17 @@ If szoveg.Visible Then
     End Select
 Else
     Select Case KeyAscii
-        Case 126
-            koordinatak = Not koordinatak
-        Case 123
-            Me.Caption = Me.Caption & " - Automatikus kitöltés..."
-            kitolt
         Case 244
             alaphelyzet
-        Case 232
-            Me.Caption = Me.Caption & " - Memória listázva volt..."
-            kuldo.Enabled = Not kuldo.Enabled
-            sysmon.Visible = Not sysmon.Visible
+        
     End Select
 End If
 End Sub
 
 Private Sub Form_Load()
 On Error Resume Next
-terkep.terulet.Picture = sysmon.kep.Picture
 Me.Caption = "Vaktérkép " & App.Major & "." & App.Minor
-If Len(App.Path) = 3 Then eleres = Mid(App.Path, 1, 2) Else eleres = App.Path
-'MkDir eleres & "\megnyitva"
-koordinatak = False
 ertekeles.Enabled = False
-'jb.Visible = True
-
 End Sub
 
 Private Sub Form_Resize()
@@ -413,54 +365,94 @@ If terkep.ScaleHeight - terulet.Height < 0 Then
     Else
         fl.Visible = False
 End If
+
+If (fl.Visible Or jb.Visible) And jelm.Enabled Then
+        gomb.Move fl.Left, jb.Top
+        gomb.Visible = True
+Else
+        gomb.Visible = False
+End If
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-'On Error Resume Next
-'Kill eleres & "\megnyitva\*.*"
-'RmDir eleres & "\megnyitva"
+
 totalki
+End Sub
+
+Private Sub gomb_Click()
+jelm_Click
+End Sub
+
+Private Sub help_Click()
+On Error GoTo hiba
+Shell "hh.exe " & eleres & "\vakterkep.chm", vbNormalFocus
+Exit Sub
+hiba:
+    MsgBox "Az ön Windowsa nem képes kezelni a HTML Help fájlokat.", vbInformation, "Súgó nem tölthetõ be"
 End Sub
 
 Private Sub jb_Change()
 terulet.Left = jb.Value
 End Sub
 
-Private Sub kuldo_Timer()
-Dim kep As String
-kep = "Memória Állapota:" & vbCrLf
-kep = kep & "-----------------" & vbCrLf
-For i = 1 To teljes
-    kep = kep & "cimke(" & i & ").Caption=" & nevek(i) & vbCrLf
-Next i
-kep = kep & "Összesen:" & teljes & " objektum" & vbCrLf
-kep = kep & "Koordináta listázás:" & koordinatak & vbCrLf
-kep = kep & "Aktív objektum:" & aktualis
-sysmon.monitor = kep
+
+Public Sub jelm_Click()
+If jelol.Visible Then
+    jelol.Visible = False
+Else
+    jelol.Show vbModeless, terkep
+End If
 End Sub
 
 Private Sub nevjegy_Click()
 frmAbout.Show vbModal
 End Sub
 
+Private Sub nyomtat_Click()
+terkep.PrintForm
+End Sub
+
 Private Sub open_Click()
 On Error GoTo hiba
 pb.DialogTitle = "Térkép megnyitása ..."
 pb.Filter = "Térkép projektek (*.vtk)|*.vtk"
-pb.FileName = eleres & "\*.vtk"
+pb.FileName = "*.vtk"
 pb.ShowOpen
-'tomorit pb.FileName
 Call alaphelyzet
 tolt (pb.FileName)
 hiba:
 End Sub
 
 Public Sub beiro()
-'MsgBox cimke(aktualis).Caption, vbCritical, aktualis
-szoveg.Width = (Len(cimke(aktualis).Caption)) * 100 + 200
-szoveg.Text = cimke(aktualis).Caption
-szoveg.Move cimke(aktualis).Left, cimke(aktualis).Top
-szoveg.Visible = True
+'On Error GoTo ki
+i = aktualis
+Call Form_KeyPress(27)
+aktualis = i
+If ((megoldas(aktualis, egyeni(aktualis)) = "" Or hanyadik = 0 Or cimke(aktualis).LinkTimeout = 0) And egyeni(aktualis) <= 4) Then
+mehet:
+    'If (cimke(aktualis).LinkTimeout = 50 And opciok.segito = 1 And hanyadik > 0) Then Exit Sub
+    szoveg.Width = (Len(cimke(aktualis).Caption)) * 100 + 200
+    szoveg.Text = cimke(aktualis).Caption
+    szoveg.SelStart = 0
+    szoveg.SelLength = Len(szoveg.Text)
+    szoveg.Move cimke(aktualis).Left, cimke(aktualis).Top
+    szoveg.Visible = True
+    Exit Sub
+Else
+    k = InputBox(segitseg(aktualis, egyeni(aktualis)), egyeni(aktualis) + 1 & ". segítõ kérdés:")
+    If k = "" Then
+        Exit Sub
+    Else
+        If Trim(UCase(k)) <> Trim(UCase(megoldas(aktualis, egyeni(aktualis)))) Then
+            egyeni(aktualis) = egyeni(aktualis) + 1
+            If egyeni(aktualis) = 5 Then egyeni(aktualis) = 4
+        Else
+            cimke(aktualis).LinkTimeout = 0
+            GoTo mehet
+        End If
+    End If
+End If
+ki:
 End Sub
 Public Sub tolt(fajlnev As String)
 Dim parancs As String, ertek As String, kod As Integer, sor As String, ker As Integer, i As Integer
@@ -476,7 +468,6 @@ j = 0
 konyvtar = Mid(fajlnev, 1, j)
 'MsgBox konyvtar
 
-'MsgBox vbBlack & "  " & vbRed & "   " & vbBlue
 meret = 9
 szin = vbBlack
 kod = 0
@@ -485,13 +476,16 @@ kover = False
 alahuzott = False
 jobbra = False
 
-On Error GoTo fajlhiba
+If fajlnev = eleres & "\vakterkep.ini" Then
+    On Error GoTo nincs
+Else
+    On Error GoTo fajlhiba
+End If
 Open fajlnev For Input As 1
     Do While Not EOF(1)
         Line Input #1, sor
             parancs = ""
             ertek = ""
-            On Error GoTo kephiba
             'On Error Resume Next
             For ker = 1 To Len(sor)
             If Mid(sor, ker, 1) = "=" Then
@@ -500,33 +494,35 @@ Open fajlnev For Input As 1
                 GoTo gyorski
             End If
         Next ker
-    If parancs = "" Then GoTo ki
+    If parancs = "" Then parancs = sor
+    parancs = LCase(parancs)
 gyorski:
     Select Case parancs
         Case "cim"
             Me.Caption = ertek & " - Vaktérkép " & App.Major & "." & App.Minor
         Case "terkep"
+            On Error GoTo kephiba
             If Mid(ertek, 1, 1) = "\" Then
                     ertek = Mid(ertek, 2, Len(ertek) - 1)
                     terulet.Picture = LoadPicture(konyvtar & ertek)
                 Else
                     terulet.Picture = LoadPicture(ertek)
             End If
+            On Error GoTo egyeb
         Case "szin"
             szin = ertek
         Case "kover"
-            kover = ertek
+            kover = True
         Case "dolt"
-            dolt = ertek
+            dolt = True
         Case "alahuzott"
-            alahuzott = ertek
+            alahuzott = True
         Case "meret"
             meret = ertek
-        Case "jobbra"
-            jobbra = ertek
+        Case "balra"
+            jobbra = True
         Case "elem"
-            kod = kod + 1
-            For i = 1 To 10
+           For i = 1 To 10
                 feltolt(i) = ""
             Next i
             i = 1
@@ -541,13 +537,14 @@ gyorski:
                     Next
                     feltolt(j) = Mid(ertek, i, Len(ertek) + 1 - i)
                     
-                    nev = feltolt(4)
+                    tipus = feltolt(1)
                     X = feltolt(2)
                     Y = feltolt(3)
-                    tipus = feltolt(1)
-                    'End
-                    'MsgBox tipus & "    " & X & " " & Y & " " & nev
-                        
+                    nev = feltolt(4)
+                    
+                     Select Case tipus
+                        Case 0 To 6
+                            kod = kod + 1
                             Load pont(kod)
                             pont(kod).Left = X
                             pont(kod).Top = Y
@@ -559,7 +556,7 @@ gyorski:
                             
                             Load cimke(kod)
                             cimke(kod).FontSize = meret
-                            cimke(kod).Caption = "?"
+                            cimke(kod).Caption = opciok.jel
                             cimke(kod).ForeColor = szin
                             cimke(kod).FontBold = kover
                             cimke(kod).FontItalic = dolt
@@ -581,24 +578,132 @@ gyorski:
                             Load fedo(kod)
                             fedo(kod).Move pont(kod).Left, pont(kod).Top, pont(kod).Width, pont(kod).Height
                             fedo(kod).Visible = True
-                        
-           ' Next i
+                       
+                       Case 7
+    
+                            i = jelol.pont.Count
+                            i = CInt(i)
+                            Load jelol.pont(i)
+                            jelol.pont(i).Left = jelol.pont(i - 1).Left
+                            jelol.pont(i).Top = jelol.cimke(i - 1).Top + jelol.cimke(i - 1).Height + 30
+                            jelol.pont(i).Shape = X
+                            jelol.pont(i).BorderColor = szin
+                            jelol.pont(i).FillColor = szin
+                            jelol.pont(i).Visible = True
+                            
+                            
+                            Load jelol.cimke(i)
+                            jelol.cimke(i).FontSize = meret
+                            jelol.cimke(i).Caption = nev
+                            jelol.cimke(i).ForeColor = szin
+                            jelol.cimke(i).FontBold = kover
+                            jelol.cimke(i).FontItalic = dolt
+                            jelol.cimke(i).FontUnderline = alahuzott
+                            jelol.cimke(i).Top = jelol.cimke(i - 1).Top + jelol.cimke(i - 1).Height + 30
+                            jelol.cimke(i).Left = jelol.cimke(i - 1).Left
+                            jelol.cimke(i).Visible = True
+                            
+                            If jelol.Width < jelol.cimke(i).Left + jelol.cimke(i).Width + 100 Then
+                                    jelol.Width = jelol.cimke(i).Left + jelol.cimke(i).Width + 100
+                            End If
+                            jelol.Height = 1.5 * (jelol.cimke(i).Top + jelol.cimke(i).Height)
+                            
+                            jelm.Enabled = True
+                            
+                End Select
+                meret = 9
+                szin = vbBlack
+                dolt = False
+                kover = False
+                alahuzott = False
+                jobbra = False
+                
+                retrn.Enabled = True
+                ertekeles.Enabled = True
+                ertekeles.Caption = "Értékelés"
 objki:
+        Case "hatarok"
+            If opciok.beall.Value = 1 Or fajlnev = eleres & "\vakterkep.ini" Then
+            i = 1
+            j = 1
+        
+                    For ker = 1 To Len(ertek)
+                        If Mid(ertek, ker, 1) = "," Then
+                            feltolt(j) = Mid(ertek, i, ker - i)
+                            i = ker + 1
+                            j = j + 1
+                        End If
+                    Next
+                    feltolt(j) = Mid(ertek, i, Len(ertek) + 1 - i)
+                    
+                    For i = 1 To 4
+                        opciok.hatarok(i) = feltolt(i)
+                    Next i
+                End If
+        Case "tipp"
+            If opciok.tippek = 1 Then
+                gyorstip(kod) = perenbol(ertek)
+            End If
+        Case "kerdes"
+            If opciok.segito = 1 Then
+            For i = 1 To 10
+                feltolt(i) = ""
+            Next i
+            i = 1
+            j = 1
+        
+                    For ker = 1 To Len(ertek)
+                     If j < 3 Then
+                        If Mid(ertek, ker, 1) = "," Then
+                            feltolt(j) = Mid(ertek, i, ker - i)
+                            i = ker + 1
+                            j = j + 1
+                        End If
+                    Else
+                        GoTo ki2
+                    End If
+                    Next
+ki2:
+                    feltolt(j) = Mid(ertek, i, Len(ertek) + 1 - i)
+            
+            If feltolt(2) = "" Then feltolt(2) = " "
+            
+            i = feltolt(1) - 1
+            megoldas(kod, i) = feltolt(2)
+            segitseg(kod, i) = perenbol(feltolt(3))
+            End If
+        
+        Case "beallitas"
+            opciok.beeng.Value = ertek
+            sett.Visible = Abs(CInt(ertek))
+            
+        Case "egyeni"
+            opciok.beall.Value = ertek
+        Case "jel"
+            opciok.jel = ertek
+        Case "pont"
+            opciok.pont = ertek
+        Case "segito"
+            opciok.segito = ertek
+        Case "tippek"
+            opciok.tippek = ertek
+        Case "minusz"
+            opciok.szazal = ertek
         Case "vege"
+            Close 1
             Exit Sub
     End Select
 ki:
     Loop
 
 Close 1
-teljes = kod
-ertekeles.Enabled = True
 Form_Resize
+retrn_Click
 Exit Sub
 
 
 kephiba:
-    MsgBox "A projectben megadott kép nem elérhetõ, ezért a project betöltése megszakad.", vbCritical, "A kép nem elérhetõ"
+    MsgBox "A projektben megadott kép nem elérhetõ, ezért a projekt betöltése megszakad.", vbCritical, "A kép nem elérhetõ"
         alaphelyzet
         Close 1
         Form_Resize
@@ -606,18 +711,48 @@ kephiba:
 
 
 fajlhiba:
-    MsgBox "A megadott elérési út helytelen, vagy nem Vaktérkép fájl.(" & fajlnev & ")", vbCritical, "A project nem nyitható meg..."
+    MsgBox "A megadott elérési út helytelen, vagy nem Vaktérkép fájl.(" & fajlnev & ")", vbCritical, "A projekt nem nyitható meg..."
         alaphelyzet
         Close 1
         Exit Sub
-
-
+egyeb:
+    MsgBox "A töltés meg fog szakadni az alábbi hiba miatt:" & vbCrLf & Err.Description, vbCritical, "Hiba(" & Err.Number & ")"
+    alaphelyzet
+    Form_Resize
+    Close 1
+    Exit Sub
+nincs:
+    Close 1
 End Sub
 
+Private Sub ora_Timer()
+On Error GoTo ki
+If gyorstip(ttip) = "" Or szoveg.Visible = True Then GoTo ki
+segito.Caption = gyorstip(ttip)
+segito.Move pont(ttip).Left, cimke(ttip).Top + cimke(ttip).Height + 10
+segito.Visible = True
+ki:
+End Sub
 
+Private Sub retrn_Click()
+On Error Resume Next
+    For i = 1 To (cimke.Count - 1)
+        cimke(i).Caption = opciok.jel
+        cimke(i).Enabled = True
+        cimke(i).BackStyle = 0
+        fedo(i).Enabled = True
+        pontok(i) = 0
+        egyeni(i) = 0
+        cimke(i).LinkTimeout = 50
+    Next i
+Unload bizi
+ertekeles.Caption = "Értékelés"
+aktualis = 0
+hanyadik = 0
+End Sub
 
-Private Sub szigor_Click()
-opciok.Visible = Not opciok.Visible
+Private Sub sett_Click()
+opciok.Show vbModal
 End Sub
 
 Private Sub szoveg_Change()
@@ -625,36 +760,39 @@ szoveg.Width = (Len(szoveg.Text) + 1) * 120 + 150
 End Sub
 
 Private Sub terulet_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-If koordinatak = True Then MsgBox X & "            " & Y
 aktualis = 0
 szoveg.Visible = False
 End Sub
-'Public Sub tomorit(fajl As String)
-'On Error GoTo hiba
-'Shell eleres & "\rar.exe x " & fajl & " megnyitva", vbHide
-'Do While Dir(eleres & "\megnyitva\terkep.vtk", vbNormal Or vbReadOnly Or vbHidden Or vbSystem Or vbArchive) = ""
-'Loop
-'tolt (eleres & "\megnyitva\terkep.vtk")
-'Exit Sub
-'hiba:
-'MsgBox "Nemtalálom a külsõ tömörítõt!"
-'End Sub
-Public Sub kitolt()
-    For i = 1 To teljes
-        cimke(i).Caption = nevek(i)
-         cimke(i).Width = (Len(nevek(i))) * 100 + 200
-    Next i
-    
-End Sub
+
 Public Sub alaphelyzet()
-    For i = 1 To teljes
+On Error Resume Next
+    For i = 1 To (cimke.Count - 1)
         nevek(i) = ""
         Unload cimke(i)
         Unload pont(i)
         Unload fedo(i)
+        gyorstip(i) = ""
+        For j = 0 To 4
+            megoldas(i, j) = ""
+            segitseg(i, j) = ""
+        Next j
     Next i
-    teljes = 0
+    For i = 1 To jelol.cimke.Count
+        Unload jelol.cimke(i)
+        Unload jelol.pont(i)
+    Next i
+        
     terulet.Picture = Nothing
     aktualis = 0
+    hanyadik = 0
     Form_Load
+End Sub
+
+Private Sub terulet_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+ttip_el
+End Sub
+Private Sub ttip_el()
+ora.Enabled = False
+segito.Visible = False
+ttip = 0
 End Sub

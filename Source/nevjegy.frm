@@ -34,13 +34,14 @@ Begin VB.Form frmAbout
    Begin VB.Label url 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Muráti Ákos honlapja - www.extra.hu/murako"
+      Caption         =   "Vaktérkép honlapja - http://www.tar.hu/vakterkep2002"
       Height          =   195
       Index           =   1
-      Left            =   720
+      Left            =   480
+      MousePointer    =   10  'Up Arrow
       TabIndex        =   2
       Top             =   3480
-      Width           =   3195
+      Width           =   3945
    End
    Begin VB.Label url 
       AutoSize        =   -1  'True
@@ -49,6 +50,7 @@ Begin VB.Form frmAbout
       Height          =   195
       Index           =   0
       Left            =   840
+      MousePointer    =   10  'Up Arrow
       TabIndex        =   0
       Top             =   3840
       Width           =   2775
@@ -61,7 +63,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Form_Load()
-    kep.Picture = sysmon.kep.Picture
     Me.Caption = App.Title & " névjegye"
 End Sub
 
@@ -81,7 +82,7 @@ Private Sub url_Click(Index As Integer)
         Case 0
             Shell "explorer mailto:b0murako@gyakg.u-szeged.hu", vbHide
         Case 1
-            Shell "explorer http://www.extra.hu/murako"
+            Shell "explorer http://www.tar.hu/vakterkep2002"
     End Select
 End Sub
 

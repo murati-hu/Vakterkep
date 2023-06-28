@@ -1,17 +1,17 @@
 VERSION 5.00
 Begin VB.Form jelol 
    Caption         =   "Jelmagyarázat"
-   ClientHeight    =   855
+   ClientHeight    =   1800
    ClientLeft      =   60
    ClientTop       =   345
-   ClientWidth     =   3120
+   ClientWidth     =   2760
    ControlBox      =   0   'False
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   855
-   ScaleWidth      =   3120
+   ScaleHeight     =   1800
+   ScaleWidth      =   2760
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin VB.Shape pont 
