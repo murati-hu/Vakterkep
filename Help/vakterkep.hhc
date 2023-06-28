@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Vakt&eacute;rk&eacute;p s&uacute;g&oacute;ja">
+		<param name="Local" value="index.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Billenty&ucirc;zet kioszt&aacute;sa">
+		<param name="Local" value="bill.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="T&aacute;mogat&aacute;s">
+		<param name="Local" value="supp.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Haszn&aacute;lat">
+		<param name="Local" value="hasz.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="T&eacute;rk&eacute;p megnyit&aacute;sa">
+		<param name="Local" value="open.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

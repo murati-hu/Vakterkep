@@ -1,0 +1,86 @@
+cim=Nagy Magyarország
+terkep=\nmo.GIF
+elem=3,2498,1823,Pozsony
+kerdes=1,1,Régen gyakran voltak itt gyûlések\nSok sikert a többihez\n\nÜdv: Muráti Ákos
+kerdes=2,2,Szlovákia fõvárosa
+kerdes=3,3,Írd má be hogy "POZSONY"
+kerdes=4,4,Írd má be hogy "POZSONY"
+kerdes=5,5,Írd má be hogy "POZSONY"
+alahuzott
+kover
+szin=4227327
+elem=3,4013,2558,Buda
+kerdes=1,elsõ megoldás,Hozzácsatolták egy másik városhoz
+kerdes=3,harmadik,NEM PEST!
+kerdes=4,negyedik,Pszzt!!! BUDA!!!
+kerdes=5,ötödik,Mondom!!!!\n\nBBBUUUDDDAAAA!\nNa. Hülyegyerek
+tipp=Budapest lesz a neve késõbb...
+kover
+szin=4210816
+elem=3,4868,4028,Szeged
+alahuzott
+kover
+szin=33023
+elem=3,1823,1703,Bécs
+tipp=Ausztria Fõvárossa
+elem=3,7583,3263,Kolozsvár
+elem=3,5318,743,Lõcse
+elem=3,5723,1118,Kassa
+elem=3,5813,1868,Tokaj
+elem=3,6038,2513,Várad
+elem=3,3593,2888,Székesfehérvár
+elem=3,3218,2213,Komárom
+elem=3,4073,2213,Esztergom
+elem=3,3308,2723,Pannonhalma
+elem=3,5753,4628,Temesvár
+elem=3,8363,3773,Segesvár
+elem=3,5813,4043,Csanád
+elem=3,6188,3923,Arad
+elem=3,7238,4493,Lippa
+alahuzott
+kover
+szin=4227327
+elem=3,3023,128,Prága
+elem=3,4973,2333,Eger
+kover
+meret=17,25
+szin=32768
+elem=1,4373,6188,Török birodalom
+kover
+meret=17,25
+szin=32768
+balra
+elem=1,9728,263,Lengyelország
+alahuzott
+kover
+szin=4227327
+elem=7,3,0,Fõváros
+kover
+meret=13,5
+szin=32768
+elem=7,1,0,Ország
+kover
+meret=12
+szin=255
+elem=1,473,5018,Dalmácia
+kover
+meret=12
+szin=255
+elem=1,7103,2513,Erdély
+kover
+meret=12
+szin=255
+elem=1,3668,968,Felvidék
+kover
+meret=12
+szin=255
+elem=1,2123,2918,Dunántúl
+kover
+meret=17,25
+szin=32768
+elem=1,98,1868,NRB
+kover
+meret=12
+szin=255
+elem=7,1,0,Magyar területek
+elem=7,3,0,Városok

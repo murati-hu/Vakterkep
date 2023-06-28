@@ -1,0 +1,501 @@
+<html>
+<head>
+	<title>Vaktérkép projektek kézi szerkesztése</title>
+<link rel="StyleSheet" href="stilus.css" type="text/css">
+<script language="JavaScript">
+function mutat(mit) {
+	for (i=1; i<=20; i++) {
+		eval("tema" + i + ".style.display='none';");
+		}
+	eval("tema" + mit + ".style.display='block';");
+
+}
+</script>
+</head>
+<body>
+<h3>Vaktérkép projektek kézi szerkesztése</h3>
+<p>A vaktérképek fizikai felépítése igen egyszerû: <b>Parancs=&lt;érték&gt;</b> vagy <b>parancs</b>.</p>
+
+<p>A <b>parancs</b> meghatározott szöveg.Nem kell különbséget tenni a kis és nagybetûk között.<i>(A nem azonosítható, elgépelt parancsokat
+a Vaktérkép figyelmen kívül hagyja.)</i></p>
+
+<p>Az <b>&lt;érték&gt;</b> kis megkötésekkel tetszõleges lehet.<i>(A helytelenül megadott
+értékek(pl.: rossz szintaktika, más tulajdonság, túl sok paraméter) programhibát okozhat. Erre
+A Vaktékép egy <b>Hiba(&lt;szám&gt;)</b> üzenetet ad és a töltés megszakad.</i></p>
+<hr>
+
+
+<table width="80%" align="center" border="1" cellspacing="0" cellpadding="0">
+	<caption><b>Vaktérkép projekt parancsai</b></caption>
+	
+	<tr><td colspan="2"><b>Vaktérkép beállításai:</b></td></tr>
+	
+	<tr><td align="center"><a href="#" onclick="mutat('13');">Beállítáások tárolása</a></td>
+	<td align="center"><a href="#" onclick="mutat('14')">Egyéni projektbeállítások</a></td></tr>	
+
+	<tr><td align="center"><a href="#" onclick="mutat('3');">Ponthatárok</a></td>
+	<td align="center"><a href="#" onclick="mutat('15')">Beállítások menüpont</a></td></tr>
+
+	<tr><td align="center"><a href="#" onclick="mutat('16');">Kitöltõ jel</a></td>
+	<td align="center"><a href="#" onclick="mutat('17')">Pontok</a></td></tr>
+
+	<tr><td align="center"><a href="#" onclick="mutat('18');">Kérdések levonásai</a></td>
+	<td align="center"><a href="#" onclick="mutat('19')">Kérdések  engedélyezése/tiltása</a></td></tr>
+	<tr><td colspan="2" align="center"><a href="#" onclick="mutat('20')">Gyorstippek engedélyezése/tiltása</a></td></tr>
+
+
+
+	<tr><td colspan="2"><b>Térkép tulajdonságai:</b></td></tr>
+	
+	<tr><td align="center"><a href="#" onclick="mutat('1');">Projekt elnevezése</a></td>
+	<td align="center"><a href="#" onclick="mutat('2')">Háttérkép megadása</a></td></tr>
+
+	<tr><td align="center" colspan="2"><a href="#"onclick="mutat('3')">Egyéni Ponthatárok megadása</a></td>
+	</tr>
+	
+	<tr><td colspan="2"><b>Elemek és tulajdonságaik:</b></td></tr>
+	
+	<tr><td align="center"><a href="#" onclick="mutat('4')">Elemek létrehozása</a></td>
+	<td align="center"><a href="#" onclick="mutat('5')">Segítõ kérdések</a></td></tr>
+
+	<tr><td align="center"><a href="#"  onclick="mutat('6')">Dõlt elemszöveg</a></td>
+	<td align="center"><a href="#" onclick="mutat('7')">Félkövér elemszöveg</a></td></tr>
+
+	<tr><td align="center"><a href="#"  onclick="mutat('8')">Aláhúzott elemszöveg</a></td>
+	<td align="center"><a href="#" onclick="mutat('9')">Betûméret megadása</a></td></tr>
+
+	<tr><td align="center"><a href="#" onclick="mutat('10')">Elem színének megadása</a></td>
+	<td align="center"><a href="#"  onclick="mutat('11')">Szöveg balra csatolása</a></td></tr>
+	
+	<tr><td align="center"><a href="#" onclick="mutat('12')">Gyorstippek</a></td>
+	<td align="center"><a href="#"  onclick="mutat('21')">Láthatalan jel</a></td></tr>
+
+<tr><td colspan="2">
+<hr>
+
+<!-- PARANCSOK LEÍRÁSA -->
+
+<div id="tema1" style="display: none;">
+	<h4>Projekt elnevezése</h4>
+
+	<p>Ez az érték fog megjelenni a Vaktérkép címsorában. </p>
+	<h5>Szintaktika</h5>
+
+	<p><b>cim=Projekt neve</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>Projekt neve</b></td>
+		<td>Tetszõleges szöveg vagy szám lehet.</td></tr>
+	</table></p>
+	<p></p>
+	<h5>Megjegyzések</h5>
+	<p>A parancs csak <b>egy sorba</b> kerülhet</b></p>
+</div>
+
+
+
+<div id="tema2" style="display: none;">
+
+	<h4>Háttérkép megadása</h4>
+
+	<p>Az itt megadott kép lesz a vaktérkép váza. Ez maga a térkép.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>terkep=képfájl</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>képfájl</b></td>
+		<td>Valós képfájlt kell megadni!</td></tr>
+	</table></p>
+	
+	<p>A képfájl megadásának lehetõségei</p>
+	
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		
+		<tr><td valign="top"><b>Relatív elérés</b></td>
+		<td>Ez az élérési mód az ajánlott. Ekkor csak a térképprojekt könyvtárjában és annak
+		alkönyvtáraiban szerepelhet a képfájl. Ennek az elõhívásához egy <b>\</b> -jelet kell
+		a képfájl elérési útja elé tenni. (<i>pl.: terkep=\terkep.jpg</i>)</td></tr>
+
+		<tr><td colspan="2"><hr></td></tr>
+		
+		<tr><td valign="top"><b>Abszolut elérés</b></td>
+		<td>Meg kell adnunk a kép teljes elérési útját. Ez akkor lehet veszélyes ha más
+		környezetbe dolgozunk a Vaktérképpel.</td></tr>
+	</table></p>
+
+	<h5>Megjegyzések</h5>
+	<p>Ha a képfájl nem nyitható meg, akkor a térképünk sem használható!A parancs csak <b>egy sorba</b> kerülhet!</b></p>
+</div>
+
+
+
+<div id="tema3" style="display: none;">
+	<h4>Egyéni ponthatárok megadása</h4>
+
+	<p>Az itt beállított százalékhatárok alapján fog értékelni a Vaktérkép, ha a projektek
+	egyéni beállításai engedélyezve vannak.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>hatarok=2,3,4,5</b></p>
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>2,3,4,5</b></td>
+		<td>A kettes helyére a kettes alsó százalékhatárát kell megadni, a hármas helyére a hármast..</td></tr>
+	</table></p>
+	<p></p>
+	<h5>Megjegyzések</h5>
+	<p>Fontos hogy csak szám kerülhet ide, és egy százalékhatár elõtt nem állhat nála nagyobb szám.</b></p>
+</div>
+
+<div id="tema4" style="display: none;">
+	<h4>Elemek felvétele a térképre</h4>
+
+	<p>A megadott típusú és tulajdonságú elemek lesznek a térképen, vagy a jelmagyarázaton láthatók.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>elem=típus,érték1,érték2,érték3</b></p>
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		
+		<tr><td valign="top"><b>típus</b></td>
+		<td>Az itt megadott szám adja meg az elem típusát.</td></tr>
+		
+		<tr><td valign="top"><b>érték1</b></td>
+		<td>A térképen szereplõ elemeknél ez az érték jelenti az X koordinátát a térképen, jelmagyarázatoknál
+		az elemtípusát határozza meg.</td></tr>
+
+		<tr><td valign="top"><b>érték2</b></td>
+		<td>A térképen szereplõ elemeknél ez az érték jelenti az y koordinátát a térképen.</td></tr>
+
+		<tr><td valign="top"><b>érték3</b></td>
+		<td>Ez tartalmazza az elem nevét, ami jelmagyarázatoknál látszik, térképelemeknél
+		pedig a megoldás.</td></tr>
+	</table></p>
+	<p></p>
+	
+	<p>Az elemek lehetséges típusai:</p>
+	
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		
+		<tr><td valign="top"><b>0-1</b></td>
+		<td>Az elem jele négyszög lesz.</td></tr>
+
+		<tr><td colspan="2"><hr></td></tr>
+		
+		
+		<tr><td valign="top"><b>2-3</b></td>
+		<td>Kör alakú elemjel.</td></tr>
+
+		<tr><td colspan="2"><hr></td></tr>
+		
+		<tr><td valign="top"><b>4-5</b></td>
+		<td>Lekerekített négyszög.</td></tr>
+
+		<tr><td colspan="2"><hr></td></tr>
+		
+
+		<tr><td valign="top"><b>7</b></td>
+		<td>Jelmagyarázat. Az érték2 helyére írd valamelyik típust 1-6-ig a típustáblázatból.</td></tr>
+
+		<tr><td colspan="2"><hr></td></tr>
+		
+		
+		
+	
+	</table></p>
+	<h5>FONTOS!</h5>
+	<p>Egy-egy érték helytelen megadásánál a program leállhat!</b></p>
+</div>
+
+<div id="tema5" style="display: none;">
+	<h4>Segítõ kérdések</h4>
+
+	<p>Ha elsõre nem tudjuk helyesen megadni egy pont nevét és ha a ponthoz hozzárendeltünk
+	egy kérdést, akkor az elem addig blokkolva lesz, amíg egy kérdésre nem adunk helyes választ.
+	A kérdés egy bevitelimezõként jelenik meg, amin szerepel a megadott kérdés.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>segitseg=szám,megoldás,kérdés</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>szám</b></td>
+		<td>Az elsõ értékelés utáni próba száma, amikor megjelenik a szöveg.</td></tr>
+
+		<tr><td><b>megoldás</b></td><td>A kérdés megoldását adhatjuk meg itt.</td></tr>
+
+		<tr><td><b>Kérdés</b></td><td>Ide írhatjuk a feltenni kívánt kérdést. Sortörés
+		alkalmazásáshoz használjuk a a <b>\n</b> vezérlõt.</td></tr>
+	</table></p>
+	<p></p>
+</div>
+
+<div id="tema6" style="display: none;">
+	<h4>Dõlt elemszöveg</h4>
+
+	<p>Dõltté tehetjük vele az aktuális elem szövegét.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>dolt</b></p>
+	<h5>Megjegyzések</h5>
+	<p>Csak az utána következõ elemre van hatással.</p>
+</div>
+
+
+
+<div id="tema7" style="display: none;">
+	<h4>Félkövér elemszöveg</h4>
+
+	<p>Félkövérré tehetjük vele az aktuális elem szövegét.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>kover</b></p>
+	<h5>Megjegyzések</h5>
+	<p>Csak az utána következõ elemre van hatással.</p>
+</div>
+
+<div id="tema8" style="display: none;">
+	<h4>Aláhúzott elemszöveg</h4>
+
+	<p>Aláhúzottá tehetjük vele az aktuális elem szövegét.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>alahuzott</b></p>
+	<h5>Megjegyzések</h5>
+	<p>Csak az utána következõ elemre van hatással.</p>
+</div>
+
+<div id="tema11" style="display: none;">
+	<h4>Elemszöveg balra csatolása</h4>
+
+	<p>Az elemszöveg az elem bal oldalára kerül.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>balra</b></p>
+
+	<h5>Megjegyzések</h5>
+	<p>Csak az utána következõ elemre van hatással.</p>
+</div>
+
+<div id="tema9" style="display: none;">
+	<h4>Elemszöveg méretének megadása.</h4>
+
+	<p>Az itt megadott méretû lesz az elem szövege.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>meret=méret_pontokban</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>méret_pontokban</b></td>
+		<td>A betûméret pontokban.</td></tr>
+
+	</table></p>
+	<h5>Megjegyzések</h5>
+	<p>A 8,25-ös betûméretet nem kötelezõ megadni, ugyanis ez az alapértelmezett.
+	Csak az utána következõ elemre van hatással.</p>
+</div>
+
+<div id="tema10" style="display: none;">
+	<h4>Az elem színének megadása</h4>
+
+	<p>Az itt megadott méretû lesz az elem szövege.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>szin=szinkód</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>színkód</b></td>
+		<td>Visual Basic-es színkód.</td></tr>
+
+	</table></p>
+
+	<h5>Megjegyzések</h5>
+	<p>A feketét(kód:0) nem kötelezõ megadni, mert az az alapértelmezett szín.</p>
+</div>
+
+
+<div id="tema12" style="display: none;">
+	<h4>Gyorstippek felvétele</h4>
+
+	<p>A Vaktérképben az elemre való rámutatással ez a szöveg fog látszódni.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>tipp=Tipp_szövege</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>tipp_szövege</b></td>
+		<td>Itt adhatjuk meg a GYorstipp szövegét. Sortörést a <b>/n</b> karakterekkel helyezhetünk el.</td></tr>
+
+	</table></p>
+
+	<h5>Megjegyzések</h5>
+	<p>Ez az opció csak akkor mûködik, ha engedélyezve van.</p>
+</div>
+
+
+<div id="tema13" style="display: none;">
+	<h4>Beállítások tárolása</h4>
+
+	<p>A Vaktérkép beállításait a vaktérkép könyvtárán belül a <b>vakterkep.ini</b> fájl tárolja
+	Ez a fájl a Vaktérkép minden indításakor lefut.</p>
+	<h5>Szintaktika</h5>
+
+	<p>Szintaktikájában megegyezik a vaktérkép projektekkel.</p>
+
+
+	<h5>Megjegyzések</h5>
+	<p>Bármilyen projektutasítás megadható benne!</p>
+</div>
+
+
+<div id="tema14" style="display: none;">
+	<h4>Egyéni projektbeállítások</h4>
+
+	<p>Vaktérkép projektek egyéni beállításait adhatjuk meg vele.<i>(pl.: Ponthatárok)</i>.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>egyeni=logikai_érték</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>logikai_érték</b></td>
+		<td><b>0</b> ha tiltjuk, <b>1</b> ha engedélyezzük.</td></tr>
+
+	</table></p>
+</div>
+
+<div id="tema15" style="display: none;">
+	<h4>Beállítások menüpont</h4>
+
+	<p>Vaktérkép futása alatt az <b>Eszközök/Beállítások...</b> menüpont mutatása.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>beallitas=logikai_érték</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>logikai_érték</b></td>
+		<td><b>0</b> ha tiltjuk, <b>1</b> ha engedélyezzük.</td></tr>
+
+	</table></p>
+	<h5>Megjegyzések</h5>
+	<p>A tiltás figyelmen kívül hagyható a <b>vakterkep.exe /beall</b> parancssori futtatással.</p>
+</div>
+
+<div id="tema16" style="display: none;">
+	<h4>Kitöltõ jel</h4>
+
+	<p>Az elemek neve helyére írandó jelet adhatjuk meg vele.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>jel=Érték</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>érték</b></td>
+		<td>Bármilyen karakter(ek).</td></tr>
+
+	</table></p>
+</div>
+
+<div id="tema17" style="display: none;">
+	<h4>Egy faladatra adható pontok</h4>
+
+	<p>Az értékelés során a feladatok pontszámát adhatjuk meg vele.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>pont=szám</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>szám</b></td>
+		<td>1-99 közé esõ egész szám.</td></tr>
+
+	</table></p>
+</div>
+
+<div id="tema18" style="display: none;">
+	<h4>Kérdések levonásai</h4>
+
+	<p>Az a százalékértéket adhatjuk meg vele, amit a büntetõkérdések után levonunk.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>minusz=szám</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>szám</b></td>
+		<td>1-20 közé esõ egész szám.</td></tr>
+
+	</table></p>
+</div>
+
+<div id="tema19" style="display: none;">
+	<h4>Segítõ kérdések engedélyezése/tiltása</h4>
+
+	<h5>Szintaktika</h5>
+
+	<p><b>segito=logikai_érték</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>logikai_érték</b></td>
+		<td><b>0</b> ha tiltjuk, <b>1</b> ha engedélyezzük.</td></tr>
+
+	</table></p>
+</div>
+
+<div id="tema20" style="display: none;">
+	<h4>GYorstippek engedélyezése/tiltása</h4>
+	<h5>Szintaktika</h5>
+
+	<p><b>tippek=logikai_érték</b></p>
+
+	<p><table width="60%" align="center">
+		<tr><td><b>Értékek</b></td><td><b>Leírás</b></td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr><td valign="top"><b>logikai_érték</b></td>
+		<td><b>0</b> ha tiltjuk, <b>1</b> ha engedélyezzük.</td></tr>
+
+	</table></p>
+</div>
+
+<div id="tema21" style="display: none;">
+	<h4>Láthatatlan elemjel</h4>
+
+	<p>A parancs által nem látható az elem jele.</p>
+	<h5>Szintaktika</h5>
+
+	<p><b>lathatatlan</b></p>
+
+	<h5>Megjegyzések</h5>
+	<p>Csak az utána következõ elemre van hatással.</p>
+</div>
+
+</td></tr></table>
+</body>
+</html>

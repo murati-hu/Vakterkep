@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Vaktérkép hibaüzenetei</title>
+<link rel="StyleSheet" href="stilus.css" type="text/css">
+<script language="JavaScript" src="scriptek.js"></script>
+</head>
+<body>
+
+
+<h3>Hibaüzenetek</h3>
+<h4>A projekt nem nyitható meg...</h4>
+<p>Ezt a hibaüzenetet akkor kapjuk, ha a megnyitni kívánt fájl nem található a
+megadott helyen.
+<i>(Általában a parancssori megnyitásnál fordule elõ. pl.: <b>vakterkep.exe &lt;fájl_neve&gt;</i></b>
+<br><a href="#" onclick="mutat('nincsmeg')">Hibaüzenet mutatása/elrejtése</a></p>
+<p align="center"><img src="kepek/nincs.gif" id="nincsmeg" border="0" style="display: none"></p>
+
+
+<h4>A kép nem elérhetõ</h4>
+<p>Ez az üzenet azt jelenti, hogy a projektünkben megadott képfájl nem található
+a megadott helyen. Ez általában a projekt könyvtárában van, de lehet más
+helyen is. <i>(Ha a hivatkozás nem relatív és más környezetben futtatjuk,
+akkor is ezt az üzenenetet kapjuk.)</i><br>
+<a href="#" onclick="mutat('kephiba')">Hibaüzenet mutatása/elrejtése</a></p>
+<p align="center"><img src="kepek/kephiba.gif" id="kephiba" border="0" style="display: none"></p>
+
+
+
+<h4>Hiba(&lt;szám&gt;)</h4>
+<p>A hiba arra utal hogy valamilyen rendellenesség történt a töltés
+során. Általában akkor fordul elõ ha kézzel szerkesztettük a térképfájlt
+és valamilyen szintaktikai hibát követtünk el. A szám a VB-s hibaüzenet kódját
+jelenti<br>
+<a href="#" onclick="mutat('egyeb')">Hibaüzenet mutatása/elrejtése</a></p>
+<p align="center"><img src="kepek/egyeb.gif" id="egyeb" border="0" style="display: none"></p>
+
+<script language="JavaScript">latszat()</script>
+</body>
+</html>

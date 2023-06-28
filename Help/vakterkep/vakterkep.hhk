@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[CTRL] + [B]">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[CTRL] + [E]">
+		<param name="Name" value="Értékelés használata">
+		<param name="Local" value="page\ert.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[CTRL] + [J]">
+		<param name="Name" value="Jelmagyarázat használata">
+		<param name="Local" value="page\jelm.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[CTRL] + [K]">
+		<param name="Name" value="Kilépés a Vaktérképbõl">
+		<param name="Local" value="page\kilep.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[CTRL] + [M]">
+		<param name="Name" value="Vaktérképek megnyitása">
+		<param name="Local" value="page\megnyit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[CTRL] + [N]">
+		<param name="Name" value="Vaktérkép Súgó menüje">
+		<param name="Local" value="page\sugo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[CTRL] + [U]">
+		<param name="Name" value="Újra Kezd">
+		<param name="Local" value="page\uj.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[ENTER]">
+		<param name="Name" value="Vaktérkép használata">
+		<param name="Local" value="page\hasznal.htm">
+		<param name="Name" value="Vaktérkép funkcióbillentyûi">
+		<param name="Local" value="page\bill.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[ESC]">
+		<param name="Name" value="Vaktérkép funkcióbillentyûi">
+		<param name="Local" value="page\bill.htm">
+		<param name="URL" value="page\jelm.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[F1]">
+		<param name="Name" value="Vaktérkép Súgó menüje">
+		<param name="Local" value="page\sugo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="A k&eacute;p nem el&eacute;rhet&otilde;">
+		<param name="Name" value="Vaktérkép hibaüzenetei">
+		<param name="Local" value="page\hiba.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="A projekt nem nyithat&oacute; meg">
+		<param name="Name" value="Vaktérkép hibaüzenetei">
+		<param name="Local" value="page\hiba.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Aacute;ltal&aacute;nos  f&uuml;l">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Be&aacute;ll&iacute;t&aacute;sok">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bevezet&eacute;s">
+		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
+		<param name="Local" value="page\kezdo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Billenty&ucirc;parancsok">
+		<param name="Name" value="Vaktérkép funkcióbillentyûi">
+		<param name="Local" value="page\bill.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Egy feladatra adhat&oacute; pont">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Egy&eacute;ni be&aacute;ll&iacute;t&aacute;sok">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="E-mail nekem">
+		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
+		<param name="Local" value="page\index.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Eacute;rt&eacute;kel&eacute;s">
+		<param name="Name" value="Értékelés használata">
+		<param name="Local" value="page\ert.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Eacute;rt&eacute;kel&eacute;s menete">
+		<param name="Name" value="Vaktérkép értékelése">
+		<param name="Local" value="page\ert.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EULA">
+		<param name="Name" value="Felhasználói Licence Szerzõdés">
+		<param name="Local" value="page\eula.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Felhaszn&aacute;l&oacute;i Licence Szerz&otilde;d&eacute;s">
+		<param name="Name" value="Felhasználói Licence Szerzõdés">
+		<param name="Local" value="page\eula.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Gyorstippek">
+		<param name="Name" value="Kiegészítõk">
+		<param name="Local" value="page\kieg.htm">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Haszn&aacute;lat">
+		<param name="Name" value="Vaktérkép használata">
+		<param name="Local" value="page\hasznal.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Helyes megold&aacute;s">
+		<param name="Name" value="Értékelés használata">
+		<param name="Local" value="page\ert.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Hiba(&lt;sz&aacute;m&gt;)">
+		<param name="Name" value="Vaktérkép hibaüzenetei">
+		<param name="Local" value="page\hiba.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Hib&aacute;s megold&aacute;s">
+		<param name="Name" value="Értékelés használata">
+		<param name="Local" value="page\ert.htm">
+		<param name="Name" value="Kiegészítõk">
+		<param name="Local" value="page\kieg.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Hiba&uuml;zenetek">
+		<param name="Name" value="Vaktérkép hibaüzenetei">
+		<param name="Local" value="page\hiba.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Honlapom">
+		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
+		<param name="Local" value="page\index.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Jelmagyar&aacute;zat">
+		<param name="Name" value="Jelmagyarázat használata">
+		<param name="Local" value="page\jelm.htm">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Kapcsolat">
+		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
+		<param name="Local" value="page\kezdo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="K&eacute;rd&eacute;senk&eacute;nti sz&aacute;zal&eacute;klevon&aacute;s">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Kieg&eacute;sz&iacute;t&otilde;k">
+		<param name="Name" value="Kiegészítõk">
+		<param name="Local" value="page\kieg.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="KIl&eacute;p&eacute;s">
+		<param name="Name" value="Kilépés a Vaktérképbõl">
+		<param name="Local" value="page\kilep.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="M&aacute;sol&aacute;s, terjeszt&eacute;s, jogok">
+		<param name="Name" value="Felhasználói License Szerzõdés">
+		<param name="Local" value="page\eula.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Megnyit&aacute;s">
+		<param name="Name" value="Vaktérképek megnyitása">
+		<param name="Local" value="page\megnyit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Mur&aacute;ti &Aacute;kos">
+		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
+		<param name="Local" value="page\index.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="N&eacute;vjegy">
+		<param name="Name" value="Vaktérkép Súgó menüje">
+		<param name="Local" value="page\sugo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Null&aacute;z&aacute;s">
+		<param name="Name" value="Újra Kezd">
+		<param name="Local" value="page\uj.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Piros elemek">
+		<param name="Name" value="Értékelés használata">
+		<param name="Local" value="page\ert.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Pontok">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		<param name="Name" value="Értékelés használata">
+		<param name="Local" value="page\ert.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="P&oacute;tl&oacute;jel">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Pr&oacute;b&aacute;lkoz&aacute;si lehet&otilde;s&eacute;gek">
+		<param name="Name" value="Értékelés használata">
+		<param name="Local" value="page\ert.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Programr&oacute;l">
+		<param name="Name" value="Felhasználói License Szerzõdés">
+		<param name="Local" value="page\eula.htm">
+		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
+		<param name="Local" value="page\index.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Rendszerf&aacute;jlok">
+		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
+		<param name="Local" value="page\kezdo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Rendszerk&ouml;vetelm&eacute;nyek">
+		<param name="Name" value="Üdvözlöm a Vaktérkép Súgójában">
+		<param name="Local" value="page\kezdo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Seg&iacute;t&otilde; k&eacute;rd&eacute;sek">
+		<param name="Name" value="Kiegészítõk">
+		<param name="Local" value="page\kieg.htm">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="S&uacute;g&oacute;">
+		<param name="Name" value="Vaktérkép Súgó menüje">
+		<param name="Local" value="page\sugo.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sz&aacute;zal&eacute;khat&aacute;rok">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sz&ouml;veg be&iacute;r&aacute;sa">
+		<param name="Name" value="Vaktérkép használata">
+		<param name="Local" value="page\hasznal.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="&Uacute;jra Kezd">
+		<param name="Name" value="Újra Kezd">
+		<param name="Local" value="page\uj.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="vakterkep.exe /beall">
+		<param name="Name" value="Vaktérkép beállításai">
+		<param name="Local" value="page\beall.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Z&ouml;ld elemek">
+		<param name="Name" value="Értékelés használata">
+		<param name="Local" value="page\ert.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>
